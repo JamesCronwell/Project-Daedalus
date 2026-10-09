@@ -3,7 +3,8 @@
 #             -> G:\My Drive\daedalus-backups\restic          (exclusions: tools\backup-exclude.txt, never named here)
 #   saves:    KSP_Calypso\saves, KSP_Reborn\saves, one snapshot each
 #             -> G:\My Drive\### Games\KSP\-- BACKUP --\saves-restic
-# Run by the scheduled task (tools\backup-task.ps1), or by hand:
+# The guard refuses to let Claude run this file (it handles the password): the owner chose that Claude never runs it
+# (2026-10-09, option 2). The task runs it; the owner's one sitting is tools\backup-owner-setup.ps1. By hand (the owner):
 #   powershell -NoProfile -File tools\backup.ps1 [-SkipSaves] [-DryRun]   the daily run (-DryRun: decisions only)
 #   powershell -NoProfile -File tools\backup.ps1 -CheckExcludes           dry-run the plumbing set; count what each
 #                                                                         exclude line would still let in (must be 0)
@@ -88,18 +89,7 @@ function Invoke-Restic([string]$repo, [string[]]$resticArgs) {   # returns resti
     $code
 }
 
-function Ksp-Blocker([string]$install) {   # why the saves of $install must be skipped now, or $null
-    if ($SkipSaves) { return '-SkipSaves' }
-    if (Test-Path -LiteralPath (Join-Path $StateDir 'skip-ksp-saves')) { return 'the skip-ksp-saves flag file' }
-    foreach ($p in @(Get-Process -Name 'KSP_x64' -ErrorAction SilentlyContinue)) {
-        $path = $null
-        try { $path = $p.Path } catch {}
-        if (-not $path) { return "KSP_x64 (pid $($p.Id), path unknown)" }
-        if ($path -like (Join-Path $Ksp "$install\*")) { return "KSP_x64 from $install (pid $($p.Id))" }
-        if (-not ($path -like "$Ksp\*")) { return "KSP_x64 from elsewhere: $path" }
-    }
-    $null
-}
+. (Join-Path $PSScriptRoot 'backup-skip.ps1')   # Get-KspBlocker: the saves' skip rule, testable on its own
 
 New-Item -ItemType Directory -Force -Path $StateDir | Out-Null
 $script:ResticExe = (Get-Command restic -ErrorAction SilentlyContinue).Source
@@ -178,7 +168,7 @@ try {
     # saves, one snapshot per install
     foreach ($tag in $Saves.Keys) {
         $install = $Saves[$tag]
-        $why = Ksp-Blocker $install
+        $why = Get-KspBlocker $install ([bool]$SkipSaves) $StateDir $Ksp
         if ($why) {
             Log "$tag`: skipped ($why)"
             if ((Test-Path -LiteralPath (Stamp 'first-run')) -and (Age $tag) -gt 72) {

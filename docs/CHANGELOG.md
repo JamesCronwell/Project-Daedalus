@@ -15,6 +15,36 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  Crusader  The owner's sitting: restic password, both repositories, first run, test restore, daily task
+Brief:     02 (tasks 3 and 4)
+Why:       BACKUP-MAP gaps 1, 7, 10 and 11: a daily, versioned copy of ~/.claude, the plumbing and the KSP saves off the
+           C:+F: disk. The owner chose option 2 (relayed by Orchestrator - Daedalus, 2026-10-09): Claude never runs what
+           touches the password; the guard also refuses Register-ScheduledTask, so the task is in the same sitting
+Owner yes: PENDING (asked in the BRIEF 02 chat)
+Before:    no `%LOCALAPPDATA%\Daedalus`; no `G:\My Drive\daedalus-backups\restic`; no
+           `G:\My Drive\### Games\KSP\-- BACKUP --\saves-restic`; no task "Daedalus daily backup"
+Change:    the owner runs `tools\backup-owner-setup.ps1` in their own PowerShell: stores the password DPAPI-protected at
+           `%LOCALAPPDATA%\Daedalus\restic-password.dpapi`; `restic init` both repositories; the exclusion check; the
+           first run (`tools\backup.ps1`); restores it into `%LOCALAPPDATA%\Daedalus\restore-check` with `--verify`;
+           manifests compared; that folder deleted only on a full MATCH; registers "Daedalus daily backup" (daily,
+           logged-on only, hidden). With -SkipSaves it leaves `%LOCALAPPDATA%\Daedalus\skip-ksp-saves`
+Rollback:  the owner deletes the task in Task Scheduler; deletes `G:\My Drive\daedalus-backups\restic` and
+           `...\-- BACKUP --\saves-restic` (and empties them from Drive's bin), after checking nothing else is in them;
+           deletes `%LOCALAPPDATA%\Daedalus` (password file, log, stamps) and the password-manager entry. The sources
+           are only read
+Outcome:   -
+
+## 2026-10-09  Crusader  Install restic (winget)
+Brief:     02 (task 3)
+Why:       the daily backup's tool (backend A: restic straight onto G:, the owner's choice relayed 2026-10-09)
+Owner yes: PENDING (asked in the BRIEF 02 chat)
+Before:    `Get-Command restic`: not found. `winget show --id restic.restic --exact`: 0.19.1 available
+Change:    `winget install --id restic.restic --exact --scope user --accept-package-agreements
+           --accept-source-agreements` (the flags accept restic's BSD-2 license and winget's source terms: part of the
+           yes asked)
+Rollback:  `winget uninstall --id restic.restic --exact`
+Outcome:   -
+
 ## 2026-10-09  Crusader  One copy of ~/.claude to Google Drive, and a checksum-verified test restore
 Brief:     01 (task 3, gap 1 (a))
 Why:       ~/.claude (memory, transcripts, settings, tools) had no copy and dies with the C:+F: disk (BACKUP-MAP gap 1)

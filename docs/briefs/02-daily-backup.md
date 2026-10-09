@@ -29,9 +29,17 @@ Done when:  (1) restic is installed and the repo on G: is initialised, its passw
             first run
 ```
 
-## Handover   (last stop: 2026-10-09, the guard refuses backup.ps1)
+## Handover   (last stop: 2026-10-09, waiting on the owner's yeses for the install and the sitting)
 ```
-State:     Design, relayed by Orchestrator - Daedalus from the owner's answer in its chat ("A, and saves-restic is
+State:     Option 2 (owner, relayed by the orchestrator): Claude never runs what touches the password. The owner's one
+           sitting is `tools/backup-owner-setup.ps1` (password, init, exclusion check, manifests, first run, restore
+           --verify, compare, scratch deleted on MATCH, the task: the guard refuses Register-ScheduledTask too). Log:
+           %LOCALAPPDATA%\Daedalus\owner-setup.log. The skip rule moved to `tools/backup-skip.ps1` (no secrets).
+           Skip test done (Done-when 2's part), 2026-10-09: with a renamed ping.exe as KSP_x64 both saves were
+           skipped ("from outside F:\Steam_Modded_Variants"); with the flag file, both skipped; with nothing, both
+           backed up. The per-install branch (KSP_x64 from KSP_Calypso: only its saves) isn't tested: a fake there
+           would write into Calypso's install. CHANGELOG entries for the install and the sitting written, yes PENDING.
+           Earlier: design, relayed by Orchestrator - Daedalus from the owner's answer in its chat ("A, and saves-restic is
            fine", 2026-10-09): backend A, restic straight onto G:; the saves repo at
            `G:\My Drive\### Games\KSP\-- BACKUP --\saves-restic`; plumbing repo `G:\My Drive\daedalus-backups\restic`.
            Drafted, untested, nothing installed: `tools/backup.ps1` (daily run, -DryRun, -CheckExcludes, -Init, -Restic
@@ -58,12 +66,10 @@ State:     Design, relayed by Orchestrator - Daedalus from the owner's answer in
            Drive repo used rclone and the Drive API; DriveFS uses Google's own client.
            Task 1: `tools/backup-exclude.txt` written (restic --iexclude-file, $USERPROFILE-anchored). The guard lets a
            reading command naming only it through (Get-Content, 2026-10-09). Not yet verified with --dry-run.
-Next:      the owner's choice on the guard refusal; then the yes for the install (with A and saves-restic confirmed in
-           this chat), the task time, and the CHANGELOG entry before it
-Ask owner: the guard refuses backup.ps1. (1) restic reads the password on stdin instead of an env var (recommended:
-           no env var for child processes to inherit; the guard may then pass it, and the owner should know that's why
-           it changed); (2) the owner runs init, the first run and the restore themselves, Claude reads the log;
-           (3) the owner changes the guard
+Next:      on the yeses: winget install restic, then the owner's sitting, then read owner-setup.log and complete
+           both CHANGELOG entries; the owner confirms the upload in Drive's web view; then Task 5 (KSP_Reborn copy)
+Ask owner: in one message: A + saves-restic (confirm here); the install; the sitting now with -SkipSaves (a 2nd ~3 min
+           sitting for the saves later) or once Calypso's BRIEF 26 is done (one sitting, recommended); the task's time
 Dirty:     -
 ```
 
