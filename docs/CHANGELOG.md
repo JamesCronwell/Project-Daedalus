@@ -200,3 +200,16 @@ Before:    `C:\- Tools\- LLM\Daedalus` did not exist
 Change:    this repo (docs, `.claude/settings.json` deny list, BRIEF 01); one roster line added to `~/.claude/CLAUDE.md`
 Rollback:  delete the folder; remove the roster lines from `~/.claude/CLAUDE.md`
 Outcome:   local git repo, first commit 8c1700e; pushed to the private GitHub repo JamesCronwell/Project-Daedalus the same day
+
+## 2026-10-09  plumbing  Discord layout tool (BRIEF 05): code only so far; bot and servers not touched yet
+Brief:     BRIEF 05
+Why:       the owner reshapes the Discord server often; a tool applies layout changes so they aren't done by hand
+Owner yes: "yes, that's right, lock it in" (the interview, 2026-10-09); the bot's permission set: "Yes, bot gets those
+           too" (2026-10-09). The yes to invite the bot to the TEST server and to the LIVE server is still to be given
+Before:    no tool, no bot, no `discord/` folder
+Change:    `tools/discord_layout.py`, `tools/discord_layout_test.py`, `tools/discord-setpass.ps1`, `docs/DISCORD-LAYOUT.md`;
+           PLUMBING and BACKUP-MAP rows (the token's home). Still to come, with the owner: the Discord application and
+           its token (password manager + `%LOCALAPPDATA%\Daedalus\discord-token.dpapi`), the bot joining the test server,
+           then the live server (own entry before that invite), and `discord/layout.toml`
+Rollback:  revert the commits; the owner deletes the application in the Developer Portal and the .dpapi file
+Outcome:   tests green (`python -I tools/discord_layout_test.py`); nothing on any server or machine has changed

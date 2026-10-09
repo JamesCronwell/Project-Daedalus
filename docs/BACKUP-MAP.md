@@ -42,6 +42,7 @@ in each row. Rewrite this file when a copy, a schedule or a test changes; the ga
 | 15 | Tailscale serve mappings, ports | Bastion tailscaled state | recorded in `docs/inventory/bastion.md` (regenerate) | 2026-10-09 | rebuild by hand from the inventory |
 | 16 | gbrain (`~/gbrain-vault`, `~/gbrain-backups`) | Bastion `/home` | `~/gbrain-backups/gbrain-…-20261006-1745.tgz` (same disk); whether restic covers `/home` beyond `bastion-ops` is unknown | 2026-10-06 | no |
 | 17 | The restic password for Crusader's two repos (rows 1, 3, 4, 5): without it they can't be opened | the owner's password manager; for the task, `%LOCALAPPDATA%\Daedalus\restic-password.dpapi` (DPAPI, this Windows user only: dies with the PC) | the password manager is the copy | 2026-10-09 | used by the sitting's restore 2026-10-09 (from the DPAPI file); the password-manager copy: the owner's |
+| 18 | The Discord layout bot's token (BRIEF 05): without it the owner runs no plan or apply; the bot's structure is in `discord/layout.toml` | the owner's password manager; for the tool, `%LOCALAPPDATA%Daedalusdiscord-token.dpapi` (DPAPI, this Windows user only: dies with the PC) | the password manager is the copy | 2026-10-09 | rotate: Developer Portal > Bot > Reset Token, update the manager, delete the .dpapi file, run `toolsdiscord-setpass.ps1`. A leak: reset at once |
 
 ## Hephaestus's chain, checked (BRIEF 01 Done-when 4)
 - **Now (re-read 2026-10-09 ~10:00 UTC):** newest dump `bench-20261009-0945.dump.age` 555,761 bytes, `last_ok`

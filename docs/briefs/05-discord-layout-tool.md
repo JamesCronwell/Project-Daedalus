@@ -1,7 +1,7 @@
 # BRIEF 05: The Discord layout lives in the repo, and the owner applies changes with plan and apply
 
 ```
-Status:     next
+Status:     in progress (tasks 1-3 done; 4-7 wait for the owner)
 Commits:    -
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's test server, then "Mojo Dojo Casa House"; the token's protected file on Crusader
@@ -33,12 +33,29 @@ Done when:  (1) `python -I tools/discord_layout_test.py` passes: the diff, never
             BRIEF 03 then edits the layout to its target and applies its rounds through the tool.
 ```
 
-## Handover   (last stop: -)
+## Handover   (last stop: 2026-10-09, after the tool and its tests)
 ```
-State:     not started
-Next:      -
-Ask owner: -
-Dirty:     -
+State:     tasks 1-3 done. Done-when (1) is green: `python -I tools/discord_layout_test.py` runs 23 tests against an
+           in-memory fake (diff, never-delete, rename keeps its id, member overwrites survive, owner's bits flagged and
+           skipped with apply carrying on, stale plan refused, stop-at-first-error, 429 retry, TOML round trip,
+           check-template, the full loop ending in a second empty plan).
+           - Written: tools/discord_layout.py (import, check-template, names, plan, apply, invite),
+             tools/discord_layout_test.py, tools/discord-setpass.ps1, docs/DISCORD-LAYOUT.md (the owner's steps),
+             PLUMBING row, BACKUP-MAP row 18, a CHANGELOG entry (code only; the bot and servers are untouched).
+           - Design points the owner should know: apply writes new ids back into the layout file; a role overwrite the
+             layout drops is neutralised (0/0), never deleted, and the API client refuses DELETE; the "yours" set is
+             computed from the bot's real permissions per channel, so a channel the bot can't see is skipped and
+             listed; extras sink nowhere (they stay put, listed); channel order is refilled around extras.
+           - NOT verified here: the DPAPI token read (`read_token`; the dummy-token check was denied) and every real
+             Discord behaviour (task 5 proves them on the test server): that creating a channel with an explicit empty
+             `permission_overwrites` list doesn't inherit the category's, that Discord accepts the PUTs when the live
+             overwrite already holds bits the bot lacks, and the bot's 403 rules.
+Next:      the owner does task 4 (docs/DISCORD-LAYOUT.md "One-time"), then the test server run (task 5). The session
+           then reads each plan file. CHANGELOG entry for the live invite before task 6. Task 7: names check, commit
+           discord/layout.toml (only after the owner confirms the names), mark the brief done
+Ask owner: - the yes to invite the bot to the test server; later a separate yes for the live server
+           - the test server's id and a window to watch import, plan and apply (~15 min)
+Dirty:     nothing on any machine or server; no secret anywhere. Not pushed (the orchestrator pushes main)
 ```
 
 ## Why
