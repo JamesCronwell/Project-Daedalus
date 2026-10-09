@@ -1,7 +1,7 @@
 # BRIEF 03: The Discord server, rebuilt around how the group actually uses it
 
 ```
-Status:     next
+Status:     waiting-owner: channels.md answers, the feed bots' Manage pages, 3 Members tabs
 Commits:    -
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's Discord server "Mojo Dojo Casa House"
@@ -22,21 +22,39 @@ Done when:  (1) the "after" template, diffed against before-2026-10-09, matches 
             in docs/discord/ (local); the brief's Handover summarises them without friends' names
 ```
 
-## Handover   (last stop: -)
+## Handover   (last stop: 2026-10-09, after the channel check was pre-filled)
 ```
-State:     not started.
+State:     tasks 1-2 started; the owner's answers are the gate for task 3.
            - The "before" snapshot: docs/discord/before-2026-10-09.template.json (template rz3WdmpSVFVQ, 2026-10-09
              09:52 UTC). `python -I tools/discord_tree.py <it>` renders it.
-           - The owner's screenshots are in docs/discord/inputs-2026-10-09/: categories-1..5 (the squads), bots (the
-             8 bots and their webhook counts), feed-1..6 (what posts in mining-incorporated, wh40k,
-             army-rangers-applications-files, helldiving-quarters, aviation-sqd-news, pathfinding-and-exiles), and
-             members-1..2 (all 46 members with their top role; "+N" hides the rest).
-Next:      Task 1. The members screenshots cover top roles; ask only for the Members tab of the roles a step would
-           change or the owner may delete
-Ask owner: -  (answered 2026-10-09 in the orchestrator's chat: the three people in the bots' role "should not have
-           admin, no". The checklist removes them from ADMIN / MECHANIZED TRANSPORT before that role is cut down;
-           they keep their other roles)
-Dirty:     -
+           - The owner's screenshots are in docs/discord/inputs-2026-10-09/ (all read this session).
+           - Written locally (gitignored): channels.md (the channel check: decisions Q1-Q8, then a row per channel
+             with my guess and `?` where unsure), feeds.md (the 8 bots, which feed is seen where, what is unplaced),
+             role-holders-2026-10-09.md (top roles from members-1..2).
+           - Findings that change the plan:
+             (1) PatchBot pings roles only with Premium ($1.49/mo), so the Minecraft, Squad and Helldivers feeds
+             can't ping for free (SnailBot's two already do);
+             (2) `wh40k` is hidden from everyone but the Dungeoneering roles, so moving it to the Feeds reveals it;
+             (3) the bot-managed roles are not in the template, so their powers are unseen;
+             (4) the squad roles HRT // SWAT, Aviation and Pathfinder hold "Mention @everyone, @here and All Roles";
+             (5) a MINECRAFT category would hold one channel once the feeds move;
+             (6) once Administrator leaves the bots' role, a bot-account feed (aviation-sqd-news) needs an explicit
+             Send overwrite and the pinging bots Mention Everyone, or the ping roles must be made mentionable;
+             (7) no Community server, so game roles are self-service via carl-bot's reaction roles.
+           - The bots' role is held by 8 bots and 3 people (as top role); the Admin role goes to the 6 holders of
+             O-10 and O-9. O-6 and O-5 show no top-role holders, so hidden holders are possible.
+Next:      the owner answers channels.md (Q1-Q8, then the `?` rows, ~10 min). Then task 3: write the checklist
+           (rounds a-g, each with its rollback) and the round-1 CHANGELOG entry (plumbing: Discord) before the owner
+           applies round (a). Never touch the server; every step is the owner's
+Ask owner: - the channels.md answers (Q1 PatchBot pings, Q2 drop the MINECRAFT category, Q3 wh40k visible to all,
+             Q4 archive hidden, Q5 carl-bot reaction roles, Q6 strip Mention All from squad roles; whether D&D still
+             meets; the `?` rows)
+           - each feed bot's Manage page (PatchBot, SnailBot, MEE6, Free Stuff): channel names only, never a webhook URL
+           - the Members tab of ADMIN / MECHANIZED TRANSPORT, O-6 / Colonel and O-5 / Lieutenant Colonel
+           - a Roles screenshot showing the bot-managed roles
+           - (answered earlier) the three people in the bots' role lose Administrator: the checklist removes them from
+             it before it is cut down; they keep their other roles
+Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing on the server is changed
 ```
 
 ## Why
