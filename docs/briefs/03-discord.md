@@ -1,7 +1,7 @@
 # BRIEF 03: The Discord server, rebuilt around how the group actually uses it
 
 ```
-Status:     waiting-owner: channels.md answers, the feed bots' Manage pages, 3 Members tabs
+Status:     pending: the automation brief (the layout tool); the checklist is written, nothing applied
 Commits:    -
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's Discord server "Mojo Dojo Casa House"
@@ -68,13 +68,28 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              `briefing-room`; updates channel = base-announcements, stays hidden in ARCHIVE).
            - Task 3 done: docs/discord/checklist.md (local), rounds a-g with rollbacks. CHANGELOG entry for rounds (a)+(b)
              written; (c)-(g) get theirs when reached. Nothing is applied yet.
-Next:      the owner applies round (a) and (b), then the session reads Server Settings to check, writes the (c)+(d)
-           entry, and so on. The owner said they will give feedback "after we've automated implementation": whether to
-           automate this checklist now is an open question (below)
-Ask owner: - how the checklist is applied: by hand (about 55 min in rounds), or automated. Automation means a bot the owner
-             owns with its token held like BRIEF 02's restic password (the brief's "Later" item: its own interview, its
-             own brief); driving the Discord app by clicks was not agreed
-           - the small `?` rows in channels.md (kerbal-space-launches to the archive, `engineering-log` private, names)
+           - **The automation interview is done and locked** (owner, 2026-10-09: "yes, that's right, lock it in"). The
+             owner reshapes the server often (new things, moves, themes), so the layout is applied by a tool, not by hand.
+             Decisions: (1) layout as code in the Daedalus repo: a layout file of categories, channels, roles and
+             permission overwrites, each with a stable key tied to its Discord id (a rename keeps history, webhooks and
+             follows); the file holds no people, so it is committed; (2) the loop: the owner tells a session what to
+             change (a theme is a rename), the session edits the file and shows the diff, the OWNER runs `plan` (reads
+             the live server, writes a diff file the session may read) and then `apply`; no session ever holds the token;
+             (3) scope: structure only; who holds which role, messages, bots, webhooks, follows and server settings are
+             not managed; (4) it never deletes: extras are flagged, or channels go to the archive; real deletes stay by
+             hand; (5) a standing bot the owner owns with only Manage Channels, Manage Roles and View Channels, its role
+             high enough to edit the roles below it; the powerful toggles (Administrator, Manage Server, Kick, Ban) stay
+             by hand and the plan flags them as "yours"; the token sits in the owner's password manager plus a protected
+             file, like BRIEF 02's restic password; (6) tested first on the owner's existing test server (a rehearsal, not
+             a blue/green swap: Discord can't swap servers), only then the bot joins the live one; (7) the first real run:
+             the layout file starts from the "before" snapshot, so the first plan shows exactly the BRIEF 03 changes,
+             applied in stages in the checklist's round order with a plan approved between stages; (8) stdlib-only
+             Python; the by-hand checklist stays as the fallback. A new brief (BRIEF 04+; the orchestrator numbers it)
+             builds it; this brief's rounds wait for it
+Next:      the orchestrator writes the automation brief from the locked interview above. BRIEF 03's rounds (a)-(g) are
+           applied through that tool (or by hand if the owner changes their mind); the CHANGELOG entry for rounds (a)+(b)
+           stays "planned"
+Ask owner: - the small `?` rows in channels.md (kerbal-space-launches to the archive, `engineering-log` private, names)
            - (answered earlier) the three people in the bots' role lose Administrator: the checklist removes them from
              it before it is cut down; they keep their other roles
 Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing on the server is changed
