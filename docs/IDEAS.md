@@ -24,6 +24,6 @@ Each one gets an interview with the owner before it becomes a brief (global rule
   for the group to want it, and the owner may modify the modpack later. Its offsite copy was dropped on 2026-10-03 on
   purpose, to stay inside R2's 10 GB free tier. While stopped, the world doesn't change, so one copy is enough.
   Interview when it comes back.
-- **The Discord server rework.** Channels, roles and categories: some are deprecated, some still in use, most were set
-  up by hand (owner, 2026-10-09). Daedalus takes it as a one-off brief: DIRECTION's "owner's own infrastructure" line
-  (owner's yes, 2026-10-09). Interview in progress; it becomes a brief once the owner confirms the restatement.
+- **The Discord server as code** (owner, 2026-10-09: "maybe we can still do some proper automation at some point").
+  After BRIEF 03's manual rework: the layout in a declarative file, diffed against the live server and applied by a bot
+  the owner owns, dry run first. Its own interview.

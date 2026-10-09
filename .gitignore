@@ -13,3 +13,5 @@ __pycache__/
 .claude/settings.local.json
 # chip sessions run in worktrees here
 .claude/worktrees/
+# Discord snapshots and screenshots hold friends' names: local only (BRIEF 03)
+docs/discord/
