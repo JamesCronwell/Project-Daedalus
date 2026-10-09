@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  plumbing: Discord  Rounds (a)+(b): a new Admin role, and the MESS HALL, COMMS and ENGINEERING categories (planned, owner applies)
+Brief:     03
+Why:       the owner's Discord server "Mojo Dojo Casa House" is rebuilt around how the group really uses it (BRIEF 03):
+           the Hangout, read-only feeds, one private engineering forum, an archive; only one `Admin` role keeps the powers
+Owner yes: "yes, write the checklist" to the layout restated in this session (BRIEF 03 chat, 2026-10-09). The session never
+           touches the server: the owner applies each step; the session only reads Server Settings afterwards
+Before:    the "before" snapshot `docs/discord/before-2026-10-09.template.json` (local, gitignored: it holds members' names;
+           template rz3WdmpSVFVQ, 2026-10-09 09:52 UTC). 6 roles hold Administrator (O-10 to O-6 and the bots' role)
+Change:    (a) create the role `Admin` (Administrator only) and give it to the 6 holders of O-10 and O-9; (b) create the
+           categories MESS HALL, COMMS (read-only for @everyone; the bots' role may send) and ENGINEERING (private, with a
+           forum `engineering-log`); rename `// ARCHIVE //` to `ARCHIVE`. Nothing is moved, stripped or deleted in these
+           two rounds; (c)-(g) follow, each with its own entry first (docs/discord/checklist.md, local)
+Rollback:  remove `Admin` from the 6 and delete the (empty) new categories and forum by hand; rename ARCHIVE back
+Outcome:   -
+
 ## 2026-10-09  Crusader  The 3 craft only the 2025 KSP_Reborn copy holds, copied out next to it
 Brief:     02 (towards retiring the 2025 copy after Task 5)
 Why:       a names-only, read-only diff (2026-10-09): of the 2025 G: copy's 292 craft names, 3 are in neither F:'s

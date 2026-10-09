@@ -62,12 +62,19 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              (e) SnailBot holds the Aviation Sqd. role (that is where its ping comes from), so Mention Everyone must not
              be stripped from the bots' role or that role without a replacement; MCStatus has no role of its own and
              lives on the bots' role, so the cut bots' role must keep View, Send and Embed.
-Next:      the owner answers the open questions below. Then task 3: write the checklist (rounds a-g, each with its
-           rollback) and the round-1 CHANGELOG entry (plumbing: Discord) before the owner applies round (a). Every
-           change is the owner's; the session may re-read Server Settings read-only to check a round
-Ask owner: - keep the Project Zomboid and Ready Or Not news (as COMMS feeds) or archive them with the squads
-           - what happens to tech-engineering and assembly-line feeds if PatchBot or SnailBot go
-           - the rest of the `?` rows in channels.md
+           - Layout confirmed by the owner ("yes, write the checklist", 2026-10-09; channels.md section F): MESS HALL (6),
+             COMMS (9 read-only feeds incl. Zomboid and Ready Or Not), ENGINEERING (a new private forum), ARCHIVE (32,
+             the whole Technical Engineering set included). Community is on (rules channel = welcome, kept visible as
+             `briefing-room`; updates channel = base-announcements, stays hidden in ARCHIVE).
+           - Task 3 done: docs/discord/checklist.md (local), rounds a-g with rollbacks. CHANGELOG entry for rounds (a)+(b)
+             written; (c)-(g) get theirs when reached. Nothing is applied yet.
+Next:      the owner applies round (a) and (b), then the session reads Server Settings to check, writes the (c)+(d)
+           entry, and so on. The owner said they will give feedback "after we've automated implementation": whether to
+           automate this checklist now is an open question (below)
+Ask owner: - how the checklist is applied: by hand (about 55 min in rounds), or automated. Automation means a bot the owner
+             owns with its token held like BRIEF 02's restic password (the brief's "Later" item: its own interview, its
+             own brief); driving the Discord app by clicks was not agreed
+           - the small `?` rows in channels.md (kerbal-space-launches to the archive, `engineering-log` private, names)
            - (answered earlier) the three people in the bots' role lose Administrator: the checklist removes them from
              it before it is cut down; they keep their other roles
 Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing on the server is changed
