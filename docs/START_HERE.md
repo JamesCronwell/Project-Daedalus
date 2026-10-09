@@ -62,8 +62,8 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 
 ## 5. How we work
 - One brief per session. Stop by rewriting the brief's Handover (State / Next / Ask owner / Dirty) in the same commit.
-- A chip's first turn replies "ready" and reads nothing. The orchestrator sets model and effort from the brief header,
-  then sends "go".
+- A brief session (opened by the owner in the main checkout) replies "ready" on turn 1 and reads nothing. The
+  orchestrator sets model and effort from the brief header, then sends "go".
 - **Models:** Sonnet for routine work, Opus for planning and risky changes, Haiku for bulk scans.
 - **Cadence:** on demand, plus a weekly read-only health check (a report, no asks).
 - Every new idea starts with an interview (global rule).
