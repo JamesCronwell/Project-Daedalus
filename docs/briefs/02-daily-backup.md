@@ -49,8 +49,9 @@ State:     The owner's sitting is done (CHANGELOG): repos created, the first run
            stay messages to the orchestrator. The flag stays only for `backup-owner-setup.ps1 -SkipSaves`.
            Drive quota: G: reports exactly 2.00 TB (1,473 GB used + 527 GB free); the owner says the plan is 5 TB.
            Asked the owner to check which account holds the 5 TB plan (one.google.com/storage) before recording it.
-           The 2025 KSP_Reborn copy: keep it until Task 5 and a read-only manifest diff list what only it holds
-           (the 45 craft); the owner then keeps what they want and deletes the old copy themselves (proposed to the owner).
+           The 2025 KSP_Reborn copy: a names-only diff found 3 craft in neither F:'s KSP_Reborn nor Reborn Hangar;
+           copied out (owner's yes) to `-- BACKUP --\KSP_Reborn-2025-only-craft`, sha256-checked (CHANGELOG). Keep the
+           2025 copy until Task 5's fresh copy exists; then a full manifest diff, and the owner deletes it themselves.
            Earlier: owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a), 13:00". restic 0.19.1 installed
            (CHANGELOG); the exe has no `restic` alias, so tools/backup-restic.ps1 finds it. A scratch-only test (a
            --insecure-no-password repo in the session scratchpad) showed: the anchored $VAR excludes work (top-level

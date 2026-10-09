@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  Crusader  The 3 craft only the 2025 KSP_Reborn copy holds, copied out next to it
+Brief:     02 (towards retiring the 2025 copy after Task 5)
+Why:       a names-only, read-only diff (2026-10-09): of the 2025 G: copy's 292 craft names, 3 are in neither F:'s
+           KSP_Reborn (293) nor `KSP_Calypso\saves\Reborn Hangar` (119)
+Owner yes: "yes, copy the 3 craft out" (BRIEF 02 chat, 2026-10-09)
+Before:    `G:\My Drive\### Games\KSP\-- BACKUP --\KSP_Reborn-2025-only-craft` doesn't exist. The sources, in the 2025
+           copy: `saves\USA\Ships\VAB\- INSP\Juno_I_-_Explorer_1.craft` (247,297 B), `saves\USA\Subassemblies\HAPS-1.craft`
+           (109,382 B), `saves\USA\Subassemblies\SLS Ascension.craft` (173,220 B)
+Change:    Copy-Item of each into `...\-- BACKUP --\KSP_Reborn-2025-only-craft\` under the same relative path; the 2025
+           copy is only read; nothing overwritten (the folder is new)
+Rollback:  the owner deletes `KSP_Reborn-2025-only-craft`
+Outcome:   2026-10-09: all 3 copied, sizes as Before, sha256 of each copy equals its source's. Read Drive's local
+           view (the upload is Drive's). Names-only diff: same-named craft may differ in content; the full manifest
+           diff after Task 5 covers the rest of the 2025 copy (saves, settings)
+
 ## 2026-10-09  Crusader  The owner's sitting: restic password, both repositories, first run, test restore, daily task
 Brief:     02 (tasks 3 and 4)
 Why:       BACKUP-MAP gaps 1, 7, 10 and 11: a daily, versioned copy of ~/.claude, the plumbing and the KSP saves off the
