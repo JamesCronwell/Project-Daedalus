@@ -1,7 +1,7 @@
 # BRIEF 02: Crusader backs itself up every day - ~/.claude, the plumbing, the KSP saves - and a restore proves it
 
 ```
-Status:     next
+Status:     waiting-owner
 Commits:    -
 Track:      safety
 Machine:    Crusader
@@ -29,11 +29,22 @@ Done when:  (1) restic is installed and the repo on G: is initialised, its passw
             first run
 ```
 
-## Handover   (last stop: -)
+## Handover   (last stop: 2026-10-09, Task 0 done, read-only)
 ```
-State:     not started
-Next:      Task 0
-Ask owner: -
+State:     Task 0 done. G: is Drive for desktop in stream mode (virtual drive, DriveFS 132; no local "My Drive"
+           mirror; its cache is %LOCALAPPDATA%\Google\DriveFS on C:, the same physical disk until uploaded).
+           G: 527 GB free of ~2 TB; C: 425 GB free. Sources (totals only): ~/.claude ~0.96 GB (BRIEF 01's copy);
+           Scripts, Olympus, Atlas tiny; Claude_UI_UX 0.04 GB; EU5 empty; KSP_Calypso\saves 0.15 GB (281 files);
+           KSP_Reborn\saves 3.66 GB (668); KSP_Reborn whole 65.21 GB (57,169 files) vs the 2025 copy on G: 60.25 GB
+           (56,142). All in, ~70 GB: 2x fits. restic not installed; rclone 1.75.1 is (winget).
+           Research: no restic-on-DriveFS corruption reports found; the risks are the sync client's (the Box-folder
+           analogue on restic's forum; DriveFS 84.0 lost unsynced files in Nov 2023). Bastion's "quota-blocked"
+           Drive repo used rclone and the Drive API; DriveFS uses Google's own client.
+           Task 1: `tools/backup-exclude.txt` written (restic --iexclude-file, $USERPROFILE-anchored). The guard lets a
+           reading command naming only it through (Get-Content, 2026-10-09). Not yet verified with --dry-run.
+Next:      the owner's answer on the backend, then the KSP folder (Task 2), then the install's yes
+Ask owner: (1) backend: A restic straight onto G: (recommended), B restic via rclone to the Drive API, C dated copies;
+           (2) the saves repo's exact folder under `G:\My Drive\### Games\KSP\-- BACKUP --`
 Dirty:     -
 ```
 

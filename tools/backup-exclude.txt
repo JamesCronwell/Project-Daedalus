@@ -1,0 +1,9 @@
+# restic --iexclude-file for tools/backup.ps1 (BRIEF 02). Owner's choice on BRIEF 01's Ask owner 16: the exclusions
+# live here, and no command or script names them. restic expands $VARS; patterns match whole path components.
+# Verify a change with `restic backup --dry-run -vv` before the next run.
+
+# ~/.claude: the login token (the owner logs in again after a restore) and the throwaway caches
+$USERPROFILE\.claude\.credentials.json
+$USERPROFILE\.claude\cache
+$USERPROFILE\.claude\session-env
+$USERPROFILE\.claude\shell-snapshots
