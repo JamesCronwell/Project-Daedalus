@@ -20,3 +20,7 @@ Each one gets an interview with the owner before it becomes a brief (global rule
   `~/.claude/skills/` (shared plumbing, Daedalus's) or a sync script. Part of the drift is deliberate: Calypso adapted
   WH40K's copy (brief header, KSP examples), per the Calypso orchestrator. So a shared core plus per-project notes,
   diffed with both orchestrators first.
+- **The Minecraft server.** Kept, not running (owner, 2026-10-09): it waits for the modpack's version 14 update and
+  for the group to want it, and the owner may modify the modpack later. Its offsite copy was dropped on 2026-10-03 on
+  purpose, to stay inside R2's 10 GB free tier. While stopped, the world doesn't change, so one copy is enough.
+  Interview when it comes back.
