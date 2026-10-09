@@ -63,7 +63,7 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              be stripped from the bots' role or that role without a replacement; MCStatus has no role of its own and
              lives on the bots' role, so the cut bots' role must keep View, Send and Embed.
            - Layout confirmed by the owner ("yes, write the checklist", 2026-10-09; channels.md section F): MESS HALL (6),
-             COMMS (9 read-only feeds incl. Zomboid and Ready Or Not), ENGINEERING (a new private forum), ARCHIVE (32,
+             COMMS (9 read-only feeds incl. Zomboid and Ready Or Not), ENGINEERING (a new private forum), ARCHIVE (31,
              the whole Technical Engineering set included). Community is on (rules channel = welcome, kept visible as
              `briefing-room`; updates channel = base-announcements, stays hidden in ARCHIVE).
            - Task 3 done: docs/discord/checklist.md (local), rounds a-g with rollbacks. CHANGELOG entry for rounds (a)+(b)
@@ -89,7 +89,9 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
 Next:      the orchestrator writes the automation brief from the locked interview above. BRIEF 03's rounds (a)-(g) are
            applied through that tool (or by hand if the owner changes their mind); the CHANGELOG entry for rounds (a)+(b)
            stays "planned"
-Ask owner: - the small `?` rows in channels.md (kerbal-space-launches to the archive, `engineering-log` private, names)
+Ask owner: - nothing open. Answered 2026-10-09: `kerbal-space-launches` is empty and the owner deletes it by hand (so
+             ARCHIVE holds 31, not 32); `engineering-log` is private (Admin only); the channel and category names are as
+             proposed in channels.md section F
            - (answered earlier) the three people in the bots' role lose Administrator: the checklist removes them from
              it before it is cut down; they keep their other roles
 Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing on the server is changed
