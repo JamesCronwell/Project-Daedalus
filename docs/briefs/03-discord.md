@@ -8,8 +8,11 @@ Machine:    none: the owner's Discord server "Mojo Dojo Casa House"
 Touch:      docs/discord/ (local only, gitignored: it holds friends' names), tools/discord_tree.py,
             docs/CHANGELOG.md (one entry per checklist round), docs/PLUMBING.md (the feeds), this brief
 Don't touch: the server itself. The owner applies every step, permission changes always. No bot token, no Discord
-            login, no browser session in Discord. Message content (structure and metadata only). Deleting anything:
-            channels, roles, bots
+            login (the owner signs in). Message content (structure and metadata only). Deleting anything:
+            channels, roles, bots.
+            Amended 2026-10-09 (owner, in this session: "you can just take control and check for a bit"): the session
+            may LOOK at Server Settings (Roles, Integrations, Members) in the owner's signed-in Discord, read-only: no
+            Save, toggle, move or delete; no channel opened, no message read; no password typed
 Suggested model: sonnet   (tables and a checklist; the owner applies them)
 Effort level:    high     (permission overwrites and the bots' role are easy to get subtly wrong)
 Parallel:   yes  (touches neither machine)
@@ -41,20 +44,34 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              (6) once Administrator leaves the bots' role, a bot-account feed (aviation-sqd-news) needs an explicit
              Send overwrite and the pinging bots Mention Everyone, or the ping roles must be made mentionable;
              (7) no Community server, so game roles are self-service via carl-bot's reaction roles.
-           - The bots' role is held by 8 bots and 3 people (as top role); the Admin role goes to the 6 holders of
-             O-10 and O-9. O-6 and O-5 show no top-role holders, so hidden holders are possible.
-Next:      the owner answers channels.md (Q1-Q8, then the `?` rows, ~10 min). Then task 3: write the checklist
-           (rounds a-g, each with its rollback) and the round-1 CHANGELOG entry (plumbing: Discord) before the owner
-           applies round (a). Never touch the server; every step is the owner's
-Ask owner: - the channels.md answers (Q1 PatchBot pings, Q2 drop the MINECRAFT category, Q3 wh40k visible to all,
-             Q4 archive hidden, Q5 carl-bot reaction roles, Q6 strip Mention All from squad roles; whether D&D still
-             meets; the `?` rows)
-           - each feed bot's Manage page (PatchBot, SnailBot, MEE6, Free Stuff): channel names only, never a webhook URL
-           - the Members tab of ADMIN / MECHANIZED TRANSPORT, O-6 / Colonel and O-5 / Lieutenant Colonel
-           - a Roles screenshot showing the bot-managed roles
+           - The bots' role is held by 8 bots, 3 people and 3 hidden holders (almost certainly O-10/O-9, who get Admin
+             anyway). O-6 and O-5 have 0 members.
+           - Owner's answers (this session): Helldivers is cast out; PatchBot goes if useless; no new ping roles and no
+             carl-bot reaction roles (pruning); no MINECRAFT category; wh40k visible to all; the existing hidden ARCHIVE is
+             reused; D&D never started (archived); quiet-lounge, The Safe Room and the old chats archived; Project Zomboid
+             voice kept as a Hangout spare; MEE6 and carl-bot "nuke" (the owner removes them by hand, later).
+           - The owner allowed a read-only look at Server Settings in their signed-in Discord (the brief's Don't touch was
+             amended). Read 2026-10-09: docs/discord/live-read-2026-10-09.md (local). It found:
+             (a) wh40k, aviation-sqd-news, pathfinding-and-exiles, survivalist-files and swat-files are fed by 11 Discord
+             announcement follows (War Thunder, PoE, Project Zomboid, Ready Or Not, a Warhammer release channel):
+             moves keep them; archiving survivalist-files and swat-files would hide the Zomboid and Ready Or Not news;
+             (b) `donations` is the Free Stuff (free-games) feed; kerbal-space-launches has no poster at all;
+             (c) PatchBot and SnailBot also post into the owner's hidden tech-engineering and assembly-line;
+             (d) MEE6's own role is renamed `ADMIN / MOTORIZED TRANSPORT` and carries Manage Roles, Kick, Ban; MEE6's 31
+             webhooks look like one per channel, not feeds; removing the app removes both;
+             (e) SnailBot holds the Aviation Sqd. role (that is where its ping comes from), so Mention Everyone must not
+             be stripped from the bots' role or that role without a replacement; MCStatus has no role of its own and
+             lives on the bots' role, so the cut bots' role must keep View, Send and Embed.
+Next:      the owner answers the open questions below. Then task 3: write the checklist (rounds a-g, each with its
+           rollback) and the round-1 CHANGELOG entry (plumbing: Discord) before the owner applies round (a). Every
+           change is the owner's; the session may re-read Server Settings read-only to check a round
+Ask owner: - keep the Project Zomboid and Ready Or Not news (as COMMS feeds) or archive them with the squads
+           - what happens to tech-engineering and assembly-line feeds if PatchBot or SnailBot go
+           - the rest of the `?` rows in channels.md
            - (answered earlier) the three people in the bots' role lose Administrator: the checklist removes them from
              it before it is cut down; they keep their other roles
 Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing on the server is changed
+           (one click expanded a Channels Followed row and was collapsed again; no change made)
 ```
 
 ## Why
