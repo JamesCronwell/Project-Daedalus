@@ -49,7 +49,11 @@ same answer was relayed earlier from Calypso's chat: "yes, tell Daedalus to back
    - **Research before building:** does restic behave on a Drive for desktop folder (lock files, partial uploads)?
      Fallbacks: restic with an rclone backend, or dated zip copies.
 1. **The sources.**
-   - `~/.claude` without `.credentials.json` or the caches (reuse `tools/backup-claude.ps1`'s exclusions);
+   - `~/.claude` without `.credentials.json` or the caches. **The exclusions live in an exclude file** in `tools/`,
+     which restic reads with `--exclude-file`. No command or script names the credentials file. That's the owner's
+     choice on BRIEF 01's Ask owner 16 (2026-10-09, Orchestrator - Daedalus chat: "yes, exclude file"); the guard stays
+     as it is. First check, harmlessly, that the guard lets a command naming only the exclude file through. If it
+     doesn't, stop and ask the owner: don't change the guard and don't route around it.
    - `%APPDATA%\Claude\claude_desktop_config.json`;
    - `C:\Users\User\Scripts`;
    - the non-git folders under `C:\- Tools\- LLM`: Olympus, Atlas, Hephaestus's `Claude_UI_UX` and `EU5`. Restic reads
