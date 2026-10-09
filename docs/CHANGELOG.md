@@ -15,6 +15,38 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  plumbing  Guard hook and a tighter deny list for Daedalus sessions (no machine change)
+Brief:     01 (task 0)
+Why:       DIRECTION's guardrails: "the boundary lives in code"
+Owner yes: BRIEF 01's Touch list ("tools/ (guard hook ...), .claude/settings.json (deny list: tighten only)"), sent with
+           "go" by the Daedalus orchestrator (2026-10-09). The hook only refuses; it changes nothing on a machine
+Before:    `.claude/settings.json` at 164dbe9: 53 deny rules, no hooks; no `.gitattributes` (Crusader's Git has
+           `core.autocrlf=true`, so scripts checked out CRLF)
+Change:    `tools/guard.py` + `tools/guard_core.py` as a PreToolUse hook on Bash, PowerShell, Monitor and the Terminal
+           panel's run_in_terminal; deny list 53 → 150 rules (none removed), including Edit/Write on the guard, its
+           tests and the settings; `.gitattributes` (`* text=auto eol=lf`; CRLF only for .ps1/.cmd/.bat); the guard
+           refuses to pipe a CRLF script to a remote host, and `tools/inventory.py` strips CR and sends bytes
+Rollback:  `git revert` the BRIEF 01 commit, or the owner removes the "hooks" block from `.claude/settings.json`. Hooks and
+           deny rules load when a session starts, so a running session keeps the old ones
+Outcome:   classification tests green (`python -I tools/guard_test.py`: 386 refused, 166 allowed, 9 protocol checks,
+           fail-closed on a broken rules file, UTF-8 input, a 4 s deadline under the 15 s hook timeout). Three doubt cycles (BRIEF 01's
+           Handover). The live check (a fresh session refusing the canaries) is still open: hooks don't load mid-session
+
+## 2026-09-26 .. 2026-10-08  both  Changes made before Daedalus existed (recorded after the fact)
+Brief:     - (one-off sessions: "Homepage UI", "Cloudflare backups cleanup", "Bastion", "Cleanuparr Mobland search loop",
+           "Computer audit and debloat", "Crusader-Bastion unified control dashboard", "Cleanuparr errors on Sonarr")
+Why:       BRIEF 01 task 6: so this log holds what changed on the machines before it existed
+Owner yes: given in those sessions; not re-checked
+Before:    unknown in detail
+Change:    summarised in `docs/RUNBOOK-bastion.md` ("What earlier sessions changed") and `docs/RUNBOOK-crusader.md`
+           ("Secrets the rebuild needs"): new containers (Scrutiny, Diun, Kavita, Pinchflat), R2 offsite set up then
+           narrowed to the bench dumps (2026-10-03, owner, free tier), 40 OS packages + reboot (2026-10-07), media-stack
+           tuning, gbrain 0.54 → 0.60, OneBrain token rotation, Crusader secrets moved to user environment variables
+Rollback:  per those sessions' own backups: `Documents\PC-Audit-Backup-2026-10-06`, `~/gbrain-backups/`, the Bazarr and
+           Cleanuparr `.bak` files, `~/bastion-ops/patches/`
+Outcome:   leads from the orchestrator's read-only summary of the transcripts' last 80 messages; the backup facts were
+           checked against Bastion on 2026-10-09 (inventory, `~/bastion-ops/CLAUDE.md`), the rest were not
+
 ## 2026-10-09  plumbing  Daedalus repo created (no machine change)
 Brief:     -
 Why:       the owner's yes to the Daedalus direction (docs/DIRECTION.md), from the Calypso orchestrator's chat
