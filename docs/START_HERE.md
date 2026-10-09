@@ -20,7 +20,7 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 | `docs/IDEAS.md` | ideas no brief has picked up yet |
 | `tools/` | `guard.py` + `guard_core.py` (the hook; tests: `guard_test.py`), `inventory.py` (+ `inventory-crusader.ps1`, `inventory-bastion.sh`), `manifest.py`, `secret_scan.py` |
 | `.claude/settings.json` | the permission deny list: part of the guardrails |
-| Remote | `origin` = private GitHub `JamesCronwell/Project-Daedalus` (HTTPS, GCM login). `git push` after commits |
+| Remote | `origin` = private GitHub `JamesCronwell/Project-Daedalus` (HTTPS, GCM login). The orchestrator pushes `main` after its commits and merges (owner, 2026-10-09: "Push main yourself, I trust it") |
 
 ## 1. Machines
 | Name | What | Reach |
