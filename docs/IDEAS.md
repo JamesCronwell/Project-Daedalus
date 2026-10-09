@@ -17,5 +17,6 @@ Each one gets an interview with the owner before it becomes a brief (global rule
 - **WizTree** for the file-structure pass (the owner installs it).
 - **One shared copy of the decision skills.** `doubt-driven-development` and `interview-me` live in Calypso's and
   WH40K's `.claude/skills/`, and the two copies have drifted apart (2026-10-09). Daedalus has none. Either one copy in
-  `~/.claude/skills/` (shared plumbing, Daedalus's) or a sync script; first diff the two copies with both
-  orchestrators, since the drift may be deliberate.
+  `~/.claude/skills/` (shared plumbing, Daedalus's) or a sync script. Part of the drift is deliberate: Calypso adapted
+  WH40K's copy (brief header, KSP examples), per the Calypso orchestrator. So a shared core plus per-project notes,
+  diffed with both orchestrators first.
