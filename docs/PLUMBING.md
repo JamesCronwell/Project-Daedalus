@@ -32,7 +32,7 @@ properly is IDEAS' "MCP and plugin token cost" (habits stretch).
 | "WH40K Backup Pull" (`WH40K\webapp\pull_backup.ps1`) | Scheduled task | daily 04:30 | Hephaestus BRIEF 50 |
 | "WH40K Bridge Watcher" (`WH40K\bridge-kit\watcher.py`, pythonw) | Scheduled task | at logon, running | Hephaestus |
 | "OneBrainSync" (`WH40K\bridge-kit\sync-onebrain.ps1`) | Scheduled task | ~every 2 h | Hephaestus |
-| "Daedalus daily backup" (`Daedalus\tools\backup.ps1`, powershell hidden) | Scheduled task | daily 13:00, as User, logged-on only; a missed run starts when the PC is back; stopped after 3 h | Daedalus BRIEF 02 (registered by the owner, 2026-10-09). Alerts to ntfy topic `bastion` (Bastion's ntfy over Tailscale): a failure, no good run for 36 h, a saves folder without a snapshot for 3 days. Skips the KSP saves while KSP_x64 runs or `%LOCALAPPDATA%\Daedalus\skip-ksp-saves` exists (Calypso's deploy windows) |
+| "Daedalus daily backup" (`Daedalus\tools\backup.ps1`, powershell hidden) | Scheduled task | daily 13:00, as User, logged-on only; a missed run starts when the PC is back; stopped after 3 h | Daedalus BRIEF 02 (registered by the owner, 2026-10-09). Alerts to ntfy topic `bastion` (Bastion's ntfy over Tailscale): a failure, no good run for 36 h, a saves folder without a snapshot for 3 days. Skips the KSP saves while KSP_x64 runs, or while `%LOCALAPPDATA%\Daedalus\skip-ksp-saves` exists (set only by `backup-owner-setup.ps1 -SkipSaves`; Calypso's deploys never write saves and use no flag: owner via Calypso, 2026-10-09) |
 
 Everything else on the Startup and task lists is vendor software (`docs/inventory/crusader.md`).
 

@@ -41,8 +41,16 @@ State:     The owner's sitting is done (CHANGELOG): repos created, the first run
            started; (5) records written (BACKUP-MAP rows 1, 3, 4, 5, 17; RUNBOOK-crusader "Restoring from restic";
            PLUMBING; START_HERE §1): gaps 1, 7, 11 closed pending the upload check, 10 narrowed, 8 waits for Task 5;
            (6) done.
-           Not yet tested: an ntfy alert actually arriving (a test post is a message: needs the owner's yes); the
-           skip-ksp-saves flag as Calypso's deploy-window switch (proposed to the orchestrator, not agreed).
+           Not yet tested: an ntfy alert actually arriving (a test post is a message: the orchestrator put it to the
+           owner). The skip-ksp-saves flag as Calypso's deploy-window switch: **no** (the owner via Calypso, relayed
+           by the orchestrator, 2026-10-09: "no flag"): Calypso's deploys write only `GameData\CalypsoKSP` and
+           `Ships\Script\calypso`, never saves; its only saves writer is the rare `hangar_copy.py` (worst case one
+           partial daily snapshot, healed by the next run); the KSP_x64 rule covers the real risk; deploy heads-ups
+           stay messages to the orchestrator. The flag stays only for `backup-owner-setup.ps1 -SkipSaves`.
+           Drive quota: G: reports exactly 2.00 TB (1,473 GB used + 527 GB free); the owner says the plan is 5 TB.
+           Asked the owner to check which account holds the 5 TB plan (one.google.com/storage) before recording it.
+           The 2025 KSP_Reborn copy: keep it until Task 5 and a read-only manifest diff list what only it holds
+           (the 45 craft); the owner then keeps what they want and deletes the old copy themselves (proposed to the owner).
            Earlier: owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a), 13:00". restic 0.19.1 installed
            (CHANGELOG); the exe has no `restic` alias, so tools/backup-restic.ps1 finds it. A scratch-only test (a
            --insecure-no-password repo in the session scratchpad) showed: the anchored $VAR excludes work (top-level
