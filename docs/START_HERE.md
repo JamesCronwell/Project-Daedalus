@@ -29,9 +29,9 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 ## 2. Orchestrators: the clients
 | Orchestrator | Project | Session | Repo | Weekly budget |
 |---|---|---|---|---|
-| Calypso | KSP modding | "Orchestrator - KSP" (local_80afc890-056e-4e98-a809-5934b6efdab8) | `C:\- Tools\- LLM\Calypso` | 50% |
-| Hephaestus | WH40K painting app (Bench Register) | "Orchestrator - Bench Register" (local_0ea8fe21-a495-441f-be47-a9a020421e1d) | `C:\- Tools\- LLM\WH40K` | 40% |
-| **Daedalus** | this repo | "Orchestrator - Daedalus" (to start) | here | 10% (5-10) |
+| Calypso | KSP modding | "Orchestrator - Calypso" (local_80afc890-056e-4e98-a809-5934b6efdab8) | `C:\- Tools\- LLM\Calypso` | 50% |
+| Hephaestus | WH40K painting app (Bench Register) | "Orchestrator - Hephaestus" (local_0ea8fe21-a495-441f-be47-a9a020421e1d) | `C:\- Tools\- LLM\WH40K` | 40% |
+| **Daedalus** | this repo | "Orchestrator - Daedalus" (local_55670803-ef4e-48f7-b6f5-4840687d7930) | here | 10% (5-10) |
 | Zalmoxes | not started this month | - | - | - |
 | Cerberus | future security guard (~1% weekly), its own interview first | - | - | - |
 

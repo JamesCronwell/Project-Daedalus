@@ -15,3 +15,7 @@ Each one gets an interview with the owner before it becomes a brief (global rule
 - **The MCP and plugin token cost.** Count what each MCP server and plugin adds to every session's context, across all
   orchestrators, and prune the unused ones (habits stretch).
 - **WizTree** for the file-structure pass (the owner installs it).
+- **One shared copy of the decision skills.** `doubt-driven-development` and `interview-me` live in Calypso's and
+  WH40K's `.claude/skills/`, and the two copies have drifted apart (2026-10-09). Daedalus has none. Either one copy in
+  `~/.claude/skills/` (shared plumbing, Daedalus's) or a sync script; first diff the two copies with both
+  orchestrators, since the drift may be deliberate.
