@@ -40,7 +40,9 @@ Each one gets an interview with the owner before it becomes a brief (global rule
 - **The guard's false positives** (2026-10-09, for the owner, who alone changes the guard). It refused:
   - a heredoc whose text mentioned an SSH key, read as an ssh command;
   - a relative script path after `cd`;
-  - `file` on a remote `.sh`, read as running it.
+  - `file` on a remote `.sh`, read as running it;
+  - the `<` in a commit message's attribution line, read as a redirect.
 
-  Each was worked around by a plainer route: the Edit tool, an absolute path, or trusting the owner's confirmation.
+  Each was worked around by a plainer route: the Edit tool, an absolute path, trusting the owner's confirmation, or
+  `git commit -F` with a message file.
   Worth a tuning pass with tests if they keep costing time.

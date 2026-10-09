@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  plumbing  Global CLAUDE.md: usage habits revised, `/compact` past ~250k instead of the morning `/clear`
+Brief:     - (orchestrator; docs/DECISIONS.md, "Usage and the weekly limit")
+Why:       Calypso and Hephaestus objected that `/clear` loses the working memory. This session's transcript: re-reading
+           the context is 74% of its cost (97% if re-reads count fully), and it grew 70k -> 488k within one day, so
+           in-day growth outweighs the overnight carry-over a morning reset targets
+Owner yes: "yes, swap it for /compact", 2026-10-09
+Before:    the "Usage habits" bullet's first two sub-bullets: "Each morning the owner types `/clear` in each orchestrator
+           chat: the same session, ID and pin, with its context back to about 70k." and "Before that, the orchestrator
+           appends the day's decisions to its repo's decision log, refreshes its live-state file, and leaves no
+           interview half-done."
+Change:    those two replaced by: past ~250k the orchestrator says so at a natural break, the owner types `/compact`
+           (optional focus line), decisions logged first, no routine `/clear`; the 50% line notes it's live after a restart
+Rollback:  put the two quoted sub-bullets back; the file is also in the daily restic backup (BRIEF 02)
+Outcome:   done; Calypso and Hephaestus told in one bundled message
+
 ## 2026-10-09  plumbing  Global CLAUDE.md: the orchestrators' usage habits (morning /clear, decisions first, batched messages)
 Brief:     - (orchestrator; the usage discussion, docs/DECISIONS.md)
 Why:       an orchestrator's every turn re-reads its whole context, and each message between orchestrators costs the

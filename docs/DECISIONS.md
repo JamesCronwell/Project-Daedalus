@@ -1,7 +1,7 @@
 # DECISIONS: what the owner decided, and why
 
 Newest first. Each entry gives the question, the owner's answer (quoted where it matters), what was weighed or
-rejected, and where the outcome now lives. **Before an orchestrator's `/clear`,** the day's decisions are appended here
+rejected, and where the outcome now lives. **Before an orchestrator's `/compact`,** the day's decisions are appended here
 and START_HERE §6 is refreshed (owner, 2026-10-09). The briefs, DIRECTION and IDEAS keep the outcomes; this file keeps
 the trail. Friends' names never go here.
 
@@ -71,8 +71,12 @@ the trail. Friends' names never go here.
 
 ### Usage and the weekly limit (in discussion, before BRIEF 05)
 - **The auto-compact override goes at 50%, not 30%.** The owner didn't want throughput hurt; 50% is a safety net only.
-- **A morning `/clear` in the same orchestrator chat** keeps the session's id, pin and folder, and drops its context
-  back to about 70k. Decisions are archived here before each one.
+- **`/compact` past ~250k, not a morning `/clear`** ("yes, swap it for /compact"). First agreed as a morning `/clear`;
+  Calypso and Hephaestus objected that it loses the working memory. This session's transcript settled it: re-reading
+  the context is 74% of the cost (97% if re-reads count fully), and the context grew from 70k to 488k within one day,
+  so in-day growth matters more than the overnight carry-over. The orchestrator flags the moment at a natural break;
+  the owner types `/compact`, with a focus line if wanted. Decisions are archived here before each one. Rejected: the
+  morning `/clear` (wipes the working memory, misses in-day growth); a lower auto-compact (it fires mid-task).
 - **Messages between orchestrators get batched:** urgent ones now, information-only ones bundled and never answered.
 - **MCP pruning** waits for the habits stretch, measured first.
 - **Effort stays xhigh this week,** to use the Max plan (5x Pro, renews 2026-11-07). Revisit next week.
