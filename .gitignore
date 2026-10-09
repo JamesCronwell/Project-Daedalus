@@ -1,0 +1,13 @@
+# secrets never enter the repo
+*.key
+*.pem
+.env
+.env.*
+id_*
+*.kdbx
+# raw scans: only the redacted, generated docs/inventory/*.md are committed
+docs/inventory/raw/
+scratch/
+*.log
+__pycache__/
+.claude/settings.local.json
