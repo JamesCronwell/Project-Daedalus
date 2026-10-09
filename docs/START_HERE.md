@@ -69,7 +69,23 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 - Every new idea starts with an interview (global rule).
 
 ## 6. Open questions for the owner
-- **BRIEF 01's gap list:** each gap's proposed fix waits in BRIEF 01's Handover ("Ask owner",
-  `docs/briefs/done/01-safety-net.md`). First, before BRIEF 02 runs: item 16, the guard refusing a secret file's name even
-  in an exclusion.
+- **BRIEF 02 (the daily backup):**
+  - one ntfy test alert to the owner's phone (a yes);
+  - which Google account holds the 5 TB plan (G: reports 2 TB);
+  - Task 5, the full KSP_Reborn copy, on an evening without KSP, with its own yes;
+  - BRIEF 01's one-off `~/.claude` copy on G:, now redundant: the owner keeps it or deletes it by hand.
+- **BRIEF 03 (Discord):** the channel check in `docs/discord/channels.md` (local), the feed bots' Manage pages, and
+  three roles' Members tabs.
+- **BRIEF 01's remaining gaps** (`docs/briefs/done/01-safety-net.md`, "Ask owner"). Gaps 1, 7 and 11 are closed by
+  BRIEF 02, and 10 is narrowed. Still open:
+  - 15, a slim R2 offsite for Bastion's configs;
+  - 3, the old Seagate backup disk;
+  - 6, the age key in the password manager;
+  - 5, the dropped Drive repo;
+  - 16, gbrain not in backrest;
+  - 12, a quarterly restore test;
+  - 14, the media library;
+  - 13, E:;
+  - and item 14, a restricted Bastion key for Daedalus (owner/Cerberus).
+- **The GPU** (owner, 2026-10-09: "AMD GPU keeps failing"): a read-only look at driver resets, if the owner asks.
 - **WizTree:** install it when the habits stretch starts.
