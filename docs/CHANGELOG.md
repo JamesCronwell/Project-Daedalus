@@ -33,7 +33,17 @@ Rollback:  the owner deletes the task in Task Scheduler; deletes `G:\My Drive\da
            `...\-- BACKUP --\saves-restic` (and empties them from Drive's bin), after checking nothing else is in them;
            deletes `%LOCALAPPDATA%\Daedalus` (password file, log, stamps) and the password-manager entry. The sources
            are only read
-Outcome:   -
+Outcome:   sitting 1, 2026-10-09 19:38-19:42 (owner-setup.log): password stored; repos created (plumbing 832abfff5e,
+           saves ee86e1949c); exclusion check 5538 entries, 0 excluded paths in; first run ok: plumbing ea7e8029
+           (4584 files, 1.086 GiB, 521 MiB stored), calypso-saves f0859780 (281 files, 150 MiB), reborn-saves f3f7e346
+           (668 files, 3.665 GiB, 458 MiB stored), forget + check "no errors were found" on both; restores of
+           ~/.claude and both saves verified by restic; manifests: calypso-saves MATCH 281, reborn-saves MATCH 668,
+           ~/.claude "MISMATCH, 1": a file-history copy created at 19:41:20 (between the manifest and the snapshot)
+           keeping its original's 19:13 modified date, which the date test missed. Its restored sha256 equals the
+           live file's (aa7863b0...). A false alarm: the test now takes the later of created/modified. So the
+           scratch folder was kept and the task not registered. Also: the MCP config was "does not exist": the
+           desktop app is MSIX, its real path is %LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\
+           Claude\ (backup.ps1 fixed). Sitting 2: the owner deletes the scratch folder and runs the script again
 
 ## 2026-10-09  Crusader  Install restic (winget)
 Brief:     02 (task 3)

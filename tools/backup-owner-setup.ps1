@@ -123,7 +123,10 @@ try {
         if ($a[$k] -eq $b[$k]) { continue }
         $p = Join-Path $claude ($k -replace '/', '\')
         $item = Get-Item -LiteralPath $p -Force -ErrorAction SilentlyContinue
-        if ((-not $item) -or $item.LastWriteTime -ge $t0.AddSeconds(-5)) { $live++ } else { $bad += $k }
+        # the later of the two dates: Claude Code's file-history copies are new files that keep the original's
+        # modified date (seen in the first sitting, 2026-10-09)
+        $touched = if ($item) { @($item.CreationTime, $item.LastWriteTime) | Sort-Object | Select-Object -Last 1 }
+        if ((-not $item) -or $touched -ge $t0.AddSeconds(-5)) { $live++ } else { $bad += $k }
     }
     if ($bad.Count) {
         $ok = $false

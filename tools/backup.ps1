@@ -32,9 +32,13 @@ $Repos = @{
     plumbing = 'G:\My Drive\daedalus-backups\restic'
     saves    = 'G:\My Drive\### Games\KSP\-- BACKUP --\saves-restic'
 }
+# The desktop app is MSIX-packaged: its %APPDATA%\Claude is redirected into the package's LocalCache for the app (and
+# the sessions it starts), so outside it (the task, the owner's window) the MCP config lives here (found 2026-10-09)
+$McpConfig = Join-Path $env:LOCALAPPDATA 'Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude_desktop_config.json'
+if (-not (Test-Path -LiteralPath $McpConfig)) { $McpConfig = Join-Path $env:APPDATA 'Claude\claude_desktop_config.json' }
 $Plumbing = @(
     (Join-Path $env:USERPROFILE '.claude'),
-    (Join-Path $env:APPDATA 'Claude\claude_desktop_config.json'),
+    $McpConfig,
     'C:\Users\User\Scripts',
     'C:\- Tools\- LLM\Olympus',
     'C:\- Tools\- LLM\Atlas',
