@@ -55,7 +55,14 @@ the trail. Friends' names never go here.
   interview. Lives in IDEAS.
 - **Friends' names stay out of git.** The permission classifier refused a push holding them, and we agreed with it.
   `docs/discord/` is local only.
-- **Still open:** apply the checklist by hand, or automate.
+- **Automate it, with the owner's hands on the token:** "yes, that's right, lock it in" (in the BRIEF 03 session). The
+  owner reshapes the server often, so the layout lives in the repo as a file. A session edits it, and the owner runs
+  `plan` and `apply` with a standing bot of their own. Structure only, never deletes, test server first. The
+  by-hand checklist stays as the fallback. Lives in BRIEF 05, and BRIEF 03's rounds wait for it.
+  - Found while writing BRIEF 05: the template has no real ids, so the owner's `import` of the live server seeds the
+    layout. A bot can only grant the bits it holds, so its permission set is the owner's next decision.
+- **The last channel answers:** `kerbal-space-launches` is empty and the owner deletes it by hand ("kerbal to
+  deletion"). `engineering-log` is private, Admin only. The names are as proposed in the channel check.
 
 ### The KSP crash and BRIEF 04
 - **The cause:** the GPU device was removed during KSP. Horse's 27B model sat wholly in VRAM, and commit stood at 94%.
@@ -69,7 +76,7 @@ the trail. Friends' names never go here.
 - **The pagefile and the Adrenalin settings** are applied by the owner from guides, because they're system and app
   settings.
 
-### Usage and the weekly limit (in discussion, before BRIEF 05)
+### Usage and the weekly limit
 - **The auto-compact override goes at 50%, not 30%.** The owner didn't want throughput hurt; 50% is a safety net only.
 - **`/compact` past ~250k, not a morning `/clear`** ("yes, swap it for /compact"). First agreed as a morning `/clear`;
   Calypso and Hephaestus objected that it loses the working memory. This session's transcript settled it: re-reading

@@ -75,8 +75,11 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
   - which Google account holds the 5 TB plan (G: reports 2 TB);
   - Task 5, the full KSP_Reborn copy, on an evening without KSP, with its own yes;
   - BRIEF 01's one-off `~/.claude` copy on G:, now redundant: the owner keeps it or deletes it by hand.
-- **BRIEF 03 (Discord):** the channel check in `docs/discord/channels.md` (local), the feed bots' Manage pages, and
-  three roles' Members tabs.
+- **BRIEF 05 (the Discord layout tool):** the bot's permission set (the brief's orchestrator note 3), before its
+  session starts. BRIEF 03 has nothing open and waits for BRIEF 05; `kerbal-space-launches` is the owner's to delete
+  by hand.
+- **The 50% auto-compact:** this session still read 97 after it restarted. If the app itself was restarted, the
+  settings.json route didn't take, and the fallback is a Windows user environment variable the owner sets.
 - **BRIEF 01's remaining gaps** (`docs/briefs/done/01-safety-net.md`, "Ask owner"). Gaps 1, 7 and 11 are closed by
   BRIEF 02, and 10 is narrowed. Still open:
   - 15, a slim R2 offsite for Bastion's configs;
