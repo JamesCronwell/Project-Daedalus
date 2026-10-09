@@ -5,6 +5,16 @@ Each one gets an interview with the owner before it becomes a brief (global rule
 - **Cerberus.** A future security guard dog, "SOMETIME in the future, as like a 1% weekly security guard" (owner,
   2026-10-09). It would own what Daedalus may never touch: security settings, credentials, the firewall, accounts,
   exposure. It gets its own interview first.
+
+  **Its starting list,** from what Daedalus has seen (2026-10-09):
+  - qBittorrent with no password on the LAN and tailnet;
+  - SSH password login on Bastion (harden-5 waits for the owner);
+  - Bazarr's empty login;
+  - an old rclone token in backrest's `rclone.conf`;
+  - `MY_ACCESS_TOKEN`, which nothing names;
+  - Administrator held by many people on Discord, until BRIEF 03's checklist lands;
+  - Calypso's LunaServer (LMP) on UDP `[::]:8800` during co-op tests, on a portable .NET 6 (end of life) under
+    `F:\Steam_Modded_Variants\LMP_Server`.
 - **The night protocol for the monitors.** The night-mode script (`C:\Users\User\Scripts\night-mode.cmd`) puts the
   screens into standby. The monitors still flash "No signal" because their own input scan is on, so turn off Auto
   Source / Input Auto Switch in each monitor's menu. Windows' "Remember window locations based on monitor connection"
