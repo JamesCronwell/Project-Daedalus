@@ -9,7 +9,9 @@
 - **Before any commit:** run the secret scan (`tools/`, from BRIEF 01). Stage paths by name, never `git add -A`.
   Inventory raw dumps stay gitignored.
 - **Orchestrator.** A session asked to orchestrate Daedalus:
-  - reads START_HERE, the CHANGELOG's tail and the briefs' Handovers, never transcripts;
+  - reads START_HERE, the CHANGELOG's tail and the briefs' Handovers, never transcripts. One exception (owner,
+    2026-10-09): a session from before Daedalus, which has no Handover, is read once by a read-only Haiku agent that
+    returns its outcome and names credentials without quoting them;
   - starts one session per brief, setting its model and effort from the brief header (the first turn is "ready");
   - reads the brief's Handover back when the session stops;
   - never edits brief work, and never subagents for brief work;
