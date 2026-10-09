@@ -15,3 +15,5 @@ __pycache__/
 .claude/worktrees/
 # Discord snapshots and screenshots hold friends' names: local only (BRIEF 03)
 docs/discord/
+# the owner opens the repo in Obsidian: its vault config stays local
+.obsidian/
