@@ -1,7 +1,7 @@
 # BRIEF 02: Crusader backs itself up every day - ~/.claude, the plumbing, the KSP saves - and a restore proves it
 
 ```
-Status:     pending: after 01
+Status:     next
 Commits:    -
 Track:      safety
 Machine:    Crusader

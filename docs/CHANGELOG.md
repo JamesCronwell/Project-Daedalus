@@ -15,6 +15,28 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  Crusader  One copy of ~/.claude to Google Drive, and a checksum-verified test restore
+Brief:     01 (task 3, gap 1 (a))
+Why:       ~/.claude (memory, transcripts, settings, tools) had no copy and dies with the C:+F: disk (BACKUP-MAP gap 1)
+Owner yes: "Yes, go" to the copy, the restore into %TEMP%\daedalus-restore-test and the checksum compare, the copy left
+           on G:, the owner deleting the scratch folder (BRIEF 01 closing session, 2026-10-09)
+Before:    `G:\My Drive\daedalus-backups` doesn't exist; G: 528 GB free (1.47 TB used, `Get-PSDrive G`);
+           `%TEMP%\daedalus-restore-test` doesn't exist. ~/.claude without cache, session-env, shell-snapshots: 2976
+           files, 951 MB
+Change:    `powershell -NoProfile -File tools\backup-claude.ps1` (robocopy /E, no mirror, no delete; leaves out
+           .credentials.json and the caches) → `G:\My Drive\daedalus-backups\claude\<stamp>` + `<stamp>.manifest.tsv`;
+           robocopy that copy → `%TEMP%\daedalus-restore-test\claude`; `python -I tools\manifest.py make` on it, then
+           `compare` against the copy's manifest. The guard and the deny list refuse recursive deletes, so the owner
+           deletes `%TEMP%\daedalus-restore-test` by hand after the check
+Rollback:  the owner deletes `G:\My Drive\daedalus-backups` (and empties it from Drive's bin) and
+           `%TEMP%\daedalus-restore-test`. Nothing else changes: the source is only read
+Outcome:   copy `G:\My Drive\daedalus-backups\claude\2026-10-09_1418`: 2985 files, 958 MB, + `.manifest.tsv` (2985
+           lines). The guard refused the script (it names the credentials file in robocopy's /XF), so the owner ran it
+           in their own PowerShell; comm of the file lists: only the credentials file missing, as intended. Restore:
+           robocopy 2985 copied, 0 failed; `manifest.py compare` MATCH, 2985 = 2985, 0 missing / extra / differ. It read
+           Drive's local copy (proves the copy, not Drive's upload). Scratch folder: deleted by the owner
+           by hand, checked gone (`ls` "No such file or directory")
+
 ## 2026-10-09  plumbing  Guard hook and a tighter deny list for Daedalus sessions (no machine change)
 Brief:     01 (task 0)
 Why:       DIRECTION's guardrails: "the boundary lives in code"

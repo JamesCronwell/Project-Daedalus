@@ -1,9 +1,9 @@
 # BRIEF 01: Safety net - guardrails in code, an inventory of both machines, a proven backup map and a rebuild runbook
 
 ```
-Status:     waiting-owner: the attended ~/.claude backup + test restore (Done-when 4); the live guard check in a
-            fresh session after the merge (Done-when 1)
-Commits:    0b05cee (tools, docs, guard); the next commit records this sha and the inventory CR fix
+Status:     done (2026-10-09): all six Done-when green
+Commits:    0b05cee (tools, docs, guard), 075eff0 (sha, inventory CR fix), b5d09c7 (merge to main); the closing commit
+            (Done-when 1 and 4, the move to done/) is the one that adds this line
 Track:      safety
 Machine:    both
 Touch:      tools/ (guard hook, inventory, manifest, secret scan), .claude/settings.json (deny list: tighten only),
@@ -25,15 +25,25 @@ Done when:  (1) the guard hook refuses a destructive command (locally and inside
             what is lost, and how long is the restore"; (6) every gap has a proposed fix in Ask owner
 ```
 
-## Handover   (last stop: 2026-10-09, session on branch claude/goofy-lumiere-32bf51)
+## Handover   (last stop: 2026-10-09, closing session on main)
 ```
-State:     Tasks 0, 1, 2, 4, 5, 6 done; task 3 waits for the owner. Done-when: (2) (3) (5) (6) green; (1) and (4) open.
-           (1) guard: 386 refuse / 166 allow / 9 protocol cases green (`python -I tools/guard_test.py`); the hook's own
-               command line run by hand refuses a destructive ssh line (exit 2) and passes `ls` (exit 0). Hooks and new
-               deny rules load only when a session starts, so the live check in a session is still to do. The old deny
-               rules load (`dd --version` was denied in this session).
+State:     DONE. Tasks 0-6 done; Done-when (1)-(6) green.
+           (1) live, in a fresh session on main at 6d8070d: the hook refused `ssh -o ConnectTimeout=2 guard-canary.invalid
+               'rm -rf /tmp/daedalus-guard-canary'` (recursive delete) and `find "$TEMP/daedalus-canary-does-not-exist"
+               -delete` (find with delete), both "Daedalus guard: refused". `shred --version` was refused by the hook
+               first, so the deny list was shown separately: `nft list ruleset` passes the guard (read-only) and was
+               denied by the new `Bash(nft:*)` rule. (A Read of a nonexistent `.netrc` in the scratchpad wasn't denied:
+               inconclusive, the existence check or the `**` glob outside the project may come first.) Unit tests as before:
+               386 refuse / 166 allow / 9 protocol (`python -I tools/guard_test.py`).
            (2) `python -I tools/inventory.py` regenerates docs/inventory/{crusader,bastion}.md read-only, redacted.
-           (4) Hephaestus's chain checked (BACKUP-MAP.md). The ~/.claude restore can't run: there is no backup (gap 1).
+           (4) Hephaestus's chain checked (BACKUP-MAP.md). ~/.claude: G: had 528 GB free; with the owner's yes the copy
+               went to `G:\My Drive\daedalus-backups\claude\2026-10-09_1418` (2985 files, 958 MB, + `.manifest.tsv`).
+               The guard refused `tools/backup-claude.ps1` (it names the credentials file in robocopy's /XF exclusion),
+               so the owner ran it in their own PowerShell. Restored by robocopy into `%TEMP%\daedalus-restore-test`
+               (2985 copied, 0 failed); `manifest.py compare` MATCH: 2985 = 2985, 0 missing / extra / differ. The
+               restore read Drive's local copy, so it proves the copy, not Drive's upload. The copy stays on G:; BRIEF
+               02 decides whether it stays. The owner deleted the scratch folder by hand (the guard refuses recursive
+               deletes); checked gone.
            Doubt-driven development on the guard: 3 cycles, a fresh Opus reviewer each (cycle 1: 26 misses, cycle 2: 14
            miss classes + 4 false-block classes, cycle 3: 15 findings incl. the hook reading stdin as cp1252 and
            `git -C "<quoted path>"` hiding the subcommand); every actionable finding fixed and in the tests. Stopped at
@@ -43,18 +53,19 @@ State:     Tasks 0, 1, 2, 4, 5, 6 done; task 3 waits for the owner. Done-when: (
            failed; Hephaestus fixed it with the owner's yes (dump 2026-10-09 09:45).
            Sea's repo couldn't be cloned (the auto-mode classifier blocked it as untrusted code): the tools were written
            here from scratch, after Sea's design.
-Next:      1. Fresh session on main after the merge: run the canaries (Done-when 1) with harmless strings, e.g.
-              `ssh -o ConnectTimeout=2 guard-canary.invalid 'rm -rf /tmp/daedalus-guard-canary'` (an unresolvable host)
-              and `find "$TEMP/daedalus-canary-does-not-exist" -delete` (a missing folder); both must say "Daedalus guard:
-              refused". `shred --version` must be denied by the new deny list.
-           2. With the owner present: gap 1 (a), then the test restore: `tools/backup-claude.ps1` once, restore that copy
-              into `%TEMP%\daedalus-restore-test`, `python -I tools/manifest.py compare <copy>.manifest.tsv <restored>.tsv`,
-              then delete the scratch folder (the owner's yes covers it).
-           3. Then BRIEF 01 is done: Status, shas, move to done/.
+Next:      BRIEF 02 (Status `next`). Its scripts will hit Ask owner 16 below: decide that before BRIEF 02's first run.
 Ask owner: (each one's own yes; "owner/Cerberus" = security, never Daedalus's)
-           1. gap 1, ~/.claude has no backup (941 MB, 3016 files; dies with the C:+F: disk). (a) now, attended: one copy
-              with tools/backup-claude.ps1 to G:\My Drive\daedalus-backups\claude (leaves out .credentials.json and caches)
-              and the test restore above. (b) standing, recommended: restic (`winget install restic`) with a repo on G:,
+           16. NEW, before BRIEF 02: the guard refuses any command or script that names the credentials file, even only
+              to leave it out (robocopy /XF, a Where-Object name filter), so Daedalus can't run tools/backup-claude.ps1
+              and BRIEF 02's restic excludes will be refused the same way. Options: (a, recommended) the owner changes
+              guard_core.py so a secret file's name after an exclusion flag (robocopy /XF, restic/rsync --exclude,
+              `--exclude-file`) isn't a read, with tests; a fresh session picks it up. (b) BRIEF 02 keeps the excludes
+              in an exclude file the scripts point at, never naming the file in a command (the guard still reads
+              scripts; check whether it reads exclude files). (c) the owner runs each backup command by hand. Changing
+              the guard is the owner's (Edit/Write are denied on it). Also noted, no change proposed: `-Recurse -Force`
+              on a read-only listing and `>` into the scratchpad are refused too; pipes and Bash `find` work
+           1. gap 1, ~/.claude: (a) DONE 2026-10-09, one copy on G: and a matched test restore (State (4)).
+              (b) standing, recommended, now BRIEF 02: restic (`winget install restic`) with a repo on G:,
               a daily scheduled task, keep 14 daily / 8 weekly, password in your password manager; covering ~/.claude,
               %APPDATA%\Claude\claude_desktop_config.json, C:\Users\User\Scripts, the non-git LLM folders (gap 10) and
               the KSP saves (gap 7)
@@ -70,8 +81,8 @@ Ask owner: (each one's own yes; "owner/Cerberus" = security, never Daedalus's)
               and budget a replacement disk; 4 lowers the stakes
            6. gap 6, the age private key: confirm it's in your password manager (without it no dump can be restored)
            7. gap 5, G:\My Drive\bastion-restic is the dropped Drive repo (0 snapshots): yours to delete or keep
-           8. gap 9, repos: WH40K has 180 uncommitted files (tell Hephaestus); Daedalus main is 7 commits ahead of GitHub
-              (push)
+           8. gap 9, repos: WH40K has 180 uncommitted files (tell Hephaestus); Daedalus main: the orchestrator now
+              pushes it (owner, 2026-10-09); it matched origin/main at this session's start
            9. gap 11, plumbing outside any repo (~/.claude/CLAUDE.md, settings.json, claude_hours.py, night-mode.*, the
               MCP config): covered by 1b; also mirror CLAUDE.md into this repo on each change?
            10. gap 16, gbrain on Bastion (~/gbrain-vault, ~/.gbrain) isn't in backrest's sources: add to config-daily?
@@ -88,7 +99,8 @@ Ask owner: (each one's own yes; "owner/Cerberus" = security, never Daedalus's)
            repo's rclone token still in backrest's rclone.conf; MY_ACCESS_TOKEN (no file, config or task names it)
            Hephaestus's, in progress: the LF guard in deploy.sh, a nightly failure alert, the 26 h pull gate missing one
            lost night
-Dirty:     none on the machines. Scratch: this session's scratchpad only (guard test inputs); no restore folder yet
+Dirty:     on Crusader: the copy `G:\My Drive\daedalus-backups\claude\2026-10-09_1418` (+ manifest), kept on purpose.
+           Scratch folder `%TEMP%\daedalus-restore-test`: deleted by the owner, checked gone. Nothing else changed on either machine
 ```
 
 ## Why

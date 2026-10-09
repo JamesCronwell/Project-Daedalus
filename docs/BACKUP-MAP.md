@@ -2,7 +2,8 @@
 
 Checked read-only on 2026-10-09 (BRIEF 01). Ages are as of that day. "Tested" means a restore was run and checked, not
 that a copy exists. Sources: `docs/inventory/*.md` (regenerate: `python -I tools/inventory.py`) plus the checks named
-in each row. Rewrite this file when a copy, a schedule or a test changes; the gaps' fixes wait in BRIEF 01's Handover.
+in each row. Rewrite this file when a copy, a schedule or a test changes; the gaps' fixes wait in BRIEF 01's Handover
+(`docs/briefs/done/01-safety-net.md`).
 
 ## Crusader's disks (one disk holds most of it)
 | Physical disk | Volumes | What dies with it |
@@ -23,10 +24,10 @@ in each row. Rewrite this file when a copy, a schedule or a test changes; the ga
 ## The items
 | # | Item | Where it lives | Copy | Age of newest copy | Restore tested? |
 |---|---|---|---|---|---|
-| 1 | `~/.claude` (memory, transcripts, settings, `tools/`, skills; 3016 files, 941 MB) | Crusader C: | **none**. `~/.claude/backups/` holds only `.claude.json` snapshots | - | no: gap 1 |
+| 1 | `~/.claude` (memory, transcripts, settings, `tools/`, skills; 2986 files, 958 MB) | Crusader C: | **one one-off copy**: `G:\My Drive\daedalus-backups\claude\2026-10-09_1418` + its `.manifest.tsv` (`tools/backup-claude.ps1`; leaves out `.credentials.json` and the caches). No schedule yet: BRIEF 02 | 2026-10-09 14:18; ages from there until BRIEF 02's daily task | yes: 2026-10-09, restored to a scratch folder, `manifest.py compare` MATCH 2985/2985 (read Drive's local copy, not a fresh download) |
 | 2 | Repos Calypso, WH40K (Hephaestus), Daedalus | `C:\- Tools\- LLM\*` | private GitHub remotes | Calypso 0 unpushed / 2 uncommitted; WH40K 0 unpushed / **180 uncommitted**; Daedalus main 7 unpushed (the orchestrator merges, the owner pushes) | clone works daily |
 | 3 | Non-git folders under `C:\- Tools\- LLM`: Olympus (the owner's server notes `Ubuntu Commands.txt`, a house plan), Atlas, Hephaestus (`Claude_UI_UX`, `EU5`) | Crusader C: | **none found** | - | no: gap 10 |
-| 4 | Plumbing: `~/.claude/CLAUDE.md`, `~/.claude/settings.json`, `~/.claude/tools/claude_hours.py`, `C:\Users\User\Scripts\night-mode.*`, `%APPDATA%\Claude\claude_desktop_config.json` (MCP servers) | Crusader C: | **none** (inside item 1, or nowhere) | - | no: gap 11 |
+| 4 | Plumbing: `~/.claude/CLAUDE.md`, `~/.claude/settings.json`, `~/.claude/tools/claude_hours.py`, `C:\Users\User\Scripts\night-mode.*`, `%APPDATA%\Claude\claude_desktop_config.json` (MCP servers) | Crusader C: | the `~/.claude` parts are in item 1's copy (2026-10-09); `night-mode.*` and the MCP config: **none** | 2026-10-09 (the `~/.claude` parts) | the `~/.claude` parts: yes, with item 1; the rest: no, gap 11 |
 | 5 | KSP saves (`KSP_Calypso\saves`: "Reborn Hangar", 2 test scenarios, training) | Crusader F: | **none off the disk** | - | no: gap 7 |
 | 6 | KSP_Calypso install (modded) | Crusader F: | rebuildable: Steam KSP + CKAN from Calypso's repo lists and `manual_mods`; `CKAN_cache` and `calypso_cache` speed it up but sit on the same disk | - | not rehearsed |
 | 7 | KSP_Reborn (read-only reference install) | Crusader F: | `G:\My Drive\### Games\KSP\-- BACKUP --\KSP_Reborn` | folders dated 2025-02-28 / GameData 2025-04-10; F:'s copy was last modified 2026-04-10: **likely a year stale** | no: gap 8 |
