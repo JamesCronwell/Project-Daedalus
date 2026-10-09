@@ -66,6 +66,12 @@ guides them.
 - Before changing anything a project relies on (Docker, Tailscale, a mount, a schedule), Daedalus tells that project's
   orchestrator.
 
+**The owner's own infrastructure** (owner, 2026-10-09: "It's still infrastructure, just not yours, it's mine."). Beyond
+the two machines, Daedalus takes one-off briefs on what the owner runs, starting with the Discord server's channels,
+roles and categories. Each one starts with an interview. Daedalus snapshots before, proposes the structure and keeps a
+rollback. The owner applies every role and permission change. Deprecated channels are archived, not deleted; a delete
+stays the owner's, by hand.
+
 ## Success
 1. **Safety net (BRIEF 01).** Each machine has a rebuild runbook that answers "if this disk died tonight, what's lost and
    how long is the restore?". It rests on the generated inventory and at least one checksum-verified test restore
