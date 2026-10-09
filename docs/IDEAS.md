@@ -24,3 +24,7 @@ Each one gets an interview with the owner before it becomes a brief (global rule
   for the group to want it, and the owner may modify the modpack later. Its offsite copy was dropped on 2026-10-03 on
   purpose, to stay inside R2's 10 GB free tier. While stopped, the world doesn't change, so one copy is enough.
   Interview when it comes back.
+- **The Discord server rework.** Channels, roles and categories: some are deprecated, some still in use, most were set
+  up by hand (owner, 2026-10-09). Not a machine, so it needs a DIRECTION line if Daedalus takes it. Roles and
+  permissions are access control, which touches the "never security settings or accounts" rule. Interview started
+  2026-10-09.
