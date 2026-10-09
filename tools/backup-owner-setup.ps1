@@ -72,8 +72,12 @@ try {
     $t0 = Get-Date
     if ((Manifest $claude (Join-Path $scratch 'm0-claude.tsv') $excl) -gt 1) { throw 'manifest of ~/.claude failed' }
     $doSaves = @()
+    $partial = $false   # saves left out by the skip rule: not a failure; run this again once KSP is closed
+    . (Join-Path $tools 'backup-skip.ps1')
     if (-not $SkipSaves) {
         foreach ($tag in $saves.Keys) {
+            $why = Get-KspBlocker $saves[$tag] $false $state $ksp
+            if ($why) { $partial = $true; Result "$tag`: skipped now ($why): run this again once KSP is closed"; continue }
             if ((Manifest (Join-Path $ksp "$($saves[$tag])\saves") (Join-Path $scratch "m0-$tag.tsv") @()) -ne 0) {
                 throw "manifest of $tag failed"
             }
@@ -89,8 +93,8 @@ try {
     foreach ($tag in @($doSaves)) {   # a saves folder the run skipped (KSP started meanwhile) has no fresh stamp
         $st = Get-Item -LiteralPath (Join-Path $state "last-ok-$tag.txt") -ErrorAction SilentlyContinue
         if (-not $st -or $st.LastWriteTime -lt $t0) {
-            $doSaves = @($doSaves | Where-Object { $_ -ne $tag }); $ok = $false
-            Result "$tag`: NOT backed up by the run (skipped by the rule? see backup.log)"
+            $doSaves = @($doSaves | Where-Object { $_ -ne $tag }); $partial = $true
+            Result "$tag`: not backed up by the run (KSP started meanwhile? see backup.log): run this again once KSP is closed"
         }
     }
 
@@ -150,7 +154,7 @@ try {
     $ok = $false
     Result "STOPPED: $($_.Exception.Message)"
 }
-$head = "=== BRIEF 02 owner setup: $(if ($ok) { 'OK' } else { 'NOT OK' }) ==="
+$head = "=== BRIEF 02 owner setup: $(if (-not $ok) { 'NOT OK' } elseif ($partial) { 'OK, SAVES STILL TO DO (run again once KSP is closed)' } else { 'OK' }) ==="
 Say $head
 Write-Host ''
 Write-Host $head
