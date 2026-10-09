@@ -29,9 +29,25 @@ Done when:  (1) restic is installed and the repo on G: is initialised, its passw
             first run
 ```
 
-## Handover   (last stop: 2026-10-09, Task 0 done, read-only)
+## Handover   (last stop: 2026-10-09, the guard refuses backup.ps1)
 ```
-State:     Task 0 done. G: is Drive for desktop in stream mode (virtual drive, DriveFS 132; no local "My Drive"
+State:     Design, relayed by Orchestrator - Daedalus from the owner's answer in its chat ("A, and saves-restic is
+           fine", 2026-10-09): backend A, restic straight onto G:; the saves repo at
+           `G:\My Drive\### Games\KSP\-- BACKUP --\saves-restic`; plumbing repo `G:\My Drive\daedalus-backups\restic`.
+           Drafted, untested, nothing installed: `tools/backup.ps1` (daily run, -DryRun, -CheckExcludes, -Init, -Restic
+           passthrough; skip rules; ntfy alerts to topic bastion; forget daily, prune and a 1/8 data check on Sundays),
+           `tools/backup-setpass.ps1` (the owner's, DPAPI), `tools/backup-task.ps1` (daily, logged-on only).
+           **The guard refuses to run backup.ps1** ("reads a secret from the environment": it sets
+           $env:RESTIC_PASSWORD from the DPAPI file). Not worked around, guard unchanged.
+           Upload check (the orchestrator's condition for A): no reliable read-only way to tell that DriveFS has
+           uploaded a file. No shell property, no alternate stream, no CLI, and its logs are binary
+           (structured_log_*). So the owner confirms in the Drive web view (or the app's Sync status) before Done-when
+           (2) and (3) count, and the per-run "previous upload finished" line isn't cheaply possible.
+           ntfy: https://crusade-bastion.taild871d5.ts.net:2586 is healthy, topic bastion readable without auth
+           (GET only; nothing sent).
+           Slip: `winget show restic.restic` ran with --accept-source-agreements (read-only show, but that flag
+           accepts winget's source terms; reported to the owner).
+           Task 0 (earlier): done. G: is Drive for desktop in stream mode (virtual drive, DriveFS 132; no local "My Drive"
            mirror; its cache is %LOCALAPPDATA%\Google\DriveFS on C:, the same physical disk until uploaded).
            G: 527 GB free of ~2 TB; C: 425 GB free. Sources (totals only): ~/.claude ~0.96 GB (BRIEF 01's copy);
            Scripts, Olympus, Atlas tiny; Claude_UI_UX 0.04 GB; EU5 empty; KSP_Calypso\saves 0.15 GB (281 files);
@@ -42,9 +58,12 @@ State:     Task 0 done. G: is Drive for desktop in stream mode (virtual drive, D
            Drive repo used rclone and the Drive API; DriveFS uses Google's own client.
            Task 1: `tools/backup-exclude.txt` written (restic --iexclude-file, $USERPROFILE-anchored). The guard lets a
            reading command naming only it through (Get-Content, 2026-10-09). Not yet verified with --dry-run.
-Next:      the owner's answer on the backend, then the KSP folder (Task 2), then the install's yes
-Ask owner: (1) backend: A restic straight onto G: (recommended), B restic via rclone to the Drive API, C dated copies;
-           (2) the saves repo's exact folder under `G:\My Drive\### Games\KSP\-- BACKUP --`
+Next:      the owner's choice on the guard refusal; then the yes for the install (with A and saves-restic confirmed in
+           this chat), the task time, and the CHANGELOG entry before it
+Ask owner: the guard refuses backup.ps1. (1) restic reads the password on stdin instead of an env var (recommended:
+           no env var for child processes to inherit; the guard may then pass it, and the owner should know that's why
+           it changed); (2) the owner runs init, the first run and the restore themselves, Claude reads the log;
+           (3) the owner changes the guard
 Dirty:     -
 ```
 
