@@ -15,6 +15,20 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  plumbing  Auto-compact safety net at 50% for every Claude Code session (made by the owner)
+Brief:     - (orchestrator; the usage discussion, docs/DECISIONS.md)
+Why:       sessions have a 1M-token window and auto-compacted only at 97%, so the orchestrators grew all day (346-505k)
+           and every turn re-read it all. 50% is a safety net. The owner rejected 30% to protect throughput. The main
+           saving is meant to come from the morning `/clear`.
+Owner yes: the owner made the change themselves and pasted the result into the Orchestrator - Daedalus chat, 2026-10-09
+Before:    `C:\Users\User\.claude\settings.json` `env` held only CLAUDE_CODE_PLUGIN_DIRS and CLAUDE_CODE_PLUGIN_DIR_WATCH;
+           each session's readout showed autoCompactsAtPercent 97
+Change:    the owner added `"CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"` to that `env` block
+Rollback:  the owner removes that line and restarts the Claude app; the readouts return to 97
+Outcome:   pending. It applies only to sessions started after the edit (or after an app restart). The check: each
+           session's readout shows 50. If it still shows 97 (reported bug: an env block ignored), the fallback is a
+           Windows user environment variable of the same name, then an app restart.
+
 ## 2026-10-09  plumbing: Discord  Rounds (a)+(b): a new Admin role, and the MESS HALL, COMMS and ENGINEERING categories (planned, owner applies)
 Brief:     03
 Why:       the owner's Discord server "Mojo Dojo Casa House" is rebuilt around how the group really uses it (BRIEF 03):
