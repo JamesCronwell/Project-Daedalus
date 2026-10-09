@@ -34,14 +34,15 @@ function Manifest([string]$src, [string]$out, [string[]]$excl) {
     foreach ($l in $o) { Say "  $l" }
     $LASTEXITCODE
 }
-function Restored([string]$target, [string]$src) {   # where restic put $src under $target (C:\x -> <target>\C\x)
-    Join-Path $target ($src -replace '^([A-Za-z]):', '$1')
+function SnapPath([string]$src) {   # restic's name for a Windows path: C:\x\y -> /C/x/y
+    '/' + ($src -replace '^([A-Za-z]):', '$1' -replace '\\', '/')
 }
 
 $ok = $true
 try {
     Say "=== owner setup start$(if ($SkipSaves) { ' (-SkipSaves)' })"
-    if (-not (Get-Command restic -ErrorAction SilentlyContinue)) { throw 'restic is not installed yet (Claude installs it first)' }
+    . (Join-Path $tools 'backup-restic.ps1')
+    if (-not (Find-Restic)) { throw 'restic is not installed yet (Claude installs it first)' }
     $flag = Join-Path $state 'skip-ksp-saves'
     if (-not $SkipSaves -and (Test-Path -LiteralPath $flag)) { Remove-Item -LiteralPath $flag; Result 'skip-ksp-saves flag: removed (the saves are clear)' }
 
@@ -93,19 +94,22 @@ try {
         }
     }
 
-    # 6. restore into the scratch folder, restic re-reading every restored file against the snapshot (--verify)
-    $sets = @(@{ repo = 'plumbing'; tag = 'plumbing' }) + @($doSaves | ForEach-Object { @{ repo = 'saves'; tag = $_ } })
+    # 6. restore into the scratch folder, restic re-reading every restored file against the snapshot (--verify).
+    #    By snapshot:subpath, the source folder only: a full-path restore recreates C:\Users and the like, whose
+    #    security settings make restic fail ("Access is denied", seen in a scratch test 2026-10-09).
+    $sets = @(@{ repo = 'plumbing'; tag = 'plumbing'; name = 'claude'; src = $claude }) +
+        @($doSaves | ForEach-Object { @{ repo = 'saves'; tag = $_; name = $_; src = (Join-Path $ksp "$($saves[$_])\saves") } })
     foreach ($s in $sets) {
-        $target = Join-Path $scratch "r-$($s.tag)"
-        & $backup -Repo $s.repo -Restic @('restore', 'latest', '--tag', $s.tag, '--host', 'eternal-crusade', '--target', $target, '--verify')
-        if ($LASTEXITCODE -ne 0) { throw "restore of $($s.tag) failed or didn't verify ($LASTEXITCODE)" }
-        Result "restore $($s.tag): verified by restic"
+        $target = Join-Path $scratch "r-$($s.name)"
+        & $backup -Repo $s.repo -Restic @('restore', "latest:$(SnapPath $s.src)", '--tag', $s.tag, '--host', 'eternal-crusade', '--target', $target, '--verify')
+        if ($LASTEXITCODE -ne 0) { throw "restore of $($s.name) failed or didn't verify ($LASTEXITCODE)" }
+        Result "restore $($s.name): verified by restic"
     }
 
     # 7. the manifests compared. ~/.claude is written by every open session, so a difference counts only if the live
     #    file wasn't touched since just before the run.
     $live = 0
-    $rc = Restored (Join-Path $scratch 'r-plumbing') $claude
+    $rc = Join-Path $scratch 'r-claude'
     if (-not (Test-Path -LiteralPath $rc)) { throw "the restored ~/.claude isn't at ${rc}: look in $scratch" }
     if ((Manifest $rc (Join-Path $scratch 'm1-claude.tsv') $excl) -gt 1) { throw 'manifest of the restored ~/.claude failed' }
     $a = @{}; foreach ($l in Get-Content -LiteralPath (Join-Path $scratch 'm0-claude.tsv')) { $f = $l -split "`t"; $a[$f[0]] = "$($f[1])/$($f[2])" }
@@ -123,7 +127,7 @@ try {
         Result "~/.claude: MISMATCH, $($bad.Count) files differ that weren't touched since the run"
     } else { Result "~/.claude: MATCH, $($b.Count) files ($live changed live during the run, by their dates)" }
     foreach ($tag in $doSaves) {
-        $rs = Restored (Join-Path $scratch "r-$tag") (Join-Path $ksp "$($saves[$tag])\saves")
+        $rs = Join-Path $scratch "r-$tag"
         if (-not (Test-Path -LiteralPath $rs)) { throw "the restored $tag isn't at ${rs}: look in $scratch" }
         if ((Manifest $rs (Join-Path $scratch "m1-$tag.tsv") @()) -ne 0) { throw "manifest of the restored $tag failed" }
         $o = & python -I (Join-Path $tools 'manifest.py') compare (Join-Path $scratch "m0-$tag.tsv") (Join-Path $scratch "m1-$tag.tsv") 2>&1

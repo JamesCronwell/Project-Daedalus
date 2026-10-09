@@ -92,7 +92,8 @@ function Invoke-Restic([string]$repo, [string[]]$resticArgs) {   # returns resti
 . (Join-Path $PSScriptRoot 'backup-skip.ps1')   # Get-KspBlocker: the saves' skip rule, testable on its own
 
 New-Item -ItemType Directory -Force -Path $StateDir | Out-Null
-$script:ResticExe = (Get-Command restic -ErrorAction SilentlyContinue).Source
+. (Join-Path $PSScriptRoot 'backup-restic.ps1')   # Find-Restic
+$script:ResticExe = Find-Restic
 $failed = $false
 try {
     if (-not $ResticExe -and -not $DryRun) { throw 'restic is not installed (winget install restic.restic)' }

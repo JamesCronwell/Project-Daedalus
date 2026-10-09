@@ -29,9 +29,16 @@ Done when:  (1) restic is installed and the repo on G: is initialised, its passw
             first run
 ```
 
-## Handover   (last stop: 2026-10-09, waiting on the owner's yeses for the install and the sitting)
+## Handover   (last stop: 2026-10-09, restic installed; the sitting waits for Calypso's BRIEF 26)
 ```
-State:     Option 2 (owner, relayed by the orchestrator): Claude never runs what touches the password. The owner's one
+State:     Owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a), 13:00". restic 0.19.1 installed
+           (CHANGELOG); the exe has no `restic` alias, so tools/backup-restic.ps1 finds it. A scratch-only test (a
+           --insecure-no-password repo in the session scratchpad) showed: the anchored $VAR excludes work (top-level
+           cache\ and a file dropped, keep\cache kept); dry-run -vv prints `new       /C/x/y, saved in ...`, which
+           -CheckExcludes parses; a full-path restore fails ("Access is denied" restoring C:\Users's timestamp, exit 1),
+           so the sitting restores by `latest:/C/...` subpath: exit 0, --verify ok, manifest MATCH. Left in the
+           scratchpad: `rt\restore\C\Users` may carry C:\Users's ACL (temp, not the owner's folders).
+           Option 2 (owner, relayed by the orchestrator): Claude never runs what touches the password. The owner's one
            sitting is `tools/backup-owner-setup.ps1` (password, init, exclusion check, manifests, first run, restore
            --verify, compare, scratch deleted on MATCH, the task: the guard refuses Register-ScheduledTask too). Log:
            %LOCALAPPDATA%\Daedalus\owner-setup.log. The skip rule moved to `tools/backup-skip.ps1` (no secrets).
@@ -66,10 +73,10 @@ State:     Option 2 (owner, relayed by the orchestrator): Claude never runs what
            Drive repo used rclone and the Drive API; DriveFS uses Google's own client.
            Task 1: `tools/backup-exclude.txt` written (restic --iexclude-file, $USERPROFILE-anchored). The guard lets a
            reading command naming only it through (Get-Content, 2026-10-09). Not yet verified with --dry-run.
-Next:      on the yeses: winget install restic, then the owner's sitting, then read owner-setup.log and complete
-           both CHANGELOG entries; the owner confirms the upload in Drive's web view; then Task 5 (KSP_Reborn copy)
-Ask owner: in one message: A + saves-restic (confirm here); the install; the sitting now with -SkipSaves (a 2nd ~3 min
-           sitting for the saves later) or once Calypso's BRIEF 26 is done (one sitting, recommended); the task's time
+Next:      the orchestrator passes on "26 done"; ask the orchestrator to give Calypso its heads-up; then the owner's
+           sitting (no -SkipSaves, -At default 13:00); read owner-setup.log, complete the sitting's CHANGELOG entry; the
+           owner confirms the upload in Drive's web view; then Task 5 (KSP_Reborn copy), then Task 6 (records)
+Ask owner: - (the sitting, when 26 is done)
 Dirty:     -
 ```
 

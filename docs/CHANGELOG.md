@@ -20,7 +20,8 @@ Brief:     02 (tasks 3 and 4)
 Why:       BACKUP-MAP gaps 1, 7, 10 and 11: a daily, versioned copy of ~/.claude, the plumbing and the KSP saves off the
            C:+F: disk. The owner chose option 2 (relayed by Orchestrator - Daedalus, 2026-10-09): Claude never runs what
            touches the password; the guard also refuses Register-ScheduledTask, so the task is in the same sitting
-Owner yes: PENDING (asked in the BRIEF 02 chat)
+Owner yes: "yes A and saves-restic, install it, (a), 13:00" (BRIEF 02 chat, 2026-10-09): (a) is one sitting, once
+           Calypso's BRIEF 26 is done, with the saves; the task at 13:00 (the script's default). The owner runs it
 Before:    no `%LOCALAPPDATA%\Daedalus`; no `G:\My Drive\daedalus-backups\restic`; no
            `G:\My Drive\### Games\KSP\-- BACKUP --\saves-restic`; no task "Daedalus daily backup"
 Change:    the owner runs `tools\backup-owner-setup.ps1` in their own PowerShell: stores the password DPAPI-protected at
@@ -37,13 +38,17 @@ Outcome:   -
 ## 2026-10-09  Crusader  Install restic (winget)
 Brief:     02 (task 3)
 Why:       the daily backup's tool (backend A: restic straight onto G:, the owner's choice relayed 2026-10-09)
-Owner yes: PENDING (asked in the BRIEF 02 chat)
+Owner yes: "yes A and saves-restic, install it, (a), 13:00" (BRIEF 02 chat, 2026-10-09)
 Before:    `Get-Command restic`: not found. `winget show --id restic.restic --exact`: 0.19.1 available
 Change:    `winget install --id restic.restic --exact --scope user --accept-package-agreements
            --accept-source-agreements` (the flags accept restic's BSD-2 license and winget's source terms: part of the
            yes asked)
 Rollback:  `winget uninstall --id restic.restic --exact`
-Outcome:   -
+Outcome:   installed 2026-10-09 (hash verified by winget): `restic 0.19.1 compiled with go1.26.4 on windows/amd64`.
+           winget made no `restic` alias: it added
+           `%LOCALAPPDATA%\Microsoft\WinGet\Packages\restic.restic_Microsoft.Winget.Source_8wekyb3d8bbwe` to the user
+           PATH (HKCU\Environment, checked with `reg query`), and the exe there is `restic_0.19.1_windows_amd64.exe`.
+           tools\backup-restic.ps1 finds it; nothing was renamed
 
 ## 2026-10-09  Crusader  One copy of ~/.claude to Google Drive, and a checksum-verified test restore
 Brief:     01 (task 3, gap 1 (a))
