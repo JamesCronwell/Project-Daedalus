@@ -3,7 +3,7 @@
 ```
 Status:     waiting-owner: the attended ~/.claude backup + test restore (Done-when 4); the live guard check in a
             fresh session after the merge (Done-when 1)
-Commits:    -
+Commits:    0b05cee (tools, docs, guard); the next commit records this sha and the inventory CR fix
 Track:      safety
 Machine:    both
 Touch:      tools/ (guard hook, inventory, manifest, secret scan), .claude/settings.json (deny list: tighten only),

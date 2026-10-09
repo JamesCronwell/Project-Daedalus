@@ -42,7 +42,7 @@ def crusader():
     ps1 = os.path.join(HERE, "inventory-crusader.ps1")
     p = subprocess.run(["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ps1],
                        capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=900)
-    raw = p.stdout.strip()
+    raw = p.stdout.strip().replace("\\r\\n", "\\n")  # PowerShell's Out-String ends lines with CRLF
     with open(os.path.join(RAW, "crusader.json"), "w", encoding="utf-8") as f:
         f.write(raw)
     d = json.loads(raw)
