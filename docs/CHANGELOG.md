@@ -22,4 +22,4 @@ Owner yes: "yes, set up the Daedalus repo" (Calypso orchestrator chat, 2026-10-0
 Before:    `C:\- Tools\- LLM\Daedalus` did not exist
 Change:    this repo (docs, `.claude/settings.json` deny list, BRIEF 01); one roster line added to `~/.claude/CLAUDE.md`
 Rollback:  delete the folder; remove the roster lines from `~/.claude/CLAUDE.md`
-Outcome:   local git repo, first commit; no remote yet (START_HERE §6)
+Outcome:   local git repo, first commit 8c1700e; pushed to the private GitHub repo JamesCronwell/Project-Daedalus the same day

@@ -18,7 +18,7 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 | `docs/IDEAS.md` | ideas no brief has picked up yet |
 | `tools/` | inventory, manifest, secret scan, guard hook (BRIEF 01) |
 | `.claude/settings.json` | the permission deny list: part of the guardrails |
-| Remote | not yet: the owner creates a private GitHub repo (§6) |
+| Remote | `origin` = private GitHub `JamesCronwell/Project-Daedalus` (HTTPS, GCM login). `git push` after commits |
 
 ## 1. Machines
 | Name | What | Reach |
@@ -67,7 +67,5 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 - Every new idea starts with an interview (global rule).
 
 ## 6. Open questions for the owner
-- **GitHub:** create a private repo (suggested name `Project-Daedalus`, like Project-Calypso and Project-Hephaestus),
-  then the first push.
 - **Bastion:** its SSH host alias (or let BRIEF 01 read `~/.ssh/config`'s host names, never the keys).
 - **WizTree:** install it when the habits stretch starts.
