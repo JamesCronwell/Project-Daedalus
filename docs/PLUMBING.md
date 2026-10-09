@@ -7,12 +7,13 @@ orchestrators that use it.
 ## Files
 | What | Where | Used by | Maintainer | Copy |
 |---|---|---|---|---|
-| Global instructions | `~/.claude/CLAUDE.md` | every session | Daedalus (owner's yes per change) | none outside `~/.claude` (gap 11) |
-| Global settings | `~/.claude/settings.json`: `defaultMode: auto`; `CLAUDE_CODE_PLUGIN_DIRS` = WH40K's `wh40k-band` and Calypso's `calypso-band` mods, `CLAUDE_CODE_PLUGIN_DIR_WATCH=1` | every session | Daedalus; each band's content is its project's | none (gap 11) |
+| Global instructions | `~/.claude/CLAUDE.md` | every session | Daedalus (owner's yes per change) | daily restic (BRIEF 02, tag `plumbing`) |
+| Global settings | `~/.claude/settings.json`: `defaultMode: auto`; `CLAUDE_CODE_PLUGIN_DIRS` = WH40K's `wh40k-band` and Calypso's `calypso-band` mods, `CLAUDE_CODE_PLUGIN_DIR_WATCH=1` | every session | Daedalus; each band's content is its project's | daily restic |
 | Claude hours | `~/.claude/tools/claude_hours.py` (Calypso BRIEF 14, shared with Hephaestus: both read the installed copy) | Calypso, Hephaestus | Daedalus | the projects' repos hold the source |
-| Night mode | `C:\Users\User\Scripts\night-mode.cmd` + `.ps1`: puts the displays into standby after 3 s, changes no setting | the owner | Daedalus | none (gap 11); the monitor-flash follow-up is in IDEAS |
-| MCP servers (desktop app) | `%APPDATA%\Claude\claude_desktop_config.json`: **horse** (`WH40K\bridge-kit\mcp\lmstudio_proxy.py`, a proxy to LM Studio), **onebrain** (`~\.local\bin\onebrain-mcp.cmd`), **graphify** (`graphify-mcp.exe` on `WH40K\graphify-out\graph.json`) | every session | Daedalus owns the config; each server's code is its project's | none (gap 11) |
+| Night mode | `C:\Users\User\Scripts\night-mode.cmd` + `.ps1`: puts the displays into standby after 3 s, changes no setting | the owner | Daedalus | daily restic; the monitor-flash follow-up is in IDEAS |
+| MCP servers (desktop app) | `claude_desktop_config.json`: the app is MSIX, so the real file is `%LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\` (the app and the sessions it starts see it as `%APPDATA%\Claude\`; anything outside, like a scheduled task, must use the real path): **horse** (`WH40K\bridge-kit\mcp\lmstudio_proxy.py`, a proxy to LM Studio), **onebrain** (`~\.local\bin\onebrain-mcp.cmd`), **graphify** (`graphify-mcp.exe` on `WH40K\graphify-out\graph.json`) | every session | Daedalus owns the config; each server's code is its project's | daily restic |
 | Permission guard (this repo only) | `.claude/settings.json` deny list + `tools/guard.py` hook | Daedalus sessions | Daedalus, owner-only edits | git |
+| Daily backup (BRIEF 02) | `tools/backup.ps1` (+ `backup-exclude.txt`, `backup-skip.ps1`, `backup-restic.ps1`); state in `%LOCALAPPDATA%\Daedalus` (`backup.log`, `last-ok-*.txt`, the DPAPI password file, the `skip-ksp-saves` flag when set); restic 0.19.1 (winget, user scope) | Crusader; the KSP saves are Calypso's | Daedalus; the guard keeps Claude from running backup.ps1 (it handles the password): the owner and the task run it | git |
 
 `~/.claude.json` has no user-level MCP servers; `~/.claude/skills` has `graphify`. The decision skills
 (doubt-driven-development, interview-me) live in Calypso's and WH40K's repos only (IDEAS: one shared copy).
@@ -31,6 +32,7 @@ properly is IDEAS' "MCP and plugin token cost" (habits stretch).
 | "WH40K Backup Pull" (`WH40K\webapp\pull_backup.ps1`) | Scheduled task | daily 04:30 | Hephaestus BRIEF 50 |
 | "WH40K Bridge Watcher" (`WH40K\bridge-kit\watcher.py`, pythonw) | Scheduled task | at logon, running | Hephaestus |
 | "OneBrainSync" (`WH40K\bridge-kit\sync-onebrain.ps1`) | Scheduled task | ~every 2 h | Hephaestus |
+| "Daedalus daily backup" (`Daedalus\tools\backup.ps1`, powershell hidden) | Scheduled task | daily 13:00, as User, logged-on only; a missed run starts when the PC is back; stopped after 3 h | Daedalus BRIEF 02 (registered by the owner, 2026-10-09). Alerts to ntfy topic `bastion` (Bastion's ntfy over Tailscale): a failure, no good run for 36 h, a saves folder without a snapshot for 3 days. Skips the KSP saves while KSP_x64 runs or `%LOCALAPPDATA%\Daedalus\skip-ksp-saves` exists (Calypso's deploy windows) |
 
 Everything else on the Startup and task lists is vendor software (`docs/inventory/crusader.md`).
 

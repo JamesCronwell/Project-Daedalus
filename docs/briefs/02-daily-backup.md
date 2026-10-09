@@ -38,7 +38,11 @@ State:     The owner's sitting is done (CHANGELOG): repos created, the first run
            (MSIX: %LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\; fixed). Calypso had its
            heads-up (the orchestrator, after "26 done").
            Done-when: (1) done; (2) done pending the upload check; (3) done pending the upload check; (4) not
-           started; (5) records not yet written; (6) done.
+           started; (5) records written (BACKUP-MAP rows 1, 3, 4, 5, 17; RUNBOOK-crusader "Restoring from restic";
+           PLUMBING; START_HERE §1): gaps 1, 7, 11 closed pending the upload check, 10 narrowed, 8 waits for Task 5;
+           (6) done.
+           Not yet tested: an ntfy alert actually arriving (a test post is a message: needs the owner's yes); the
+           skip-ksp-saves flag as Calypso's deploy-window switch (proposed to the orchestrator, not agreed).
            Earlier: owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a), 13:00". restic 0.19.1 installed
            (CHANGELOG); the exe has no `restic` alias, so tools/backup-restic.ps1 finds it. A scratch-only test (a
            --insecure-no-password repo in the session scratchpad) showed: the anchored $VAR excludes work (top-level
@@ -81,8 +85,8 @@ State:     The owner's sitting is done (CHANGELOG): repos created, the first run
            Drive repo used rclone and the Drive API; DriveFS uses Google's own client.
            Task 1: `tools/backup-exclude.txt` written (restic --iexclude-file, $USERPROFILE-anchored). The guard lets a
            reading command naming only it through (Get-Content, 2026-10-09). Not yet verified with --dry-run.
-Next:      Task 6's records (BACKUP-MAP, RUNBOOK-crusader, PLUMBING, START_HERE §1); the first unattended run
-           2026-10-10 13:00 (read backup.log); Task 5 (KSP_Reborn copy) on an evening without KSP, with its own yes
+Next:      the first unattended run 2026-10-10 13:00 (read backup.log); Task 5 (KSP_Reborn copy) on an evening
+           without KSP, with its own yes and CHANGELOG entry; then Done-when (4), and the brief closes
 Ask owner: confirm in drive.google.com (or Drive's Sync status) that `daedalus-backups/restic` and
            `### Games/KSP/-- BACKUP --/saves-restic` finished uploading
 Dirty:     -
