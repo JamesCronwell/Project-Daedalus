@@ -60,7 +60,10 @@ the trail. Friends' names never go here.
   `plan` and `apply` with a standing bot of their own. Structure only, never deletes, test server first. The
   by-hand checklist stays as the fallback. Lives in BRIEF 05, and BRIEF 03's rounds wait for it.
   - Found while writing BRIEF 05: the template has no real ids, so the owner's `import` of the live server seeds the
-    layout. A bot can only grant the bits it holds, so its permission set is the owner's next decision.
+    layout. A bot can only grant the bits it holds, so it also gets the everyday bits the layout sets ("Yes, bot gets those
+    too"): Send, Embed, Attach, Read History, Reactions, Mention Everyone, Manage Webhooks, Connect, Speak. Never
+    Administrator, Manage Server, Kick or Ban. Rejected: the narrow three, which would leave most of rounds (d) and
+    (f) by hand.
 - **The last channel answers:** `kerbal-space-launches` is empty and the owner deletes it by hand ("kerbal to
   deletion"). `engineering-log` is private, Admin only. The names are as proposed in the channel check.
 

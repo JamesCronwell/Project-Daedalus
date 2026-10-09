@@ -1,7 +1,7 @@
 # BRIEF 05: The Discord layout lives in the repo, and the owner applies changes with plan and apply
 
 ```
-Status:     waiting-owner: the bot's permission set (orchestrator note 3)
+Status:     next
 Commits:    -
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's test server, then "Mojo Dojo Casa House"; the token's protected file on Crusader
@@ -79,8 +79,8 @@ by-hand checklist stays as the fallback.
 3. **A bot can only allow or deny the bits it holds itself.** That's Discord's rule for channel overwrites and role
    edits, as the orchestrator recalls it; task 5 proves it on the test server. With only Manage Channels, Manage Roles
    and View Channels, the bot couldn't make a feed read-only (a deny of Send Messages), nor give the bots' role Embed
-   Links or Mention Everyone. **The owner decides the bot's set before task 4.** The orchestrator's proposal: it also
-   holds the everyday bits the layout sets (Send Messages, Embed Links, Attach Files, Read Message History, Add
+   Links or Mention Everyone. **The owner's decision** ("Yes, bot gets those too", 2026-10-09): besides those three,
+   it holds the everyday bits the layout sets (Send Messages, Embed Links, Attach Files, Read Message History, Add
    Reactions, Mention Everyone, Manage Webhooks, Connect, Speak), and never Administrator, Manage Server, Kick or Ban.
    Anything outside its set is "yours" in the plan.
 4. **Discord rejects urllib's default User-Agent.** Send `DiscordBot (<repo url>, <version>)`, and honour a 429's
