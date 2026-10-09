@@ -15,6 +15,16 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-09  plumbing  Global CLAUDE.md: the orchestrators' usage habits (morning /clear, decisions first, batched messages)
+Brief:     - (orchestrator; the usage discussion, docs/DECISIONS.md)
+Why:       an orchestrator's every turn re-reads its whole context, and each message between orchestrators costs the
+           receiver one such turn
+Owner yes: "Yes go for it" to the wording shown in the Orchestrator - Daedalus chat, 2026-10-09
+Before:    `C:\Users\User\.claude\CLAUDE.md`, "# Orchestrators", ended with the get_usage / Sunday bullet
+Change:    one bullet, "Usage habits", added at the end of "# Orchestrators" (the wording as shown)
+Rollback:  delete that bullet; the file is also in the daily restic backup (BRIEF 02)
+Outcome:   done; the bullet was read back after the edit. Calypso and Hephaestus were told in one bundled message
+
 ## 2026-10-09  plumbing  Auto-compact safety net at 50% for every Claude Code session (made by the owner)
 Brief:     - (orchestrator; the usage discussion, docs/DECISIONS.md)
 Why:       sessions have a 1M-token window and auto-compacted only at 97%, so the orchestrators grew all day (346-505k)
