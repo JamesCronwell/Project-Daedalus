@@ -66,7 +66,8 @@ Outcome:   sitting 1, 2026-10-09 19:38-19:42 (owner-setup.log): password stored;
            reborn-saves MATCH 668; scratch folder deleted (checked: `Test-Path` False); task registered:
            `schtasks /query /v`: Ready, daily 13:00, next 2026-10-10 13:00, Interactive only, run as User,
            powershell.exe -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File
-           "...\tools\backup.ps1". Off-machine only once Drive has uploaded both repo folders: the owner checks
+           "...\tools\backup.ps1". Upload: the owner's screenshot of Drive for desktop, 2026-10-09 ~20:10: "Up to
+           date, Synced 27 minutes ago" (both repos were last written 19:44): off the machine
 
 ## 2026-10-09  Crusader  Install restic (winget)
 Brief:     02 (task 3)
