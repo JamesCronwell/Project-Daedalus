@@ -11,7 +11,9 @@ Touch:      tools/ (the backup script and its task definition), docs/BACKUP-MAP.
             (deleted after the check)
 Don't touch: KSP_Reborn beyond reading (Calypso's invariant: read-only); the 2025 KSP_Reborn copy on G: (45 craft F:
             lacks: the fresh copy goes next to it, never over it); the restic password (the owner creates it and
-            stores it; Claude never sees it); Bastion
+            stores it; Claude never sees it); Bastion; `F:\Steam_Modded_Variants\KSP_Coop_A`, `KSP_Coop_B` and
+            `LMP_Server` (Calypso's BRIEF 20, throwaway: out of every backup set and out of the saves scope, at
+            Calypso's request, 2026-10-09); `calypso_cache` (re-fetchable)
 Suggested model: opus   (the first standing task on the owner's PC, and a credential-adjacent design)
 Effort level:    high   (doubt-driven-development on the script's skip rules and its exclusions before the first run)
 Parallel:   no   (it changes a machine)
