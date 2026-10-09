@@ -43,7 +43,15 @@ Outcome:   sitting 1, 2026-10-09 19:38-19:42 (owner-setup.log): password stored;
            live file's (aa7863b0...). A false alarm: the test now takes the later of created/modified. So the
            scratch folder was kept and the task not registered. Also: the MCP config was "does not exist": the
            desktop app is MSIX, its real path is %LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\
-           Claude\ (backup.ps1 fixed). Sitting 2: the owner deletes the scratch folder and runs the script again
+           Claude\ (backup.ps1 fixed). Sitting 2: the owner deletes the scratch folder and runs the script again.
+           Sitting 2, 19:43-19:44: "=== BRIEF 02 owner setup: OK ===". Exclusion check 5557 entries, 0 excluded paths
+           in; run ok: plumbing 362e2d09 (no "does not exist", no unreadable file: the MCP config is in),
+           calypso-saves e2ab6108, reborn-saves 56b51ae1; restores of ~/.claude and both saves verified by restic;
+           ~/.claude MATCH 3469 files (2 changed live during the run, by their dates); calypso-saves MATCH 281;
+           reborn-saves MATCH 668; scratch folder deleted (checked: `Test-Path` False); task registered:
+           `schtasks /query /v`: Ready, daily 13:00, next 2026-10-10 13:00, Interactive only, run as User,
+           powershell.exe -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File
+           "...\tools\backup.ps1". Off-machine only once Drive has uploaded both repo folders: the owner checks
 
 ## 2026-10-09  Crusader  Install restic (winget)
 Brief:     02 (task 3)

@@ -29,9 +29,17 @@ Done when:  (1) restic is installed and the repo on G: is initialised, its passw
             first run
 ```
 
-## Handover   (last stop: 2026-10-09, restic installed; the sitting waits for Calypso's BRIEF 26)
+## Handover   (last stop: 2026-10-09, the sitting done; waiting on the owner's upload check)
 ```
-State:     Owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a), 13:00". restic 0.19.1 installed
+State:     The owner's sitting is done (CHANGELOG): repos created, the first run snapshotted every source, restores of
+           ~/.claude and both saves verified by restic and MATCHed by manifest (sitting 2, 19:44), scratch folder
+           deleted, task "Daedalus daily backup" Ready, daily 13:00. Sitting 1 stopped on a false compare alarm
+           (a file-history copy keeps its original's modified date; fixed) and showed the MCP config's real path
+           (MSIX: %LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\; fixed). Calypso had its
+           heads-up (the orchestrator, after "26 done").
+           Done-when: (1) done; (2) done pending the upload check; (3) done pending the upload check; (4) not
+           started; (5) records not yet written; (6) done.
+           Earlier: owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a), 13:00". restic 0.19.1 installed
            (CHANGELOG); the exe has no `restic` alias, so tools/backup-restic.ps1 finds it. A scratch-only test (a
            --insecure-no-password repo in the session scratchpad) showed: the anchored $VAR excludes work (top-level
            cache\ and a file dropped, keep\cache kept); dry-run -vv prints `new       /C/x/y, saved in ...`, which
@@ -73,10 +81,10 @@ State:     Owner, this chat, 2026-10-09: "yes A and saves-restic, install it, (a
            Drive repo used rclone and the Drive API; DriveFS uses Google's own client.
            Task 1: `tools/backup-exclude.txt` written (restic --iexclude-file, $USERPROFILE-anchored). The guard lets a
            reading command naming only it through (Get-Content, 2026-10-09). Not yet verified with --dry-run.
-Next:      the orchestrator passes on "26 done"; ask the orchestrator to give Calypso its heads-up; then the owner's
-           sitting (no -SkipSaves, -At default 13:00); read owner-setup.log, complete the sitting's CHANGELOG entry; the
-           owner confirms the upload in Drive's web view; then Task 5 (KSP_Reborn copy), then Task 6 (records)
-Ask owner: - (the sitting, when 26 is done)
+Next:      Task 6's records (BACKUP-MAP, RUNBOOK-crusader, PLUMBING, START_HERE §1); the first unattended run
+           2026-10-10 13:00 (read backup.log); Task 5 (KSP_Reborn copy) on an evening without KSP, with its own yes
+Ask owner: confirm in drive.google.com (or Drive's Sync status) that `daedalus-backups/restic` and
+           `### Games/KSP/-- BACKUP --/saves-restic` finished uploading
 Dirty:     -
 ```
 
