@@ -405,3 +405,15 @@ Outcome:   done 2026-10-10. The bot joined; the owner ran import (61 roles, 59 c
            changes, 0 yours, 0 extras). check-template: one difference, the category `// Kerbal Space Program //` with
            its only channel, deleted by hand by the owner. Nothing was applied on the live server. `discord/layout.toml`
            committed after the owner's names check
+
+## 2026-10-10  Discord (the owner's server)  Stage S10: `assembly-line` is the Factorio news feed (BRIEF 03 follow-up)
+Brief:     BRIEF 03 (a follow-up the owner gave in the BRIEF 05 session, which holds the tool)
+Why:       the owner: "the assembly-line page is a vox feed, it's Factorio news". It sat hidden in ARCHIVUM, so the group
+           never saw it, and its SnailBot webhook was on the by-hand delete list
+Owner yes: "yes, vox-factorio, here" (2026-10-10)
+Before:    channel id 1201283241026523270 `assembly-line` in ARCHIVUM, hidden; its webhook marked for deletion
+Change:    ONE channel through plan and apply: rename to `vox-factorio`, move to VOX, the same two overwrites as the other
+           feeds (`@everyone` no Send; the bots' role Send + Embed). Id and key unchanged, so the webhook and follows
+           keep working. The webhook is NOT deleted (the delete list's section 5 loses the `assembly-line` item)
+Rollback:  edit the layout back (name `assembly-line`, parent `archive`, the archive's two overwrites), plan, apply
+Outcome:   (to fill in after apply)

@@ -138,7 +138,7 @@ permissions = [
 [[role]]
 key = "admin-mechanized-transport"
 id = "818178494072750091"
-name = "ADMIN / MECHANIZED TRANSPORT"
+name = "Vox Handler"
 color = 13047173
 hoist = false
 mentionable = false
@@ -975,44 +975,10 @@ allow = ["VIEW_CHANNEL"]
 deny = []
 
 [[channel]]
-key = "the-safe-room"
-id = "818173951729598524"
-type = "voice"
-name = "The Safe Room"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
 key = "sit-rep"
 id = "1129093592372228187"
 type = "text"
 name = "sit-rep"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "war-reporter-room"
-id = "1129107969448091658"
-type = "text"
-name = "war-reporter-room"
 parent = "archive"
 
 [[channel.overwrite]]
@@ -1032,23 +998,6 @@ type = "text"
 name = "quiet-lounge"
 parent = "archive"
 nsfw = true
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "romanian-army-quarters"
-id = "1254033483291037728"
-type = "voice"
-name = "Romanian Army Quarters"
-parent = "archive"
 
 [[channel.overwrite]]
 role = "everyone"
@@ -1133,346 +1082,18 @@ allow = ["VIEW_CHANNEL"]
 deny = []
 
 [[channel]]
-key = "dungeoneering-lobby-1"
-id = "1401171030839394457"
-type = "voice"
-name = "Dungeoneering - Lobby 1"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "dungeoneering-forums"
-id = "1401171088007761951"
-type = "forum"
-name = "dungeoneering-forums"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "dungeoneering-general-chat"
-id = "1401170957141409944"
-type = "text"
-name = "dungeoneering-general-chat"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "dnd"
-id = "1459291643239731441"
-type = "text"
-name = "dnd"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "swat-units"
-id = "1344985225477886044"
-type = "voice"
-name = "SWAT Units"
-parent = "archive"
-user_limit = 6
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "helldiving-quarters"
-id = "1210156504217288716"
-type = "text"
-name = "helldiving-quarters"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "proving-ground"
-id = "818173483107483718"
-type = "text"
-name = "proving-ground"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "internet-tracking-files"
-id = "1174810046878711869"
-type = "text"
-name = "internet-tracking-files"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "it-engineering"
-id = "1177566154894618717"
-type = "text"
-name = "it-engineering"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "audio-engineering"
-id = "1190603563488002169"
-type = "text"
-name = "audio-engineering"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
 key = "assembly-line"
 id = "1201283241026523270"
 type = "text"
-name = "assembly-line"
-parent = "archive"
+name = "vox-factorio"
+parent = "comms-cat"
 
 [[channel.overwrite]]
 role = "everyone"
 allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
+deny = ["SEND_MESSAGES"]
 
 [[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
 deny = []
-
-[[channel]]
-key = "tech-engineering"
-id = "1196245144299638894"
-type = "text"
-name = "tech-engineering"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "finances"
-id = "1301132169049149460"
-type = "text"
-name = "finances"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "news"
-id = "1301132311198175264"
-type = "text"
-name = "news"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "usaf-sqd-101"
-id = "1129104665259278387"
-type = "voice"
-name = "USAF Sqd. 101"
-parent = "archive"
-user_limit = 4
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "usaf-sqd-102"
-id = "1129104924395982960"
-type = "voice"
-name = "USAF Sqd. 102"
-parent = "archive"
-user_limit = 4
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "aviation-files"
-id = "1129105505214791800"
-type = "forum"
-name = "aviation-files"
-parent = "archive"
-topic = "Keep it related to War Thunder's vehicles, tactics and so forth"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "path-of-crying"
-id = "1223279589439176785"
-type = "voice"
-name = "Path of Crying"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "poe-general"
-id = "1223279929203097661"
-type = "text"
-name = "poe-general"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel]]
-key = "general-chat"
-id = "1266087950761066566"
-type = "text"
-name = "general-chat"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
