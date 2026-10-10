@@ -31,7 +31,10 @@ Change:    27 edits, all renames except 3 role-bit edits: the nine ranks (O-10 H
            Kick, Ban and Manage Server stay by hand. Nothing created, moved or deleted
 Rollback:  put the previous `discord/layout.toml` back from git (the S4 commit), `plan`, `apply`: every name comes back with
            its id, history, webhooks and follows
-Outcome:   -
+Outcome:   applied by the owner, 29 changes (the 27 above plus 2: the plan found `company-movement-orders` outside the
+           archive and moved it back into ARCHIVUM, with the reorder that follows); a second `plan` showed 0 changes,
+           27 yours. The owner then said that channel holds the music bot's instructions, so the move was unwanted:
+           it is hidden in ARCHIVUM now and a visible home is being agreed (see BRIEF 03's Handover)
 
 ## 2026-10-10  Discord (the owner's server)  BRIEF 03's rebuild applied through the layout tool, under a bounded Administrator window on the bot's role (planned)
 Brief:     03 (the tool is BRIEF 05's)

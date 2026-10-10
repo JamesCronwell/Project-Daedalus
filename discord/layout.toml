@@ -47,7 +47,7 @@ permissions = ["ADMINISTRATOR"]
 [[role]]
 key = "o-10-general"
 id = "818171594845061171"
-name = "O-10 / General"
+name = "High Marshal"
 color = 16766720
 hoist = true
 mentionable = false
@@ -79,7 +79,6 @@ permissions = [
     "USE_VAD",
     "CHANGE_NICKNAME",
     "MANAGE_NICKNAMES",
-    "MANAGE_ROLES",
     "MANAGE_WEBHOOKS",
     "MANAGE_GUILD_EXPRESSIONS",
     "USE_APPLICATION_COMMANDS",
@@ -105,7 +104,7 @@ permissions = [
 [[role]]
 key = "o-9-lieutenant-general"
 id = "1193567424126140506"
-name = "O-9 / Lieutenant General"
+name = "Marshal"
 color = 12632256
 hoist = true
 mentionable = false
@@ -132,7 +131,6 @@ permissions = [
     "USE_VAD",
     "CHANGE_NICKNAME",
     "MANAGE_NICKNAMES",
-    "MANAGE_ROLES",
     "USE_APPLICATION_COMMANDS",
     "MANAGE_THREADS",
     "CREATE_PRIVATE_THREADS",
@@ -224,7 +222,7 @@ permissions = []
 [[role]]
 key = "o-8-major-general"
 id = "1199646176123817994"
-name = "O-8 / Major General"
+name = "Castellan"
 color = 9109504
 hoist = true
 mentionable = false
@@ -256,7 +254,6 @@ permissions = [
     "USE_VAD",
     "CHANGE_NICKNAME",
     "MANAGE_NICKNAMES",
-    "MANAGE_ROLES",
     "MANAGE_WEBHOOKS",
     "MANAGE_GUILD_EXPRESSIONS",
     "USE_APPLICATION_COMMANDS",
@@ -278,7 +275,7 @@ permissions = [
 [[role]]
 key = "o-7-brigadier-general"
 id = "826899945037496350"
-name = "O-7 / Brigadier General"
+name = "Emperor's Champion"
 color = 14423100
 hoist = true
 mentionable = false
@@ -375,7 +372,7 @@ permissions = []
 [[role]]
 key = "o-3-captain"
 id = "1196097455121498193"
-name = "O-3 / \tCaptain"
+name = "Chaplain"
 color = 16737894
 hoist = true
 mentionable = false
@@ -467,7 +464,7 @@ permissions = [
 [[role]]
 key = "wo-1-warrant-officer"
 id = "1196098146225369150"
-name = "WO-1 / Warrant Officer"
+name = "Sword Brother"
 color = 16777184
 hoist = true
 mentionable = false
@@ -490,7 +487,7 @@ permissions = []
 [[role]]
 key = "e-9-sergeant-major"
 id = "1254022494961270856"
-name = "E-9 / \tSergeant Major"
+name = "Techmarine"
 color = 2263842
 hoist = true
 mentionable = false
@@ -571,7 +568,7 @@ permissions = ["STREAM", "CONNECT", "SPEAK"]
 [[role]]
 key = "e-1-private"
 id = "1129094459255164968"
-name = "E-1 / Private"
+name = "Initiate"
 color = 14745568
 hoist = true
 mentionable = false
@@ -580,7 +577,7 @@ permissions = []
 [[role]]
 key = "e-0-not-enlisted"
 id = "1344988049460822086"
-name = "E-0 / Not Enlisted"
+name = "Neophyte"
 color = 8421504
 hoist = true
 mentionable = false
@@ -998,20 +995,20 @@ permissions = [
 key = "mess-hall-cat"
 id = "1558401643136024630"
 type = "category"
-name = "MESS HALL"
+name = "REFECTORIUM"
 
 [[channel]]
 key = "general-and-media"
 id = "1275552213803991071"
 type = "text"
-name = "mess-hall"
+name = "refectorium"
 parent = "mess-hall-cat"
 
 [[channel]]
 key = "welcome"
 id = "818168986092830731"
 type = "text"
-name = "briefing-room"
+name = "the-codex"
 parent = "mess-hall-cat"
 topic = "Head over to the Cadet Room for further information"
 
@@ -1036,14 +1033,14 @@ parent = "mess-hall-cat"
 key = "mining-group"
 id = "1409964144039428176"
 type = "voice"
-name = "🟩 | Mess Hall"
+name = "🟩 | Refectorium"
 parent = "mess-hall-cat"
 
 [[channel]]
 key = "general-voice"
 id = "1346807216627384331"
 type = "voice"
-name = "Barracks"
+name = "Cloister"
 parent = "mess-hall-cat"
 
 [[channel]]
@@ -1057,7 +1054,7 @@ parent = "mess-hall-cat"
 key = "comms-cat"
 id = "1558401645275123724"
 type = "category"
-name = "COMMS"
+name = "VOX"
 
 [[channel.overwrite]]
 role = "everyone"
@@ -1073,7 +1070,7 @@ deny = []
 key = "server-status"
 id = "1275774438574657610"
 type = "text"
-name = "comms-server-status"
+name = "vox-server-status"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1090,7 +1087,7 @@ deny = []
 key = "mining-incorporated"
 id = "1301135383689560115"
 type = "text"
-name = "comms-minecraft"
+name = "vox-minecraft"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1107,7 +1104,7 @@ deny = []
 key = "army-rangers-applications-files"
 id = "1196244025783627856"
 type = "text"
-name = "comms-squad"
+name = "vox-squad"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1124,7 +1121,7 @@ deny = []
 key = "survivalist-files"
 id = "1178300676347015238"
 type = "text"
-name = "comms-zomboid"
+name = "vox-zomboid"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1141,7 +1138,7 @@ deny = []
 key = "swat-files"
 id = "1186364920158224385"
 type = "text"
-name = "comms-ready-or-not"
+name = "vox-ready-or-not"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1158,7 +1155,7 @@ deny = []
 key = "wh40k"
 id = "1446046725725753477"
 type = "text"
-name = "comms-wh40k"
+name = "vox-wh40k"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1175,7 +1172,7 @@ deny = []
 key = "aviation-sqd-news"
 id = "1115935391074242581"
 type = "text"
-name = "comms-war-thunder"
+name = "vox-war-thunder"
 parent = "comms-cat"
 topic = "News and Updates for the Meatgrinder from Hell"
 
@@ -1193,7 +1190,7 @@ deny = []
 key = "pathfinding-and-exiles"
 id = "818180678301777970"
 type = "text"
-name = "comms-path-of-exile"
+name = "vox-path-of-exile"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1210,7 +1207,7 @@ deny = []
 key = "donations"
 id = "1196239982344552539"
 type = "text"
-name = "comms-free-games"
+name = "vox-free-games"
 parent = "comms-cat"
 
 [[channel.overwrite]]
@@ -1227,7 +1224,7 @@ deny = []
 key = "engineering"
 id = "1558401646860435568"
 type = "category"
-name = "ENGINEERING"
+name = "FORGE"
 
 [[channel.overwrite]]
 role = "everyone"
@@ -1243,7 +1240,7 @@ deny = []
 key = "engineering-log"
 id = "1558401648660062218"
 type = "forum"
-name = "engineering-log"
+name = "forge-log"
 parent = "engineering"
 
 [[channel.overwrite]]
@@ -1260,7 +1257,7 @@ deny = []
 key = "archive"
 id = "1254033366525677588"
 type = "category"
-name = "ARCHIVE"
+name = "ARCHIVUM"
 
 [[channel.overwrite]]
 role = "everyone"
