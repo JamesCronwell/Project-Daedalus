@@ -656,7 +656,7 @@ id = "818168986092830731"
 type = "text"
 name = "the-codex"
 parent = "mess-hall-cat"
-topic = "Head over to the Cadet Room for further information"
+topic = "The house rules. Looking for a group? Head to <#1558420052347195495>. Anything else: ask a High Marshal."
 
 [[channel.overwrite]]
 role = "everyone"

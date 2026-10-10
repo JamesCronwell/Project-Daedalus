@@ -15,6 +15,17 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  Stage S9: the stale topic on `the-codex` (planned, session applies)
+Brief:     03
+Why:       the topic sends people to "the Cadet Room", which no longer exists, from the channel every newcomer reads first
+Owner yes: "Fix all you need" (BRIEF 03 chat, 2026-10-10), after the session offered this one-line fix; the other topics
+           in the layout are on archived channels or accurate, so nothing else needs it
+Before:    `the-codex` topic: "Head over to the Cadet Room for further information"
+Change:    topic -> "The house rules. Looking for a group? Head to #muster. Anything else: ask a High Marshal." with the
+           `#muster` mention (its id is in the layout). One edit, nothing else
+Rollback:  the previous `discord/layout.toml` from git (the S8 commit, 40b2201), `plan`, `apply`
+Outcome:   -
+
 ## 2026-10-10  Discord (the owner's server)  Stage S8: the `muster` channel and the squad role names (planned, session applies)
 Brief:     03
 Why:       a place to ask for a group, with the squad roles pingable there; the squad roles get the Templars theme like the
