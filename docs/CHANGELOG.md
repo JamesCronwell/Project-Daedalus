@@ -28,7 +28,9 @@ Change:    create the text channel `muster` in REFECTORIUM under `the-codex` (in
            mentionable (War Reporter stays as it is). Expect 1 create, 6 role edits and a reorder; nothing deleted
 Rollback:  the previous `discord/layout.toml` from git (0f4e387), `plan`, `apply`; `muster` stays as an extra for the owner
            to delete by hand (the tool never deletes)
-Outcome:   -
+Outcome:   applied by the session (the owner approving the PowerShell prompts), 8 changes: 6 role edits, `muster`
+           created, the REFECTORIUM reorder; the next `plan` showed 0 changes, 11 yours, 33 extras (the roles still to be
+           deleted by hand)
 
 ## 2026-10-10  plumbing: Discord layout tool  A session may run `plan` and `apply` itself (owner's yes)
 Brief:     03 (the tool is BRIEF 05's)

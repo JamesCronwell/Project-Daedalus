@@ -670,6 +670,7 @@ deny = []
 
 [[channel]]
 key = "muster"
+id = "1558420052347195495"
 type = "text"
 name = "muster"
 parent = "mess-hall-cat"
