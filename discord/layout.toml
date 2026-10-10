@@ -37,7 +37,7 @@ permissions = []
 
 [[role]]
 key = "admin"
-id = ""
+id = "1558401632755261530"
 name = "Admin"
 color = 0
 hoist = false
@@ -1012,13 +1012,13 @@ permissions = [
 
 [[channel]]
 key = "mess-hall-cat"
-id = ""
+id = "1558401643136024630"
 type = "category"
 name = "MESS HALL"
 
 [[channel]]
 key = "comms-cat"
-id = ""
+id = "1558401645275123724"
 type = "category"
 name = "COMMS"
 
@@ -1034,7 +1034,7 @@ deny = []
 
 [[channel]]
 key = "engineering"
-id = ""
+id = "1558401646860435568"
 type = "category"
 name = "ENGINEERING"
 
@@ -1050,7 +1050,7 @@ deny = []
 
 [[channel]]
 key = "engineering-log"
-id = ""
+id = "1558401648660062218"
 type = "forum"
 name = "engineering-log"
 parent = "engineering"
@@ -1093,6 +1093,11 @@ role = "everyone"
 allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
 
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
 [[channel]]
 key = "en-general-chat"
 id = "1263461286776279091"
@@ -1105,6 +1110,11 @@ topic = "ArmA 3 --- English Chat"
 role = "everyone"
 allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
 
 [[channel]]
 key = "photo-tour"
@@ -1119,6 +1129,11 @@ role = "everyone"
 allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
 
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
 [[channel]]
 key = "ro-general-chat"
 id = "1256398424039755847"
@@ -1132,6 +1147,11 @@ role = "everyone"
 allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
 
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
 [[channel]]
 key = "ro-debrief-files-ooc"
 id = "1186382755156738078"
@@ -1144,6 +1164,11 @@ topic = "OUT OF CONTEXT CHAT"
 role = "everyone"
 allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
 
 [[channel]]
 key = "command-structure"
