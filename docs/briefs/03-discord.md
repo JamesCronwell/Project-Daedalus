@@ -1,8 +1,9 @@
 # BRIEF 03: The Discord server, rebuilt around how the group actually uses it
 
 ```
-Status:     in progress: stage S1 of 4 prepared in discord/layout.toml; waiting for the owner's Administrator window
-Commits:    -
+Status:     in progress, on hold at the owner's request (2026-10-10): stages S1-S9 applied; what is left is the owner's
+            by-hand items (see Ask owner) and the closing steps
+Commits:    a4b20d1 (S1-S4), 7fb2129 (S5), 5cf0fb7 (S6), a30ed07 (categories), 0f4e387 (S7), 40b2201 (S8), c11079e (S9)
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's Discord server "Mojo Dojo Casa House"
 Touch:      docs/discord/ (local only, gitignored: it holds friends' names), tools/discord_tree.py, discord/layout.toml
@@ -26,7 +27,7 @@ Done when:  (1) the "after" template, diffed against before-2026-10-09, matches 
             in docs/discord/ (local); the brief's Handover summarises them without friends' names
 ```
 
-## Handover   (last stop: 2026-10-09, after the channel check was pre-filled)
+## Handover   (last stop: 2026-10-10, on hold after S9; the owner is away)
 ```
 State:     tasks 1-2 started; the owner's answers are the gate for task 3.
            - The "before" snapshot: docs/discord/before-2026-10-09.template.json (template rz3WdmpSVFVQ, 2026-10-09
@@ -107,25 +108,39 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              FOUND: Done-when (3) is NOT met. O-10 and O-8 still hold Ban, Kick, Manage Server and Manage Roles, O-9 holds
              Kick and Manage Roles (the checklist only said "untick Administrator"); MEE6's, carl-bot's and Jockie's own
              roles hold Administrator. The tool removes Manage Roles (in S5); Kick, Ban and Manage Server are by hand.
-           - The owner agreed the Black Templars ladder and Military x BT names (S5 prepared: 27 edits, simulated, in
-             discord/layout.toml, uncommitted until applied; CHANGELOG entry written). Other ideas are proposals, not yet
-             agreed: Mention Everyone off the ranks, mentionable squad roles (LFG), `@everyone` trims, a Mod tier, AutoMod,
-             2FA for moderation, Onboarding, an `admin-log` channel, the bot audit.
-           - Deletions: the owner asked a session to delete; refused (irreversible, brief rule, owner not present).
-             docs/discord/delete-list.md (local) has the ordered list: 12 empty categories, 16 empty ranks, 9 dividers,
-             8 dead roles, 3 stray webhooks. After deleting, the matching entries must come out of discord/layout.toml
-             or `plan` stops ("id is not on the server")
-Next:      the owner (back): untick/keep the window as they wish, `plan` (expect 27 changes), the session reads the plan
-           file, `apply`, `plan` again, commit. Then the delete list by hand; then the session removes those entries from
-           the layout. Then decide the proposals above one by one. Then close the window (untick Administrator on the
-           bot's role), `import` to a scratch file, a last `plan`, the template sync for the after-diff
-Ask owner: - nothing open. Answered 2026-10-09: `kerbal-space-launches` is empty and the owner deletes it by hand (so
-             ARCHIVE holds 31, not 32); `engineering-log` is private (Admin only); the channel and category names are as
-             proposed in channels.md section F
-           - (answered earlier) the three people in the bots' role lose Administrator: the checklist removes them from
-             it before it is cut down; they keep their other roles
-Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing on the server is changed
-           (one click expanded a Channels Followed row and was collapsed again; no change made)
+           - 2026-10-10, later: the owner agreed the Black Templars ladder and names; S5 applied (a plan found
+             `company-movement-orders` outside the archive and moved it back; it holds the music bot's instructions, so S6
+             made it the visible read-only `vox-music-bot` in VOX). The owner deleted the 12 empty categories by hand (the
+             session dropped them from the layout first). S7: the hidden `forge-audit` text channel in FORGE, Mention
+             Everyone off High Marshal, Marshal, Castellan and Emperor's Champion; the 33 dead roles (16 empty ranks, 9
+             dividers, 8 dead squad/hall roles) were dropped from the layout and are the owner's to delete. S8: the
+             `muster` looking-for-group channel in REFECTORIUM and the squad roles renamed (Thunderhawk Wing, Scout
+             Company, Assault Squad, Wardens, Servitors, Chroniclers; the first five mentionable). S9: the `the-codex`
+             topic. Every stage's second `plan`: 0 changes; now 11 yours, 33 extras (the roles).
+           - **The loop changed** (owner, 2026-10-10, "Yes, that's the scope"): a session runs `plan` and `apply` itself
+             through its PowerShell tool, each permission prompt approved by the owner being the yes (the owner has only
+             the mobile app today). Recorded in DISCORD-LAYOUT.md and the CHANGELOG. The token is still never read.
+           - Deletions are the owner's, always: the delete-list's remaining sections are the 33 roles (and 3 stray
+             webhooks, after the bot audit). After deleting roles, `plan` should show 0 extras; no layout edit is needed
+             (they are already out of it)
+           - Still unagreed proposals: `@everyone` trims (Create Invite, Expressions, Events), a Mod tier, AutoMod, 2FA for
+             moderation, Onboarding, the bot audit (MEE6, carl-bot, Jockie), `lfg`-style Option B (a MUSTER category with
+             voice rooms, only if the group splits into several voice groups)
+Next:      the owner, when back at the PC (about 10 minutes): delete the 33 roles, then a session runs `plan` (expect 0
+           changes, 0 extras). By hand, any device: Kick, Ban and Manage Server off High Marshal, Marshal and Castellan;
+           Safety Notifications pointed at `forge-audit`; untick Administrator on Layout Admin Bot (the bounded window;
+           still open). Then AutoMod, the `@everyone` trims, 2FA, the bot audit, in a sitting with the session's click
+           path. Closing steps: `import` to a scratch file, a last `plan`, the template sync for
+           `after-2026-10-09.template.json` and its diff, Done-when (1)-(5), mark done, move to done/, stop note to the
+           orchestrator
+Ask owner: - the 33 roles to delete (docs/discord/delete-list.md sections 2-4; 7 have members, none holds any bit);
+           - Done-when (3) is still not met: Kick, Ban and Manage Server on High Marshal, Marshal and Castellan, and
+             Administrator on MEE6's, carl-bot's, Jockie's and the bots' role (MEE6 and carl-bot after the audit);
+           - the Administrator window on Layout Admin Bot is still ticked, and the owner is away: untick it (one toggle)
+             unless they want the session to keep working the server today;
+           - the `vox-music-bot` topic: a line the owner wants, if any
+Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing uncommitted in the repo besides
+           untracked `.codex/` and `AGENTS.md` (not this brief's)
 ```
 
 ## Why
