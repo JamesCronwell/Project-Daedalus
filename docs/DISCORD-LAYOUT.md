@@ -1,11 +1,17 @@
 # The Discord layout tool: how the owner uses it (BRIEF 05)
 
 The server's structure (roles, categories, channels, role overwrites) lives in `discord/layout.toml`. A session edits
-the file; **you** run `plan`, read it, then run `apply`. No session ever holds the token. The tool never deletes: it
-flags extras, and a dropped role overwrite is neutralised (allow 0, deny 0), not removed. Schema: the docstring of
-`tools/discord_layout.py`.
+the file; **you** run `plan`, read it, then run `apply`. No session ever reads or prints the token. The tool never
+deletes: it flags extras, and a dropped role overwrite is neutralised (allow 0, deny 0), not removed. Schema: the
+docstring of `tools/discord_layout.py`.
 
-All commands run in your own PowerShell, in `C:\- Tools\- LLM\Daedalus`, by the full path
+**Who runs it (owner, 2026-10-10: "Yes, that's the scope").** Either you, in your own PowerShell, or a session through
+its PowerShell tool, where your approval of each permission prompt in the app is the yes. A session writes the CHANGELOG
+entry first, runs `plan`, reads the plan file, and applies only a plan whose changes match that entry; anything extra
+stops and comes to you. The token stays in its `.dpapi` file: the tool reads it, a session never opens it. Deletions,
+the powerful toggles and anything the bot can't set stay your clicks.
+
+Commands run in `C:\- Tools\- LLM\Daedalus`, by the full path
 (`python -I "C:\- Tools\- LLM\Daedalus\tools\discord_layout.py" ...`).
 
 ## One-time: make the bot (about 10 minutes)

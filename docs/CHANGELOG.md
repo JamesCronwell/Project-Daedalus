@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  plumbing: Discord layout tool  A session may run `plan` and `apply` itself (owner's yes)
+Brief:     03 (the tool is BRIEF 05's)
+Why:       the owner will have only the mobile Claude app for the rest of the day and can't sit at the PC to paste
+           commands
+Owner yes: "if I approve the modifications you want to do, we're letting you do them" and, to the restated scope,
+           "Yes, that's the scope - we'll see what is required on the go today" (BRIEF 03 chat, 2026-10-10)
+Before:    the owner ran `plan` and `apply` in their own PowerShell; no session ran the tool
+Change:    a session runs them through its PowerShell tool, each permission prompt approved by the owner; CHANGELOG entry
+           first, the plan read before `apply`, only a matching plan applied, extras stop the run; the token is never read,
+           printed or passed (the tool reads its `.dpapi` file); no deletes, no powerful bits. Docs updated:
+           `docs/DISCORD-LAYOUT.md`, BRIEF 03's decision (2)
+Rollback:  revert the two doc edits; the owner runs the tool by hand again. A leaked token: Reset Token in the Developer
+           Portal, rerun `tools\discord-setpass.ps1`
+Outcome:   -
+
 ## 2026-10-10  Discord (the owner's server)  Stage S7 and the 33 dead roles (planned, owner applies and deletes by hand)
 Brief:     03
 Why:       the 33 roles are empty ranks, visual dividers and roles for archived squads; `forge-audit` gives Discord's

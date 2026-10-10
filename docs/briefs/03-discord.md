@@ -75,7 +75,9 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              permission overwrites, each with a stable key tied to its Discord id (a rename keeps history, webhooks and
              follows); the file holds no people, so it is committed; (2) the loop: the owner tells a session what to
              change (a theme is a rename), the session edits the file and shows the diff, the OWNER runs `plan` (reads
-             the live server, writes a diff file the session may read) and then `apply`; no session ever holds the token;
+             the live server, writes a diff file the session may read) and then `apply`; no session ever holds the token
+             (relaxed by the owner, 2026-10-10: a session may run `plan` and `apply` itself, each PowerShell permission
+             prompt approved by the owner being the yes; the token is still never read or printed, see DISCORD-LAYOUT.md);
              (3) scope: structure only; who holds which role, messages, bots, webhooks, follows and server settings are
              not managed; (4) it never deletes: extras are flagged, or channels go to the archive; real deletes stay by
              hand; (5) a standing bot the owner owns with only Manage Channels, Manage Roles and View Channels, its role
