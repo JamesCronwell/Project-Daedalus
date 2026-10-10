@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Crusader  Docker Desktop started (not reconfigured) for Hephaestus's BRIEF 62 database tests
+Brief:     - (a request from Hephaestus; its BRIEF 62 needs a throwaway local Postgres container, never on Bastion)
+Why:       `webapp/api/test_writes.py` needs a local database
+Owner yes: standing: "If Hephaestus needs small infrastructure work from you, accept but be mindful of destruction"
+           (Orchestrator - Daedalus, 2026-10-10)
+Before:    service com.docker.service Stopped, StartType Manual; no "Docker Desktop" process
+Change:    start "C:\Program Files\Docker\Docker\Docker Desktop.exe". No setting changed; the start type stays Manual.
+           If it hits the old stale-socket error, stop and ask: no folder renames
+Rollback:  quit Docker Desktop (tray > Quit); `com.docker.service` back to Stopped
+Outcome:   failed at 06:56 UTC, nothing changed. Docker Desktop 4.76.0 shows "An unexpected error occurred": it can't
+           remove the stale socket `%LOCALAPPDATA%\Docker\run\dockerInference` ("The file cannot be accessed by the
+           system"). The engine never came up, and com.docker.service stayed Stopped. The guard refused to stop the
+           hung `docker version` call (a process kill). Waiting for the owner: click Quit in the dialog; the known fix
+           is renaming `run` (and `secrets-engine` if needed), the owner's yes first
+
 ## 2026-10-09  plumbing  Global CLAUDE.md: usage habits revised, `/compact` past ~250k instead of the morning `/clear`
 Brief:     - (orchestrator; docs/DECISIONS.md, "Usage and the weekly limit")
 Why:       Calypso and Hephaestus objected that `/clear` loses the working memory. This session's transcript: re-reading

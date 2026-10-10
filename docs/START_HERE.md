@@ -47,6 +47,9 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 - **Projects keep their software; Daedalus owns the box.** The table is in DIRECTION.
 - Deploys stay the project's. Daedalus gets a heads-up and stays off that box during one.
 - Before changing anything a project relies on, tell that project's orchestrator.
+- **Standing yes for Hephaestus's small requests** (owner, 2026-10-10: "If Hephaestus needs small infrastructure work
+  from you, accept but be mindful of destruction"). A small, reversible change gets a CHANGELOG entry first, as always.
+  Anything that deletes, renames or reconfigures still comes to the owner.
 
 ## 4. Guardrails (standing invariants)
 1. **Read before change.** Nothing changes on a machine without the owner's yes, given in this chat, in a session they

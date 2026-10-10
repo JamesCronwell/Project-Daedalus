@@ -5,6 +5,11 @@ rejected, and where the outcome now lives. **Before an orchestrator's `/compact`
 and START_HERE §6 is refreshed (owner, 2026-10-09). The briefs, DIRECTION and IDEAS keep the outcomes; this file keeps
 the trail. Friends' names never go here.
 
+## 2026-10-10
+- **A standing yes for Hephaestus's small infrastructure requests:** "If Hephaestus needs small infrastructure work
+  from you, accept but be mindful of destruction". Read as: small and reversible goes ahead, with a CHANGELOG entry
+  first; anything that deletes, renames or reconfigures still comes to the owner. Lives in START_HERE §3.
+
 ## 2026-10-09: Orchestrator - Daedalus, its first day
 
 ### How Daedalus runs
