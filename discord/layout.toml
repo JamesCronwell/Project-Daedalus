@@ -1,0 +1,2111 @@
+# Discord layout (BRIEF 05). Edit it, then the owner runs plan and apply. See tools/discord_layout.py.
+version = 1
+guild_id = "818168985383075863"
+guild_name = "Mojo Dojo Casa House (Vanatorii de Munte)"
+
+[[role]]
+key = "layout-admin-bot"
+id = "1558397533703901287"
+name = "Layout Admin Bot"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "MANAGE_CHANNELS",
+    "ADD_REACTIONS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "CONNECT",
+    "SPEAK",
+    "MANAGE_ROLES",
+    "MANAGE_WEBHOOKS",
+]
+
+[[role]]
+key = "high-command"
+id = "1196095201844940842"
+name = "/ HIGH COMMAND /"
+color = 16777215
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "o-10-general"
+id = "818171594845061171"
+name = "O-10 / General"
+color = 16766720
+hoist = true
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "KICK_MEMBERS",
+    "BAN_MEMBERS",
+    "ADMINISTRATOR",
+    "MANAGE_CHANNELS",
+    "MANAGE_GUILD",
+    "ADD_REACTIONS",
+    "VIEW_AUDIT_LOG",
+    "PRIORITY_SPEAKER",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "SEND_TTS_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "VIEW_GUILD_INSIGHTS",
+    "CONNECT",
+    "SPEAK",
+    "MUTE_MEMBERS",
+    "DEAFEN_MEMBERS",
+    "MOVE_MEMBERS",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "MANAGE_NICKNAMES",
+    "MANAGE_ROLES",
+    "MANAGE_WEBHOOKS",
+    "MANAGE_GUILD_EXPRESSIONS",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "MANAGE_EVENTS",
+    "MANAGE_THREADS",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+    "USE_EMBEDDED_ACTIVITIES",
+    "MODERATE_MEMBERS",
+    "USE_SOUNDBOARD",
+    "CREATE_GUILD_EXPRESSIONS",
+    "CREATE_EVENTS",
+    "USE_EXTERNAL_SOUNDS",
+    "SEND_VOICE_MESSAGES",
+    "BIT_48",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "o-9-lieutenant-general"
+id = "1193567424126140506"
+name = "O-9 / Lieutenant General"
+color = 12632256
+hoist = true
+mentionable = false
+permissions = [
+    "KICK_MEMBERS",
+    "ADMINISTRATOR",
+    "MANAGE_CHANNELS",
+    "ADD_REACTIONS",
+    "PRIORITY_SPEAKER",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "SEND_TTS_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "MUTE_MEMBERS",
+    "DEAFEN_MEMBERS",
+    "MOVE_MEMBERS",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "MANAGE_NICKNAMES",
+    "MANAGE_ROLES",
+    "USE_APPLICATION_COMMANDS",
+    "MANAGE_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+    "USE_EMBEDDED_ACTIVITIES",
+    "MODERATE_MEMBERS",
+    "USE_SOUNDBOARD",
+    "USE_EXTERNAL_SOUNDS",
+    "SEND_VOICE_MESSAGES",
+    "BIT_48",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "admin-mechanized-transport"
+id = "818178494072750091"
+name = "ADMIN / MECHANIZED TRANSPORT"
+color = 13047173
+hoist = false
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADMINISTRATOR",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+]
+
+[[role]]
+key = "admin-motorized-transport"
+id = "1129098093007228960"
+name = "ADMIN / MOTORIZED TRANSPORT"
+color = 2003199
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "KICK_MEMBERS",
+    "BAN_MEMBERS",
+    "ADMINISTRATOR",
+    "MANAGE_CHANNELS",
+    "ADD_REACTIONS",
+    "VIEW_AUDIT_LOG",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "MUTE_MEMBERS",
+    "DEAFEN_MEMBERS",
+    "MOVE_MEMBERS",
+    "USE_VAD",
+    "MANAGE_ROLES",
+    "MANAGE_WEBHOOKS",
+    "MANAGE_GUILD_EXPRESSIONS",
+    "USE_APPLICATION_COMMANDS",
+    "MANAGE_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "SEND_MESSAGES_IN_THREADS",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "officers"
+id = "1344989444494594068"
+name = "/ OFFICERS /"
+color = 16777215
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "o-8-major-general"
+id = "1199646176123817994"
+name = "O-8 / Major General"
+color = 9109504
+hoist = true
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "KICK_MEMBERS",
+    "BAN_MEMBERS",
+    "ADMINISTRATOR",
+    "MANAGE_CHANNELS",
+    "MANAGE_GUILD",
+    "ADD_REACTIONS",
+    "VIEW_AUDIT_LOG",
+    "PRIORITY_SPEAKER",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "SEND_TTS_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "VIEW_GUILD_INSIGHTS",
+    "CONNECT",
+    "SPEAK",
+    "MUTE_MEMBERS",
+    "DEAFEN_MEMBERS",
+    "MOVE_MEMBERS",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "MANAGE_NICKNAMES",
+    "MANAGE_ROLES",
+    "MANAGE_WEBHOOKS",
+    "MANAGE_GUILD_EXPRESSIONS",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "MANAGE_THREADS",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+    "USE_EMBEDDED_ACTIVITIES",
+    "MODERATE_MEMBERS",
+    "USE_SOUNDBOARD",
+    "CREATE_GUILD_EXPRESSIONS",
+    "CREATE_EVENTS",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "o-7-brigadier-general"
+id = "826899945037496350"
+name = "O-7 / Brigadier General"
+color = 14423100
+hoist = true
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADMINISTRATOR",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "MANAGE_NICKNAMES",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "MODERATE_MEMBERS",
+]
+
+[[role]]
+key = "o-6-colonel"
+id = "818174456182734889"
+name = "O-6 / Colonel"
+color = 16720896
+hoist = true
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADMINISTRATOR",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "MODERATE_MEMBERS",
+]
+
+[[role]]
+key = "o-5-lieutenant-colonel"
+id = "826899863022731264"
+name = "O-5 / Lieutenant Colonel"
+color = 16737095
+hoist = true
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "KICK_MEMBERS",
+    "BAN_MEMBERS",
+    "MANAGE_CHANNELS",
+    "MANAGE_GUILD",
+    "ADD_REACTIONS",
+    "VIEW_AUDIT_LOG",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "VIEW_GUILD_INSIGHTS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "MANAGE_NICKNAMES",
+    "MANAGE_ROLES",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "MODERATE_MEMBERS",
+    "CREATE_GUILD_EXPRESSIONS",
+    "BIT_52",
+]
+
+[[role]]
+key = "o-4-major"
+id = "1176127923007262820"
+name = "O-4 / Major"
+color = 16728128
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "o-3-captain"
+id = "1196097455121498193"
+name = "O-3 / \tCaptain"
+color = 16737894
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "junior-officers"
+id = "1196096891180560484"
+name = "/ JUNIOR OFFICERS /"
+color = 16777215
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "o-2-first-lieutenant"
+id = "1196097560776019978"
+name = "O-2 / First Lieutenant"
+color = 16753920
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "o-1-second-lieutenant"
+id = "1196097602127667301"
+name = "O-1 / Second Lieutenant"
+color = 16759603
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "warrants"
+id = "1269955401319845929"
+name = "/ WARRANTS /"
+color = 16777215
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "cwo-chief-warrant-officer-5"
+id = "1196097884681158717"
+name = "CWO / Chief Warrant Officer 5"
+color = 14329120
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "wo-4-chief-warrant-officer-4"
+id = "1196098029611139092"
+name = "WO-4 / Chief Warrant Officer 4"
+color = 13934615
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "wo-3-chief-warrant-officer-3"
+id = "1196098038050066443"
+name = "WO-3 / Chief Warrant Officer 3"
+color = 16776960
+hoist = true
+mentionable = false
+permissions = [
+    "STREAM",
+    "CONNECT",
+    "SPEAK",
+    "USE_SOUNDBOARD",
+]
+
+[[role]]
+key = "wo-2-chief-warrant-officer-2"
+id = "1196098118224183357"
+name = "WO-2 / \tChief Warrant Officer 2"
+color = 16777113
+hoist = true
+mentionable = false
+permissions = [
+    "STREAM",
+    "CONNECT",
+    "SPEAK",
+    "USE_SOUNDBOARD",
+    "SEND_VOICE_MESSAGES",
+]
+
+[[role]]
+key = "wo-1-warrant-officer"
+id = "1196098146225369150"
+name = "WO-1 / Warrant Officer"
+color = 16777184
+hoist = true
+mentionable = false
+permissions = [
+    "STREAM",
+    "CONNECT",
+    "SPEAK",
+    "USE_SOUNDBOARD",
+]
+
+[[role]]
+key = "senior-enlisted"
+id = "1344989875530895434"
+name = "/ SENIOR ENLISTED /"
+color = 16777215
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "e-9-sergeant-major"
+id = "1254022494961270856"
+name = "E-9 / \tSergeant Major"
+color = 2263842
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "e-8-master-sergeant"
+id = "1254022408441036850"
+name = "E-8 / Master Sergeant"
+color = 7048739
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "e-7-gunnery-sergeant"
+id = "1254022262021951570"
+name = "E-7 / Gunnery Sergeant"
+color = 3329330
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "e-6-staff-sergeant"
+id = "1196098207458009231"
+name = "E-6 / Staff Sergeant"
+color = 2142890
+hoist = true
+mentionable = false
+permissions = ["STREAM", "CONNECT", "SPEAK"]
+
+[[role]]
+key = "junior-enlisted"
+id = "1344990039435640864"
+name = "/ JUNIOR ENLISTED /"
+color = 16777215
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "e-5-sergeant"
+id = "1196098269160419348"
+name = "E-5 / Sergeant"
+color = 9498256
+hoist = true
+mentionable = false
+permissions = ["CONNECT", "SPEAK"]
+
+[[role]]
+key = "e-4-corporal"
+id = "1196098303490793503"
+name = "E-4 / Corporal"
+color = 10026904
+hoist = true
+mentionable = false
+permissions = ["STREAM", "CONNECT", "SPEAK"]
+
+[[role]]
+key = "e-3-lance-corporal"
+id = "1196098334323134565"
+name = "E-3 / Lance Corporal"
+color = 12320699
+hoist = true
+mentionable = false
+permissions = ["STREAM", "CONNECT", "SPEAK"]
+
+[[role]]
+key = "e-2-private-first-class"
+id = "1196098360436854895"
+name = "E-2 / Private First Class"
+color = 13959124
+hoist = true
+mentionable = false
+permissions = ["STREAM", "CONNECT", "SPEAK"]
+
+[[role]]
+key = "e-1-private"
+id = "1129094459255164968"
+name = "E-1 / Private"
+color = 14745568
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "e-0-not-enlisted"
+id = "1344988049460822086"
+name = "E-0 / Not Enlisted"
+color = 8421504
+hoist = true
+mentionable = false
+permissions = []
+
+[[role]]
+key = "op-squads"
+id = "1196098454913552444"
+name = "/ OP. SQUADS /"
+color = 16316407
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "hrt-swat-sqd"
+id = "818178126978744341"
+name = "HRT // SWAT Sqd."
+color = 327680
+hoist = false
+mentionable = true
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+]
+
+[[role]]
+key = "aviation-sqd"
+id = "827202709399535636"
+name = "Aviation Sqd."
+color = 4620980
+hoist = false
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+]
+
+[[role]]
+key = "survivalist-sqd"
+id = "1178300333299089429"
+name = "Survivalist Sqd."
+color = 2263842
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "miner-sqd"
+id = "1275775532029575239"
+name = "Miner Sqd."
+color = 9127187
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "temu-worker-sqd"
+id = "1297885122976284702"
+name = "Temu Worker Sqd."
+color = 13808780
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "war-reporter-sqd"
+id = "1129093283566600232"
+name = "War Reporter Sqd."
+color = 8388736
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "pathfinder-sqd"
+id = "832209905792057346"
+name = "Pathfinder Sqd."
+color = 16753920
+hoist = false
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+]
+
+[[role]]
+key = "technical-engineering-sqd"
+id = "1129107354391162921"
+name = "Technical Engineering Sqd."
+color = 52945
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "hall-passes"
+id = "1196099072508035152"
+name = "/ HALL PASSES /"
+color = 15986671
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "command-room-hp"
+id = "1129091330539274380"
+name = "Command Room #HP"
+color = 4734347
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "archives-hp"
+id = "1196101580802502846"
+name = "Archives #HP"
+color = 6970061
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "admin-hp"
+id = "1196102826363977779"
+name = "Admin #HP"
+color = 4915330
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "off-duty"
+id = "1196099829118546023"
+name = "/ OFF-DUTY /"
+color = 16315893
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "chief-modder"
+id = "1259486349829083287"
+name = "Chief Modder"
+color = 16711935
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "simp-ul-lui-dan"
+id = "1193934145118801981"
+name = "Simp-ul lui Dan"
+color = 16758465
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "server-booster"
+id = "852710917790760992"
+name = "Server Booster"
+color = 16761292
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+]
+
+[[role]]
+key = "inactive-pending-removal"
+id = "1306232899913121812"
+name = "INACTIVE -- PENDING REMOVAL"
+color = 0
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "carl-bot"
+id = "818176386471559211"
+name = "carl-bot"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "KICK_MEMBERS",
+    "BAN_MEMBERS",
+    "ADMINISTRATOR",
+    "MANAGE_CHANNELS",
+    "MANAGE_GUILD",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "SEND_TTS_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "CONNECT",
+    "SPEAK",
+    "MUTE_MEMBERS",
+    "DEAFEN_MEMBERS",
+    "MOVE_MEMBERS",
+    "USE_VAD",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "jockie-music"
+id = "1102597847091777589"
+name = "Jockie Music"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = ["ADMINISTRATOR"]
+
+[[role]]
+key = "snailbot"
+id = "1116621946487062531"
+name = "SnailBot"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "MANAGE_WEBHOOKS",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "free-stuff"
+id = "1196240114297340047"
+name = "Free Stuff"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "ADD_REACTIONS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "MANAGE_WEBHOOKS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+
+[[role]]
+key = "patchbot"
+id = "1196243379495911436"
+name = "PatchBot"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "MANAGE_MESSAGES",
+    "MANAGE_WEBHOOKS",
+    "MANAGE_THREADS",
+    "BIT_51",
+    "BIT_52",
+]
+
+[[role]]
+key = "readybot-io"
+id = "1300389946447888387"
+name = "Readybot.io"
+color = 0
+hoist = false
+mentionable = false
+managed = true
+permissions = [
+    "ADD_REACTIONS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+
+[[role]]
+key = "dungeoneering-game-master"
+id = "1401170348736643195"
+name = "Dungeoneering - Game Master"
+color = 15844367
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "dungeoneering-member"
+id = "1401170566248927282"
+name = "Dungeoneering - Member"
+color = 12745742
+hoist = false
+mentionable = false
+permissions = []
+
+[[role]]
+key = "everyone"
+id = "818168985383075863"
+name = "@everyone"
+color = 0
+hoist = false
+mentionable = false
+permissions = [
+    "CREATE_INSTANT_INVITE",
+    "ADD_REACTIONS",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "USE_EXTERNAL_EMOJIS",
+    "CONNECT",
+    "SPEAK",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "USE_APPLICATION_COMMANDS",
+    "REQUEST_TO_SPEAK",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+    "USE_EMBEDDED_ACTIVITIES",
+    "USE_SOUNDBOARD",
+    "USE_EXTERNAL_SOUNDS",
+    "SEND_VOICE_MESSAGES",
+    "BIT_47",
+    "BIT_48",
+    "SEND_POLLS",
+    "USE_EXTERNAL_APPS",
+]
+
+[[channel]]
+key = "command-structure"
+id = "1196102381818101841"
+type = "category"
+name = "<<< COMMAND STRUCTURE >>>"
+
+[[channel]]
+key = "administrative-hall"
+id = "829647655922565161"
+type = "category"
+name = "// Administrative Hall //"
+
+[[channel.overwrite]]
+role = "admin-hp"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "company-movement-orders"
+id = "818169336782782504"
+type = "text"
+name = "company-movement-orders"
+parent = "administrative-hall"
+
+[[channel.overwrite]]
+role = "admin-hp"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "base-announcements"
+id = "818177046420520961"
+type = "text"
+name = "base-announcements"
+parent = "administrative-hall"
+
+[[channel.overwrite]]
+role = "admin-hp"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "command-centre"
+id = "1129092503061139617"
+type = "category"
+name = "// Command Centre //"
+
+[[channel.overwrite]]
+role = "command-room-hp"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "the-safe-room"
+id = "818173951729598524"
+type = "voice"
+name = "The Safe Room"
+parent = "command-centre"
+
+[[channel.overwrite]]
+role = "command-room-hp"
+allow = [
+    "STREAM",
+    "VIEW_CHANNEL",
+    "CONNECT",
+    "SPEAK",
+]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "sit-rep"
+id = "1129093592372228187"
+type = "text"
+name = "sit-rep"
+parent = "command-centre"
+
+[[channel.overwrite]]
+role = "command-room-hp"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "war-reporter-room"
+id = "1129107969448091658"
+type = "text"
+name = "war-reporter-room"
+parent = "command-centre"
+
+[[channel.overwrite]]
+role = "war-reporter-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "quiet-lounge"
+id = "818174311398375424"
+type = "text"
+name = "quiet-lounge"
+parent = "command-centre"
+nsfw = true
+
+[[channel.overwrite]]
+role = "command-room-hp"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "archive"
+id = "1254033366525677588"
+type = "category"
+name = "// ARCHIVE //"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "romanian-army-quarters"
+id = "1254033483291037728"
+type = "voice"
+name = "Romanian Army Quarters"
+parent = "archive"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "en-general-chat"
+id = "1263461286776279091"
+type = "text"
+name = "en-general-chat"
+parent = "archive"
+topic = "ArmA 3 --- English Chat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "photo-tour"
+id = "1254110900676464741"
+type = "text"
+name = "photo-tour"
+parent = "archive"
+topic = "In-Game Media"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "ro-general-chat"
+id = "1256398424039755847"
+type = "text"
+name = "ro-general-chat"
+parent = "archive"
+topic = "ArmA 3 --- Romanian Chat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "ro-debrief-files-ooc"
+id = "1186382755156738078"
+type = "text"
+name = "ro-debrief-files-ooc"
+parent = "archive"
+topic = "OUT OF CONTEXT CHAT"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "op-squads"
+id = "1196102298473078825"
+type = "category"
+name = "<<< OP. SQUADS  >>>"
+
+[[channel]]
+key = "minecraft-sqd"
+id = "1275551719341817897"
+type = "category"
+name = "// MINECRAFT SQD. //"
+
+[[channel]]
+key = "mining-group"
+id = "1409964144039428176"
+type = "voice"
+name = "🟩 | Mining Group"
+parent = "minecraft-sqd"
+
+[[channel]]
+key = "server-status"
+id = "1275774438574657610"
+type = "text"
+name = "server-status"
+parent = "minecraft-sqd"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = [
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+
+[[channel]]
+key = "general-and-media"
+id = "1275552213803991071"
+type = "text"
+name = "general-and-media"
+parent = "minecraft-sqd"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["EMBED_LINKS", "CREATE_PUBLIC_THREADS"]
+
+[[channel]]
+key = "mining-incorporated"
+id = "1301135383689560115"
+type = "text"
+name = "mining-incorporated"
+parent = "minecraft-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "survivalist-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "miner-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "dungeoneering"
+id = "1401170765684015185"
+type = "category"
+name = "// Dungeoneering //"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "dungeoneering-lobby-1"
+id = "1401171030839394457"
+type = "voice"
+name = "Dungeoneering - Lobby 1"
+parent = "dungeoneering"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "dungeoneering-forums"
+id = "1401171088007761951"
+type = "forum"
+name = "dungeoneering-forums"
+parent = "dungeoneering"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "dungeoneering-general-chat"
+id = "1401170957141409944"
+type = "text"
+name = "dungeoneering-general-chat"
+parent = "dungeoneering"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "dnd"
+id = "1459291643239731441"
+type = "text"
+name = "dnd"
+parent = "dungeoneering"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "wh40k"
+id = "1446046725725753477"
+type = "text"
+name = "wh40k"
+parent = "dungeoneering"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "wh40k-guides-and-gallery"
+id = "1534974650906443876"
+type = "text"
+name = "wh40k-guides-and-gallery"
+parent = "dungeoneering"
+
+[[channel.overwrite]]
+role = "dungeoneering-game-master"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "dungeoneering-member"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "survivalist-sqd"
+id = "1178300529735114763"
+type = "category"
+name = "// Survivalist Sqd. //"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "survivalist-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "project-zomboid"
+id = "1344984900985688086"
+type = "voice"
+name = "Project Zomboid"
+parent = "survivalist-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "survivalist-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "survivalist-files"
+id = "1178300676347015238"
+type = "text"
+name = "survivalist-files"
+parent = "survivalist-sqd"
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = [
+    "MANAGE_CHANNELS",
+    "ADD_REACTIONS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "SEND_TTS_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "USE_APPLICATION_COMMANDS",
+    "MANAGE_THREADS",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "USE_EXTERNAL_STICKERS",
+    "SEND_MESSAGES_IN_THREADS",
+    "USE_EMBEDDED_ACTIVITIES",
+    "SEND_VOICE_MESSAGES",
+    "BIT_51",
+    "BIT_52",
+]
+deny = []
+
+[[channel.overwrite]]
+role = "survivalist-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = [
+    "SEND_MESSAGES",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "swat-sqd"
+id = "1186364825140461701"
+type = "category"
+name = "// SWAT Sqd. //"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "hrt-swat-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "swat-units"
+id = "1344985225477886044"
+type = "voice"
+name = "SWAT Units"
+parent = "swat-sqd"
+user_limit = 6
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "hrt-swat-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "swat-files"
+id = "1186364920158224385"
+type = "text"
+name = "swat-files"
+parent = "swat-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "hrt-swat-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "army-rangers-applications-files"
+id = "1196244025783627856"
+type = "text"
+name = "army-rangers-applications-files"
+parent = "swat-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "hrt-swat-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "helldiving-quarters"
+id = "1210156504217288716"
+type = "text"
+name = "helldiving-quarters"
+parent = "swat-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "hrt-swat-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "technical-engineering-sqd"
+id = "1129107234283077784"
+type = "category"
+name = "// Technical Engineering Sqd. //"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "proving-ground"
+id = "818173483107483718"
+type = "text"
+name = "proving-ground"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "internet-tracking-files"
+id = "1174810046878711869"
+type = "text"
+name = "internet-tracking-files"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "it-engineering"
+id = "1177566154894618717"
+type = "text"
+name = "it-engineering"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "audio-engineering"
+id = "1190603563488002169"
+type = "text"
+name = "audio-engineering"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "assembly-line"
+id = "1201283241026523270"
+type = "text"
+name = "assembly-line"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "tech-engineering"
+id = "1196245144299638894"
+type = "text"
+name = "tech-engineering"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "finances"
+id = "1301132169049149460"
+type = "text"
+name = "finances"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "news"
+id = "1301132311198175264"
+type = "text"
+name = "news"
+parent = "technical-engineering-sqd"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
+deny = []
+
+[[channel.overwrite]]
+role = "technical-engineering-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "aviation-sqd"
+id = "1129099200056016906"
+type = "category"
+name = "// Aviation Sqd. //"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = [
+    "MANAGE_CHANNELS",
+    "VIEW_CHANNEL",
+    "CONNECT",
+    "BIT_52",
+]
+deny = []
+
+[[channel.overwrite]]
+role = "aviation-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "usaf-sqd-101"
+id = "1129104665259278387"
+type = "voice"
+name = "USAF Sqd. 101"
+parent = "aviation-sqd"
+user_limit = 4
+
+[[channel.overwrite]]
+role = "aviation-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "usaf-sqd-102"
+id = "1129104924395982960"
+type = "voice"
+name = "USAF Sqd. 102"
+parent = "aviation-sqd"
+user_limit = 4
+
+[[channel.overwrite]]
+role = "aviation-sqd"
+allow = ["VIEW_CHANNEL", "CONNECT"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "aviation-files"
+id = "1129105505214791800"
+type = "forum"
+name = "aviation-files"
+parent = "aviation-sqd"
+topic = "Keep it related to War Thunder's vehicles, tactics and so forth"
+
+[[channel.overwrite]]
+role = "o-6-colonel"
+allow = [
+    "MANAGE_CHANNELS",
+    "VIEW_CHANNEL",
+    "CONNECT",
+    "BIT_52",
+]
+deny = []
+
+[[channel.overwrite]]
+role = "aviation-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL"]
+
+[[channel]]
+key = "aviation-sqd-news"
+id = "1115935391074242581"
+type = "text"
+name = "aviation-sqd-news"
+parent = "aviation-sqd"
+topic = "News and Updates for the Meatgrinder from Hell"
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = [
+    "ADD_REACTIONS",
+    "SEND_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "USE_EXTERNAL_EMOJIS",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+deny = []
+
+[[channel.overwrite]]
+role = "aviation-sqd"
+allow = [
+    "SEND_MESSAGES",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = [
+    "SEND_MESSAGES",
+    "CREATE_PUBLIC_THREADS",
+    "CREATE_PRIVATE_THREADS",
+    "SEND_MESSAGES_IN_THREADS",
+]
+
+[[channel]]
+key = "pathfinders-sqd"
+id = "818169664731217920"
+type = "category"
+name = "// Pathfinders Sqd. //"
+
+[[channel.overwrite]]
+role = "pathfinder-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = [
+    "MANAGE_CHANNELS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "MANAGE_ROLES",
+    "SEND_MESSAGES_IN_THREADS",
+    "BIT_52",
+]
+
+[[channel]]
+key = "path-of-crying"
+id = "1223279589439176785"
+type = "voice"
+name = "Path of Crying"
+parent = "pathfinders-sqd"
+
+[[channel.overwrite]]
+role = "pathfinder-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = [
+    "MANAGE_CHANNELS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "MANAGE_ROLES",
+    "SEND_MESSAGES_IN_THREADS",
+    "BIT_52",
+]
+
+[[channel]]
+key = "pathfinding-and-exiles"
+id = "818180678301777970"
+type = "text"
+name = "pathfinding-and-exiles"
+parent = "pathfinders-sqd"
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["VIEW_CHANNEL", "SEND_MESSAGES"]
+deny = []
+
+[[channel.overwrite]]
+role = "pathfinder-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "SEND_MESSAGES"]
+
+[[channel]]
+key = "poe-general"
+id = "1223279929203097661"
+type = "text"
+name = "poe-general"
+parent = "pathfinders-sqd"
+
+[[channel.overwrite]]
+role = "pathfinder-sqd"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = [
+    "MANAGE_CHANNELS",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "MANAGE_ROLES",
+    "SEND_MESSAGES_IN_THREADS",
+    "BIT_52",
+]
+
+[[channel]]
+key = "off-duty"
+id = "1196101890442788984"
+type = "category"
+name = "<<< OFF-DUTY >>>"
+
+[[channel]]
+key = "general-voice"
+id = "1346807216627384331"
+type = "voice"
+name = "General Voice"
+parent = "off-duty"
+
+[[channel]]
+key = "welcome"
+id = "818168986092830731"
+type = "text"
+name = "welcome"
+parent = "off-duty"
+topic = "Head over to the Cadet Room for further information"
+
+[[channel]]
+key = "donations"
+id = "1196239982344552539"
+type = "text"
+name = "donations"
+parent = "off-duty"
+
+[[channel]]
+key = "general-chat"
+id = "1266087950761066566"
+type = "text"
+name = "general-chat"
+parent = "off-duty"

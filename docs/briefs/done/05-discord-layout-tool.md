@@ -1,8 +1,9 @@
 # BRIEF 05: The Discord layout lives in the repo, and the owner applies changes with plan and apply
 
 ```
-Status:     in progress (tasks 1-3 done; 4-7 wait for the owner)
-Commits:    -
+Status:     done (2026-10-10)
+Commits:    dd28df8 (tool, tests, docs), c3dcf5a (position-tie fix), 3b03530 and 2bc462e (records), and the closing
+            commit that adds discord/layout.toml and moves this brief to done/
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's test server, then "Mojo Dojo Casa House"; the token's protected file on Crusader
 Touch:      tools/discord_layout.py, tools/discord_layout_test.py, discord/layout.toml (structure only; committed after
@@ -59,11 +60,22 @@ State:     tasks 1-3 done. Done-when (1) is green: `python -I tools/discord_layo
            - A real-Discord bug found and fixed (c3dcf5a): a new role can share the bot's position number, and the older
              role ranks higher; the tool now ranks by (position, age). Known gap: a role REORDER while positions tie
              isn't proven (it reuses the slots' position values); not needed so far.
-Next:      task 6, the live server: a CHANGELOG entry first, then the owner's separate yes, invite, import, then
-           `check-template` against docs/discord/before-2026-10-09.template.json. Task 7: `names` check with the owner,
-           commit discord/layout.toml (no people's names), mark the brief done and move it to done/
-Ask owner: - the yes to invite the bot to the LIVE server (Mojo Dojo Casa House), and its server id; the bot's role
-             dragged above the roles it should edit; Done-when (4)'s `check-template` output to read
+           - 2026-10-10, live server (owner's yes in the chat, CHANGELOG entry first): the bot joined, the owner ran
+             import (61 roles, 59 channels/categories, 0 member overwrites) and plan (0 changes, 0 yours, 0 extras).
+             `check-template` against the "before" template: ONE difference, the category `// Kerbal Space Program //`
+             and its only channel `kerbal-space-launches`, which the owner deleted by hand (61 vs 59). Everything else
+             matches by name and position. Done-when (4) met.
+           - The names check: the owner confirmed the list. One role, `Simp-ul lui Dan`, holds a person's first name;
+             the owner waived the "no people's names" rule for it ("A", 2026-10-10): the repo is private. `Chief Modder`
+             is a title, fine. discord/layout.toml is committed.
+           - Done-when (5) met: the token lives only in the owner's password manager and the DPAPI file; PLUMBING row and
+             BACKUP-MAP row 18 say so (rotation steps in the latter).
+           - For BRIEF 03: edit discord/layout.toml to the target, the owner runs plan then apply per round (see
+             docs/DISCORD-LAYOUT.md). Apply writes new ids back into the file, so commit it after each round. A role's
+             REORDER while positions tie is unproven. The bot cannot set Administrator, Manage Server, Kick, Ban:
+             those lines come out as "yours" and stay by hand (the checklist already has them as the owner's)
+Next:      nothing in this brief. The orchestrator updates START_HERE section 6 (BRIEF 05 is no longer open) and pushes
+Ask owner: -
 Dirty:     nothing on any machine or server; no secret anywhere. Not pushed (the orchestrator pushes main)
 ```
 

@@ -256,4 +256,7 @@ Change:    the owner adds the bot (View Channels, Manage Channels, Manage Roles,
            Manage Server, Kick, Ban) and drags its role up. Then ONLY `import` and `check-template` (read-only). No
            plan is applied there in this brief
 Rollback:  the owner kicks the bot (Server Settings > Members); its role goes with it. Nothing else changes
-Outcome:   (to fill in after the import and check-template)
+Outcome:   done 2026-10-10. The bot joined; the owner ran import (61 roles, 59 channels and categories) and plan (0
+           changes, 0 yours, 0 extras). check-template: one difference, the category `// Kerbal Space Program //` with
+           its only channel, deleted by hand by the owner. Nothing was applied on the live server. `discord/layout.toml`
+           committed after the owner's names check
