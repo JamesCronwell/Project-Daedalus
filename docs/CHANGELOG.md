@@ -35,7 +35,9 @@ Change:    (1) the session drops the 33 roles from `discord/layout.toml`, adds t
 Rollback:  the layout from git (the S6 commit 5cf0fb7, or a30ed07 for the categories); the four ranks' Mention Everyone
            is one tick each; `forge-audit` is the owner's to delete by hand (the tool never deletes); a deleted role
            can't be restored, only recreated and given back to its members by hand
-Outcome:   -
+Outcome:   S7 applied by the owner (8 changes: 4 role edits, `forge-audit` created with id 1558414206754103367, 3
+           reorders); the next `plan` showed 0 changes, 11 yours, 33 extras (the roles, still to be deleted by hand).
+           Open: the 33 role deletions, then a last `plan` for 0 extras; Safety Notifications pointed at `forge-audit`
 
 ## 2026-10-10  Discord (the owner's server)  The 12 empty old categories deleted by the owner (planned, owner does it by hand)
 Brief:     03
