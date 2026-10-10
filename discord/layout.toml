@@ -27,15 +27,6 @@ permissions = [
 ]
 
 [[role]]
-key = "high-command"
-id = "1196095201844940842"
-name = "/ HIGH COMMAND /"
-color = 16777215
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
 key = "admin"
 id = "1558401632755261530"
 name = "Admin"
@@ -68,7 +59,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "VIEW_GUILD_INSIGHTS",
     "CONNECT",
@@ -121,7 +111,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "CONNECT",
     "SPEAK",
@@ -211,15 +200,6 @@ permissions = [
 ]
 
 [[role]]
-key = "officers"
-id = "1344989444494594068"
-name = "/ OFFICERS /"
-color = 16777215
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
 key = "o-8-major-general"
 id = "1199646176123817994"
 name = "Castellan"
@@ -243,7 +223,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "VIEW_GUILD_INSIGHTS",
     "CONNECT",
@@ -288,7 +267,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "CONNECT",
     "SPEAK",
@@ -299,75 +277,6 @@ permissions = [
     "REQUEST_TO_SPEAK",
     "MODERATE_MEMBERS",
 ]
-
-[[role]]
-key = "o-6-colonel"
-id = "818174456182734889"
-name = "O-6 / Colonel"
-color = 16720896
-hoist = true
-mentionable = false
-permissions = [
-    "CREATE_INSTANT_INVITE",
-    "ADD_REACTIONS",
-    "STREAM",
-    "VIEW_CHANNEL",
-    "SEND_MESSAGES",
-    "EMBED_LINKS",
-    "ATTACH_FILES",
-    "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
-    "USE_EXTERNAL_EMOJIS",
-    "CONNECT",
-    "SPEAK",
-    "USE_VAD",
-    "CHANGE_NICKNAME",
-    "USE_APPLICATION_COMMANDS",
-    "REQUEST_TO_SPEAK",
-    "MODERATE_MEMBERS",
-]
-
-[[role]]
-key = "o-5-lieutenant-colonel"
-id = "826899863022731264"
-name = "O-5 / Lieutenant Colonel"
-color = 16737095
-hoist = true
-mentionable = false
-permissions = [
-    "CREATE_INSTANT_INVITE",
-    "MANAGE_CHANNELS",
-    "ADD_REACTIONS",
-    "VIEW_AUDIT_LOG",
-    "STREAM",
-    "VIEW_CHANNEL",
-    "SEND_MESSAGES",
-    "EMBED_LINKS",
-    "ATTACH_FILES",
-    "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
-    "USE_EXTERNAL_EMOJIS",
-    "VIEW_GUILD_INSIGHTS",
-    "CONNECT",
-    "SPEAK",
-    "USE_VAD",
-    "CHANGE_NICKNAME",
-    "MANAGE_NICKNAMES",
-    "USE_APPLICATION_COMMANDS",
-    "REQUEST_TO_SPEAK",
-    "MODERATE_MEMBERS",
-    "CREATE_GUILD_EXPRESSIONS",
-    "BIT_52",
-]
-
-[[role]]
-key = "o-4-major"
-id = "1176127923007262820"
-name = "O-4 / Major"
-color = 16728128
-hoist = true
-mentionable = false
-permissions = []
 
 [[role]]
 key = "o-3-captain"
@@ -377,89 +286,6 @@ color = 16737894
 hoist = true
 mentionable = false
 permissions = []
-
-[[role]]
-key = "junior-officers"
-id = "1196096891180560484"
-name = "/ JUNIOR OFFICERS /"
-color = 16777215
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "o-2-first-lieutenant"
-id = "1196097560776019978"
-name = "O-2 / First Lieutenant"
-color = 16753920
-hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "o-1-second-lieutenant"
-id = "1196097602127667301"
-name = "O-1 / Second Lieutenant"
-color = 16759603
-hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "warrants"
-id = "1269955401319845929"
-name = "/ WARRANTS /"
-color = 16777215
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "cwo-chief-warrant-officer-5"
-id = "1196097884681158717"
-name = "CWO / Chief Warrant Officer 5"
-color = 14329120
-hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "wo-4-chief-warrant-officer-4"
-id = "1196098029611139092"
-name = "WO-4 / Chief Warrant Officer 4"
-color = 13934615
-hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "wo-3-chief-warrant-officer-3"
-id = "1196098038050066443"
-name = "WO-3 / Chief Warrant Officer 3"
-color = 16776960
-hoist = true
-mentionable = false
-permissions = [
-    "STREAM",
-    "CONNECT",
-    "SPEAK",
-    "USE_SOUNDBOARD",
-]
-
-[[role]]
-key = "wo-2-chief-warrant-officer-2"
-id = "1196098118224183357"
-name = "WO-2 / \tChief Warrant Officer 2"
-color = 16777113
-hoist = true
-mentionable = false
-permissions = [
-    "STREAM",
-    "CONNECT",
-    "SPEAK",
-    "USE_SOUNDBOARD",
-    "SEND_VOICE_MESSAGES",
-]
 
 [[role]]
 key = "wo-1-warrant-officer"
@@ -476,15 +302,6 @@ permissions = [
 ]
 
 [[role]]
-key = "senior-enlisted"
-id = "1344989875530895434"
-name = "/ SENIOR ENLISTED /"
-color = 16777215
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
 key = "e-9-sergeant-major"
 id = "1254022494961270856"
 name = "Techmarine"
@@ -492,78 +309,6 @@ color = 2263842
 hoist = true
 mentionable = false
 permissions = []
-
-[[role]]
-key = "e-8-master-sergeant"
-id = "1254022408441036850"
-name = "E-8 / Master Sergeant"
-color = 7048739
-hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "e-7-gunnery-sergeant"
-id = "1254022262021951570"
-name = "E-7 / Gunnery Sergeant"
-color = 3329330
-hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "e-6-staff-sergeant"
-id = "1196098207458009231"
-name = "E-6 / Staff Sergeant"
-color = 2142890
-hoist = true
-mentionable = false
-permissions = ["STREAM", "CONNECT", "SPEAK"]
-
-[[role]]
-key = "junior-enlisted"
-id = "1344990039435640864"
-name = "/ JUNIOR ENLISTED /"
-color = 16777215
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "e-5-sergeant"
-id = "1196098269160419348"
-name = "E-5 / Sergeant"
-color = 9498256
-hoist = true
-mentionable = false
-permissions = ["CONNECT", "SPEAK"]
-
-[[role]]
-key = "e-4-corporal"
-id = "1196098303490793503"
-name = "E-4 / Corporal"
-color = 10026904
-hoist = true
-mentionable = false
-permissions = ["STREAM", "CONNECT", "SPEAK"]
-
-[[role]]
-key = "e-3-lance-corporal"
-id = "1196098334323134565"
-name = "E-3 / Lance Corporal"
-color = 12320699
-hoist = true
-mentionable = false
-permissions = ["STREAM", "CONNECT", "SPEAK"]
-
-[[role]]
-key = "e-2-private-first-class"
-id = "1196098360436854895"
-name = "E-2 / Private First Class"
-color = 13959124
-hoist = true
-mentionable = false
-permissions = ["STREAM", "CONNECT", "SPEAK"]
 
 [[role]]
 key = "e-1-private"
@@ -580,15 +325,6 @@ id = "1344988049460822086"
 name = "Neophyte"
 color = 8421504
 hoist = true
-mentionable = false
-permissions = []
-
-[[role]]
-key = "op-squads"
-id = "1196098454913552444"
-name = "/ OP. SQUADS /"
-color = 16316407
-hoist = false
 mentionable = false
 permissions = []
 
@@ -661,15 +397,6 @@ mentionable = false
 permissions = []
 
 [[role]]
-key = "temu-worker-sqd"
-id = "1297885122976284702"
-name = "Temu Worker Sqd."
-color = 13808780
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
 key = "war-reporter-sqd"
 id = "1129093283566600232"
 name = "War Reporter Sqd."
@@ -702,60 +429,6 @@ permissions = [
     "USE_APPLICATION_COMMANDS",
     "REQUEST_TO_SPEAK",
 ]
-
-[[role]]
-key = "technical-engineering-sqd"
-id = "1129107354391162921"
-name = "Technical Engineering Sqd."
-color = 52945
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "hall-passes"
-id = "1196099072508035152"
-name = "/ HALL PASSES /"
-color = 15986671
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "command-room-hp"
-id = "1129091330539274380"
-name = "Command Room #HP"
-color = 4734347
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "archives-hp"
-id = "1196101580802502846"
-name = "Archives #HP"
-color = 6970061
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "admin-hp"
-id = "1196102826363977779"
-name = "Admin #HP"
-color = 4915330
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "off-duty"
-id = "1196099829118546023"
-name = "/ OFF-DUTY /"
-color = 16315893
-hoist = false
-mentionable = false
-permissions = []
 
 [[role]]
 key = "chief-modder"
@@ -803,15 +476,6 @@ permissions = [
     "CREATE_PUBLIC_THREADS",
     "CREATE_PRIVATE_THREADS",
 ]
-
-[[role]]
-key = "inactive-pending-removal"
-id = "1306232899913121812"
-name = "INACTIVE -- PENDING REMOVAL"
-color = 0
-hoist = false
-mentionable = false
-permissions = []
 
 [[role]]
 key = "carl-bot"
@@ -935,24 +599,6 @@ permissions = [
     "USE_EXTERNAL_STICKERS",
     "SEND_MESSAGES_IN_THREADS",
 ]
-
-[[role]]
-key = "dungeoneering-game-master"
-id = "1401170348736643195"
-name = "Dungeoneering - Game Master"
-color = 15844367
-hoist = false
-mentionable = false
-permissions = []
-
-[[role]]
-key = "dungeoneering-member"
-id = "1401170566248927282"
-name = "Dungeoneering - Member"
-color = 12745742
-hoist = false
-mentionable = false
-permissions = []
 
 [[role]]
 key = "everyone"
@@ -1241,6 +887,22 @@ key = "engineering-log"
 id = "1558401648660062218"
 type = "forum"
 name = "forge-log"
+parent = "engineering"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel]]
+key = "forge-audit"
+type = "text"
+name = "forge-audit"
 parent = "engineering"
 
 [[channel.overwrite]]

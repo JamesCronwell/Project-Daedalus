@@ -15,6 +15,28 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  Stage S7 and the 33 dead roles (planned, owner applies and deletes by hand)
+Brief:     03
+Why:       the 33 roles are empty ranks, visual dividers and roles for archived squads; `forge-audit` gives Discord's
+           Safety Notifications and the bots' logs one private place; Mention Everyone off the ranks stops an accidental
+           `@everyone`
+Owner yes: "Do the roles too, then S7. I deleted the categories" (BRIEF 03 chat, 2026-10-10), to the lists in
+           `docs/discord/delete-list.md` (sections 2 to 4) and to S7 as proposed (the audit channel; Mention Everyone off
+           every rank but `Admin` and the bots' role)
+Before:    the S6 layout minus the 12 categories (51 channels, 62 roles); High Marshal, Marshal, Castellan and Emperor's
+           Champion hold Mention Everyone; the 33 roles exist, 7 with members (Technical Engineering Sqd. 14, Command
+           Room #HP 11, Admin #HP 6, Dungeoneering - Member 4, Temu Worker Sqd. 4, Dungeoneering - Game Master 2, Archives
+           #HP 1); no overwrite on a layout channel references them
+Change:    (1) the session drops the 33 roles from `discord/layout.toml`, adds the text channel `forge-audit` under FORGE
+           (hidden like `forge-log`: `@everyone` denied View, the bot allowed View) and takes Mention Everyone off the
+           four ranks; (2) the owner runs `plan` and `apply` (1 channel created, 4 role edits); (3) by hand, the owner
+           deletes the 33 roles (Server Settings > Roles), unhooks nothing else: members only lose the labels. The
+           sections of old overwrites for O-6 (the "yours" BIT_52 lines) go with the O-6 role
+Rollback:  the layout from git (the S6 commit 5cf0fb7, or a30ed07 for the categories); the four ranks' Mention Everyone
+           is one tick each; `forge-audit` is the owner's to delete by hand (the tool never deletes); a deleted role
+           can't be restored, only recreated and given back to its members by hand
+Outcome:   -
+
 ## 2026-10-10  Discord (the owner's server)  The 12 empty old categories deleted by the owner (planned, owner does it by hand)
 Brief:     03
 Why:       the squad and command categories were emptied by the archive move (S3); they only clutter the sidebar
