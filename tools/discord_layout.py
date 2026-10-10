@@ -433,7 +433,8 @@ class Live:
         return ALL_BITS if p & ADMIN else p
 
     def bot_top(self):
-        return max([self.roles[r]["position"] for r in self.bot_role_ids if r in self.roles] + [0])
+        """The rank of the bot's highest role (see role_rank)."""
+        return max([role_rank(self.roles[r]) for r in self.bot_role_ids if r in self.roles] + [(0, 0)])
 
     def effective(self, ch):
         """The bot's permissions in a channel: the standard base + overwrites order."""
@@ -465,6 +466,12 @@ class Live:
         return hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()
 
 
+def role_rank(r):
+    """Discord's role hierarchy: a higher position wins, and on a tie the older role (the lower id) wins. A new role
+    can share a position number with an existing one."""
+    return (r["position"], -int(r["id"]))
+
+
 def sibling_order(live, parent_id):
     return sorted((c for c in live.channels.values() if c["parent_id"] == parent_id),
                   key=lambda c: (c["position"], int(c["id"])))
@@ -481,7 +488,7 @@ def refill(current, managed):
 
 def import_layout(live, guild_name=""):
     warnings = []
-    roles = sorted(live.roles.values(), key=lambda r: -r["position"])
+    roles = sorted(live.roles.values(), key=role_rank, reverse=True)
     keys, used = {}, set()
 
     def unique(base):
@@ -630,7 +637,7 @@ def make_plan(layout, live, now=None):
             reason = None
             if not everyone and lr["managed"]:
                 reason = "made by an integration"
-            elif not everyone and lr["position"] >= bot_top:
+            elif not everyone and role_rank(lr) >= bot_top:
                 reason = "at or above the bot's role"
             elif not can_roles:
                 reason = "the bot lacks Manage Roles"
@@ -672,8 +679,8 @@ def make_plan(layout, live, now=None):
                             "permissions": str(wp & mask_g), "summary": f'create role "{r["name"]}"'})
     # role order
     if can_roles:
-        elig = sorted((x for x in live.roles.values() if x["id"] != g and x["position"] < bot_top),
-                      key=lambda x: -x["position"])
+        elig = sorted((x for x in live.roles.values() if x["id"] != g and role_rank(x) < bot_top),
+                      key=role_rank, reverse=True)
         by_id = {r["id"]: r["key"] for r in roles_L if r["id"]}
         creates = [r["key"] for r in roles_L if not r["id"]]
         current = [x["id"] for x in elig] + ["new:" + k for k in creates]
@@ -944,7 +951,7 @@ def _need_id(m, key):
 def _apply_role_order(api, g, a, rmap):
     live = Live.fetch(api, g)
     top = live.bot_top()
-    elig = sorted((x for x in live.roles.values() if x["id"] != g and x["position"] < top), key=lambda x: -x["position"])
+    elig = sorted((x for x in live.roles.values() if x["id"] != g and role_rank(x) < top), key=role_rank, reverse=True)
     current = [x["id"] for x in elig]
     managed = [rmap[k] for k in a["order"] if rmap.get(k)]
     new = refill(current, managed)

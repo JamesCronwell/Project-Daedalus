@@ -312,6 +312,17 @@ class TestOwnersBits(Case):
         self.assertTrue(any("above the bot" in y for y in plan["yours"]))
         self.assertTrue(any("integration" in y for y in plan["yours"]))
 
+    def test_a_position_tie_goes_by_age(self):
+        # Discord can give a new role the bot's own position number: the older role (lower id) ranks higher
+        self.fake.roles["2999"] = self.fake.role("2999", "Newer", 4, 0)    # ties the bot (2002): below it
+        self.fake.roles["2000"] = self.fake.role("2000", "Older", 4, 0)    # ties the bot, older: above it
+        layout, _, _ = imported(self.fake)
+        edit(layout, "roles", "newer")["name"] = "Newer 2"
+        edit(layout, "roles", "older")["name"] = "Older 2"
+        plan = run_plan(self.fake, layout)
+        self.assertEqual([a["key"] for a in plan["actions"] if a["kind"] == "role.edit"], ["newer"])
+        self.assertTrue(any("Older" in y and "above the bot" in y for y in plan["yours"]))
+
     def test_a_channel_the_bot_cannot_see_is_yours(self):
         self.fake.channels["4003"]["permission_overwrites"].append(self.fake.ow("2002", 0, 0, B["VIEW_CHANNEL"]))
         layout, _, _ = imported(self.fake)
