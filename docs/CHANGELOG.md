@@ -24,7 +24,8 @@ Before:    `the-codex` topic: "Head over to the Cadet Room for further informati
 Change:    topic -> "The house rules. Looking for a group? Head to #muster. Anything else: ask a High Marshal." with the
            `#muster` mention (its id is in the layout). One edit, nothing else
 Rollback:  the previous `discord/layout.toml` from git (the S8 commit, 40b2201), `plan`, `apply`
-Outcome:   -
+Outcome:   applied by the session (the owner approving the prompts), 1 change; the next `plan` showed 0 changes, 11 yours,
+           33 extras
 
 ## 2026-10-10  Discord (the owner's server)  Stage S8: the `muster` channel and the squad role names (planned, session applies)
 Brief:     03
