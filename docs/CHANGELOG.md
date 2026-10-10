@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  The 12 empty old categories deleted by the owner (planned, owner does it by hand)
+Brief:     03
+Why:       the squad and command categories were emptied by the archive move (S3); they only clutter the sidebar
+Owner yes: "Could I also delete the old categories?" (BRIEF 03 chat, 2026-10-10); the owner deletes them, a session
+           never does (the brief's rule)
+Before:    12 categories in the layout with no channel in them (`<<< COMMAND STRUCTURE >>>`, `// Administrative Hall //`,
+           `// Command Centre //`, `<<< OP. SQUADS >>>`, `// MINECRAFT SQD. //`, `// Dungeoneering //`,
+           `// Survivalist Sqd. //`, `// SWAT Sqd. //`, `// Technical Engineering Sqd. //`, `// Aviation Sqd. //`,
+           `// Pathfinders Sqd. //`, `<<< OFF-DUTY >>>`); the last `plan` found 0 extras, so the layout matched the server
+Change:    the session drops those 12 entries from `discord/layout.toml` (so the tool does not stop on a missing id); the
+           owner right-clicks each category > Delete Category after checking it is empty in the sidebar
+Rollback:  a deleted category can't be restored; recreate it by name by hand if wanted (nothing referenced them: no
+           channel, no webhook, no bot setting). The layout comes back from git (the S6 commit, 5cf0fb7)
+Outcome:   -
+
 ## 2026-10-10  Discord (the owner's server)  Stage S6: `company-movement-orders` becomes the visible `vox-music-bot` (planned, owner applies)
 Brief:     03
 Why:       the channel holds the music bot's instructions (owner, 2026-10-10); stage S5's plan moved it back into the
