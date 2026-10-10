@@ -245,3 +245,15 @@ Update 2026-10-10: the owner created the bot and its token (password manager + `
            and added it to the owner's TEST server "Soundboard 2" (the owner's own act, in the BRIEF 03 session). The
            owner ran import, plan and apply there: two rounds, only structure on that test server; no deletes. Found and
            fixed one bug (a role that ties the bot's position). The LIVE server is not invited yet: its own entry first
+
+## 2026-10-10  Discord (the owner's server)  The layout bot joins the live server "Mojo Dojo Casa House" (BRIEF 05 task 6)
+Brief:     BRIEF 05
+Why:       so the owner can import the live layout, then reshape it through plan and apply (BRIEF 03's rounds)
+Owner yes: "yes, invite the bot to the live server 818168985383075863" (this session, 2026-10-10)
+Before:    the bot is only on the test server "Soundboard 2"; the live server has no layout bot
+Change:    the owner adds the bot (View Channels, Manage Channels, Manage Roles, Send Messages, Embed Links, Attach Files,
+           Read Message History, Add Reactions, Mention Everyone, Manage Webhooks, Connect, Speak; never Administrator,
+           Manage Server, Kick, Ban) and drags its role up. Then ONLY `import` and `check-template` (read-only). No
+           plan is applied there in this brief
+Rollback:  the owner kicks the bot (Server Settings > Members); its role goes with it. Nothing else changes
+Outcome:   (to fill in after the import and check-template)
