@@ -55,7 +55,6 @@ permissions = [
     "CREATE_INSTANT_INVITE",
     "KICK_MEMBERS",
     "BAN_MEMBERS",
-    "ADMINISTRATOR",
     "MANAGE_CHANNELS",
     "MANAGE_GUILD",
     "ADD_REACTIONS",
@@ -112,7 +111,6 @@ hoist = true
 mentionable = false
 permissions = [
     "KICK_MEMBERS",
-    "ADMINISTRATOR",
     "MANAGE_CHANNELS",
     "ADD_REACTIONS",
     "PRIORITY_SPEAKER",
@@ -158,10 +156,7 @@ color = 13047173
 hoist = false
 mentionable = false
 permissions = [
-    "CREATE_INSTANT_INVITE",
-    "ADMINISTRATOR",
     "ADD_REACTIONS",
-    "STREAM",
     "VIEW_CHANNEL",
     "SEND_MESSAGES",
     "EMBED_LINKS",
@@ -172,9 +167,8 @@ permissions = [
     "CONNECT",
     "SPEAK",
     "USE_VAD",
-    "CHANGE_NICKNAME",
+    "MANAGE_WEBHOOKS",
     "USE_APPLICATION_COMMANDS",
-    "REQUEST_TO_SPEAK",
 ]
 
 [[role]]
@@ -238,7 +232,6 @@ permissions = [
     "CREATE_INSTANT_INVITE",
     "KICK_MEMBERS",
     "BAN_MEMBERS",
-    "ADMINISTRATOR",
     "MANAGE_CHANNELS",
     "MANAGE_GUILD",
     "ADD_REACTIONS",
@@ -291,7 +284,6 @@ hoist = true
 mentionable = false
 permissions = [
     "CREATE_INSTANT_INVITE",
-    "ADMINISTRATOR",
     "ADD_REACTIONS",
     "STREAM",
     "VIEW_CHANNEL",
@@ -320,7 +312,6 @@ hoist = true
 mentionable = false
 permissions = [
     "CREATE_INSTANT_INVITE",
-    "ADMINISTRATOR",
     "ADD_REACTIONS",
     "STREAM",
     "VIEW_CHANNEL",
@@ -348,10 +339,7 @@ hoist = true
 mentionable = false
 permissions = [
     "CREATE_INSTANT_INVITE",
-    "KICK_MEMBERS",
-    "BAN_MEMBERS",
     "MANAGE_CHANNELS",
-    "MANAGE_GUILD",
     "ADD_REACTIONS",
     "VIEW_AUDIT_LOG",
     "STREAM",
@@ -368,7 +356,6 @@ permissions = [
     "USE_VAD",
     "CHANGE_NICKNAME",
     "MANAGE_NICKNAMES",
-    "MANAGE_ROLES",
     "USE_APPLICATION_COMMANDS",
     "REQUEST_TO_SPEAK",
     "MODERATE_MEMBERS",
@@ -624,7 +611,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "CONNECT",
     "SPEAK",
@@ -650,7 +636,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "CONNECT",
     "SPEAK",
@@ -712,7 +697,6 @@ permissions = [
     "EMBED_LINKS",
     "ATTACH_FILES",
     "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
     "USE_EXTERNAL_EMOJIS",
     "CONNECT",
     "SPEAK",
