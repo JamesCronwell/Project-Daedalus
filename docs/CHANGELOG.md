@@ -416,4 +416,6 @@ Change:    ONE channel through plan and apply: rename to `vox-factorio`, move to
            feeds (`@everyone` no Send; the bots' role Send + Embed). Id and key unchanged, so the webhook and follows
            keep working. The webhook is NOT deleted (the delete list's section 5 loses the `assembly-line` item)
 Rollback:  edit the layout back (name `assembly-line`, parent `archive`, the archive's two overwrites), plan, apply
-Outcome:   (to fill in after apply)
+Outcome:   applied 2026-10-10 by the owner (plan-20261010T184626Z: 6 changes, as listed above); the next plan: 0
+           changes. Along the way the layout was synced to the server: 22 archive channels the owner had deleted by hand
+           were dropped from it, and the bots' role name `Vox Handler` (the owner's rename) replaced the stale name
