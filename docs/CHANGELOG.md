@@ -15,6 +15,34 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  BRIEF 03's rebuild applied through the layout tool, under a bounded Administrator window on the bot's role (planned)
+Brief:     03 (the tool is BRIEF 05's)
+Why:       the old squad channels hide themselves from `@everyone`, so the bot (12 permission bits, no Administrator)
+           can't see or edit them: the plan would skip the 8 feeds that must go public and the ~31 channels to archive.
+           Administrator on the bot's own role gives it sight of them for the rebuild. The tool still caps what it SETS
+           at its 12 bits whatever the bot holds (BOT_PERMS), so Administrator, Manage Server, Kick, Ban, the thread bits
+           and removing the ranks' powers stay by hand
+Owner yes: "Option 2, bounded admin window - fuck it, let's ball" (BRIEF 03 chat, 2026-10-10), to "a one-time exception to
+           the standing narrow bot; ticked for the rebuild session, unticked after"
+Before:    "Layout Admin Bot" (managed role, top of the role list) holds exactly the 12 bits of BOT_PERMS, no
+           Administrator. The live layout: `discord/layout.toml` at c80d80f (61 roles, 59 channels and categories,
+           imported 2026-10-10, 0 member overwrites left out). 6 roles hold Administrator (O-10 to O-6, the bots' role)
+Change:    (0) the owner ticks Administrator on the role "Layout Admin Bot" (Server Settings > Roles); (1) four stages,
+           each: the session writes the next layout into `discord/layout.toml`, the owner runs `plan`, the session reads
+           the plan file, the owner runs `apply`, a second `plan` shows only the "yours" lines, the layout is committed
+           (apply writes new ids back): S1 the `Admin` role (no Administrator: by hand), the categories MESS HALL, COMMS,
+           ENGINEERING and the forum `engineering-log`, ARCHIVE renamed and given the bot's View; S2 the 15 feed and
+           Hangout channels renamed, moved and made read-only; S3 the 31 channels moved to ARCHIVE; S4 the role-bit
+           edits the bot can set. By hand, by the owner: Administrator on `Admin` and who holds it, the powers off the
+           ranks and the bots' role, the 3 people out of the bots' role, MEE6 and carl-bot removed; (2) the owner
+           UNTICKS Administrator on the bot's role, then `import` once more and a last `plan`
+Rollback:  untick Administrator on "Layout Admin Bot" at any time (nothing depends on it after an apply). A stage: put
+           the previous `discord/layout.toml` back from git, `plan`, `apply` (renames and moves come back with their
+           ids; items it created stay as extras for the owner to delete by hand). The before snapshot
+           `docs/discord/before-2026-10-09.template.json` holds every overwrite and role bit as it was. A leaked token
+           during the window: Developer Portal > Bot > Reset Token, then untick
+Outcome:   -
+
 ## 2026-10-10  Crusader  Docker Desktop started (not reconfigured) for Hephaestus's BRIEF 62 database tests
 Brief:     - (a request from Hephaestus; its BRIEF 62 needs a throwaway local Postgres container, never on Bastion)
 Why:       `webapp/api/test_writes.py` needs a local database

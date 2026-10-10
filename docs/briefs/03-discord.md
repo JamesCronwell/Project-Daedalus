@@ -1,11 +1,12 @@
 # BRIEF 03: The Discord server, rebuilt around how the group actually uses it
 
 ```
-Status:     pending: the automation brief (the layout tool); the checklist is written, nothing applied
+Status:     in progress: stage S1 of 4 prepared in discord/layout.toml; waiting for the owner's Administrator window
 Commits:    -
 Track:      plumbing (the owner's own infrastructure, DIRECTION)
 Machine:    none: the owner's Discord server "Mojo Dojo Casa House"
-Touch:      docs/discord/ (local only, gitignored: it holds friends' names), tools/discord_tree.py,
+Touch:      docs/discord/ (local only, gitignored: it holds friends' names), tools/discord_tree.py, discord/layout.toml
+            (BRIEF 05's layout file, edited to the target in stages; owner's yes 2026-10-10),
             docs/CHANGELOG.md (one entry per checklist round), docs/PLUMBING.md (the feeds), this brief
 Don't touch: the server itself. The owner applies every step, permission changes always. No bot token, no Discord
             login (the owner signs in). Message content (structure and metadata only). Deleting anything:
@@ -86,9 +87,23 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              applied in stages in the checklist's round order with a plan approved between stages; (8) stdlib-only
              Python; the by-hand checklist stays as the fallback. A new brief (BRIEF 04+; the orchestrator numbers it)
              builds it; this brief's rounds wait for it
-Next:      the orchestrator writes the automation brief from the locked interview above. BRIEF 03's rounds (a)-(g) are
-           applied through that tool (or by hand if the owner changes their mind); the CHANGELOG entry for rounds (a)+(b)
-           stays "planned"
+           - 2026-10-10: BRIEF 05 is done (the bot is on the live server, the live layout is imported and committed).
+             The owner chose a BOUNDED ADMINISTRATOR WINDOW ("Option 2 ... let's ball"): Administrator ticked on the
+             bot's own role for the rebuild, unticked after. Why: the bot can't see the hidden legacy channels. What it
+             does NOT change: the tool caps what it sets at its 12 bits (BOT_PERMS) even with Administrator, so
+             Administrator on `Admin`, the ranks' and the bots' role powers, the thread bits and who holds roles stay
+             by hand. CHANGELOG entry written first (2026-10-10, "planned").
+           - The target is applied in four stages, each its own layout: S1 the Admin role, categories MESS HALL, COMMS,
+             ENGINEERING, the forum `engineering-log`, ARCHIVE renamed (10 changes); S2 the 15 feed and Hangout channels
+             (69); S3 the 31 archive moves (110); S4 the role bits the bot can set (5). Simulated offline against a fake
+             server; real plans differ only where the live server holds things the layout file doesn't (member
+             overwrites, bits outside the 12). Hidden categories also carry an explicit View allow for the bot's role,
+             so the narrow bot keeps managing them after the window.
+Next:      S1 is in discord/layout.toml (uncommitted until applied). The owner ticks Administrator on the bot's role,
+           runs `plan`, the session reads the plan file, the owner runs `apply`, then `plan` again; then the session
+           writes S2 from the updated file (ids written back), and so on. Commit the layout after each stage. After
+           S4 and the by-hand part, the owner unticks Administrator; then `import`, a last `plan`, the template sync
+           for the after-diff
 Ask owner: - nothing open. Answered 2026-10-09: `kerbal-space-launches` is empty and the owner deletes it by hand (so
              ARCHIVE holds 31, not 32); `engineering-log` is private (Admin only); the channel and category names are as
              proposed in channels.md section F

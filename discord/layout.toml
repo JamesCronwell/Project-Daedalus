@@ -36,6 +36,15 @@ mentionable = false
 permissions = []
 
 [[role]]
+key = "admin"
+id = ""
+name = "Admin"
+color = 0
+hoist = false
+mentionable = false
+permissions = ["ADMINISTRATOR"]
+
+[[role]]
 key = "o-10-general"
 id = "818171594845061171"
 name = "O-10 / General"
@@ -1002,6 +1011,141 @@ permissions = [
 ]
 
 [[channel]]
+key = "mess-hall-cat"
+id = ""
+type = "category"
+name = "MESS HALL"
+
+[[channel]]
+key = "comms-cat"
+id = ""
+type = "category"
+name = "COMMS"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "engineering"
+id = ""
+type = "category"
+name = "ENGINEERING"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel]]
+key = "engineering-log"
+id = ""
+type = "forum"
+name = "engineering-log"
+parent = "engineering"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel]]
+key = "archive"
+id = "1254033366525677588"
+type = "category"
+name = "ARCHIVE"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel.overwrite]]
+role = "layout-admin-bot"
+allow = ["VIEW_CHANNEL"]
+deny = []
+
+[[channel]]
+key = "romanian-army-quarters"
+id = "1254033483291037728"
+type = "voice"
+name = "Romanian Army Quarters"
+parent = "archive"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "en-general-chat"
+id = "1263461286776279091"
+type = "text"
+name = "en-general-chat"
+parent = "archive"
+topic = "ArmA 3 --- English Chat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "photo-tour"
+id = "1254110900676464741"
+type = "text"
+name = "photo-tour"
+parent = "archive"
+topic = "In-Game Media"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "ro-general-chat"
+id = "1256398424039755847"
+type = "text"
+name = "ro-general-chat"
+parent = "archive"
+topic = "ArmA 3 --- Romanian Chat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
+key = "ro-debrief-files-ooc"
+id = "1186382755156738078"
+type = "text"
+name = "ro-debrief-files-ooc"
+parent = "archive"
+topic = "OUT OF CONTEXT CHAT"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["VIEW_CHANNEL", "CONNECT"]
+
+[[channel]]
 key = "command-structure"
 id = "1196102381818101841"
 type = "category"
@@ -1141,81 +1285,6 @@ nsfw = true
 role = "command-room-hp"
 allow = ["VIEW_CHANNEL", "CONNECT"]
 deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "archive"
-id = "1254033366525677588"
-type = "category"
-name = "// ARCHIVE //"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "romanian-army-quarters"
-id = "1254033483291037728"
-type = "voice"
-name = "Romanian Army Quarters"
-parent = "archive"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "en-general-chat"
-id = "1263461286776279091"
-type = "text"
-name = "en-general-chat"
-parent = "archive"
-topic = "ArmA 3 --- English Chat"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "photo-tour"
-id = "1254110900676464741"
-type = "text"
-name = "photo-tour"
-parent = "archive"
-topic = "In-Game Media"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "ro-general-chat"
-id = "1256398424039755847"
-type = "text"
-name = "ro-general-chat"
-parent = "archive"
-topic = "ArmA 3 --- Romanian Chat"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "ro-debrief-files-ooc"
-id = "1186382755156738078"
-type = "text"
-name = "ro-debrief-files-ooc"
-parent = "archive"
-topic = "OUT OF CONTEXT CHAT"
 
 [[channel.overwrite]]
 role = "everyone"
