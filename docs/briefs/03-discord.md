@@ -99,11 +99,24 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
              server; real plans differ only where the live server holds things the layout file doesn't (member
              overwrites, bits outside the 12). Hidden categories also carry an explicit View allow for the bot's role,
              so the narrow bot keeps managing them after the window.
-Next:      S1 is in discord/layout.toml (uncommitted until applied). The owner ticks Administrator on the bot's role,
-           runs `plan`, the session reads the plan file, the owner runs `apply`, then `plan` again; then the session
-           writes S2 from the updated file (ids written back), and so on. Commit the layout after each stage. After
-           S4 and the by-hand part, the owner unticks Administrator; then `import`, a last `plan`, the template sync
-           for the after-diff
+           - 2026-10-10 evening: S1-S4 applied and committed (a4b20d1); each real plan matched its simulation. The owner
+             did the by-hand rank strips (Administrator), took the people out of the bots' role and confirmed a feed;
+             kept the bots' role Administrator, MEE6, carl-bot and the Administrator window for now (audit first).
+             FOUND: Done-when (3) is NOT met. O-10 and O-8 still hold Ban, Kick, Manage Server and Manage Roles, O-9 holds
+             Kick and Manage Roles (the checklist only said "untick Administrator"); MEE6's, carl-bot's and Jockie's own
+             roles hold Administrator. The tool removes Manage Roles (in S5); Kick, Ban and Manage Server are by hand.
+           - The owner agreed the Black Templars ladder and Military x BT names (S5 prepared: 27 edits, simulated, in
+             discord/layout.toml, uncommitted until applied; CHANGELOG entry written). Other ideas are proposals, not yet
+             agreed: Mention Everyone off the ranks, mentionable squad roles (LFG), `@everyone` trims, a Mod tier, AutoMod,
+             2FA for moderation, Onboarding, an `admin-log` channel, the bot audit.
+           - Deletions: the owner asked a session to delete; refused (irreversible, brief rule, owner not present).
+             docs/discord/delete-list.md (local) has the ordered list: 12 empty categories, 16 empty ranks, 9 dividers,
+             8 dead roles, 3 stray webhooks. After deleting, the matching entries must come out of discord/layout.toml
+             or `plan` stops ("id is not on the server")
+Next:      the owner (back): untick/keep the window as they wish, `plan` (expect 27 changes), the session reads the plan
+           file, `apply`, `plan` again, commit. Then the delete list by hand; then the session removes those entries from
+           the layout. Then decide the proposals above one by one. Then close the window (untick Administrator on the
+           bot's role), `import` to a scratch file, a last `plan`, the template sync for the after-diff
 Ask owner: - nothing open. Answered 2026-10-09: `kerbal-space-launches` is empty and the owner deletes it by hand (so
              ARCHIVE holds 31, not 32); `engineering-log` is private (Admin only); the channel and category names are as
              proposed in channels.md section F

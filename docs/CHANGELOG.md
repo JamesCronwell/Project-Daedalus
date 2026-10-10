@@ -15,6 +15,24 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  Stage S5: the Black Templars ladder and the Military x BT names (planned, owner applies)
+Brief:     03
+Why:       the owner likes the military ranks and chose to compress them into a Black Templars ladder and to theme the
+           categories and channels the same way
+Owner yes: "Yeah I agree" to the ladder and names table (BRIEF 03 chat, 2026-10-10); Manage Roles off the ranks is the
+           owner's standing decision of 2026-10-09 ("every rank loses Administrator, Manage Server, Manage Roles, Kick
+           and Ban")
+Before:    stages S1-S4 applied (layout commits a4b20d1 and earlier); rank roles `O-10 / General`, `O-9`, `O-8` still hold
+           Manage Roles; the nine populated ranks carry their US-military names
+Change:    27 edits, all renames except 3 role-bit edits: the nine ranks (O-10 High Marshal, O-9 Marshal, O-8 Castellan,
+           O-7 Emperor's Champion, O-3 Chaplain, WO-1 Sword Brother, E-9 Techmarine, E-1 Initiate, E-0 Neophyte), the four
+           categories (REFECTORIUM, VOX, FORGE, ARCHIVUM), the Hangout (`refectorium`, `the-codex`, the voice channels
+           `Refectorium`, `Cloister`), the nine feeds (`vox-*`) and `forge-log`; Manage Roles off O-10, O-9 and O-8.
+           Kick, Ban and Manage Server stay by hand. Nothing created, moved or deleted
+Rollback:  put the previous `discord/layout.toml` back from git (the S4 commit), `plan`, `apply`: every name comes back with
+           its id, history, webhooks and follows
+Outcome:   -
+
 ## 2026-10-10  Discord (the owner's server)  BRIEF 03's rebuild applied through the layout tool, under a bounded Administrator window on the bot's role (planned)
 Brief:     03 (the tool is BRIEF 05's)
 Why:       the old squad channels hide themselves from `@everyone`, so the bot (12 permission bits, no Administrator)
