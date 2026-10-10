@@ -120,27 +120,34 @@ State:     tasks 1-2 started; the owner's answers are the gate for task 3.
            - **The loop changed** (owner, 2026-10-10, "Yes, that's the scope"): a session runs `plan` and `apply` itself
              through its PowerShell tool, each permission prompt approved by the owner being the yes (the owner has only
              the mobile app today). Recorded in DISCORD-LAYOUT.md and the CHANGELOG. The token is still never read.
-           - Deletions are the owner's, always: the delete-list's remaining sections are the 33 roles (and 3 stray
-             webhooks, after the bot audit). After deleting roles, `plan` should show 0 extras; no layout edit is needed
-             (they are already out of it)
+           - Deletions are the owner's, always. **Done by the owner since the hold** (told by the BRIEF 05 session and
+             checked: a `plan` at 2026-10-10 18:58 UTC shows 0 changes, 9 yours, 0 extras): the 33 dead roles, and 22
+             archive channels (the safe room, the war-reporter room, the Romanian quarters, the three dungeoneering
+             channels, dnd, the SWAT units, helldiving, proving ground, internet tracking, IT and audio engineering,
+             tech engineering, finances, news, the two USAF squads, aviation files, path of crying, poe general, general
+             chat). The BRIEF 05 session dropped those 22 blocks from the layout (commits 002a107, f40559d; not pushed:
+             the permission classifier denied the push, the owner pushes). The layout is now 31 channels and
+             categories, 29 roles
+           - S10 (applied by the owner, plan 0 after): `assembly-line` became `vox-factorio` in VOX, a live Factorio
+             news feed with the other feeds' overwrites; its SnailBot webhook is KEPT (delete-list section 5 corrected
+             locally). The owner renamed the bots' role `Vox Handler` (key `admin-mechanized-transport`): do not rename it
+             back. A bot logo is at discord/layout-bot-logo.png for the owner to upload in the Developer Portal
            - Still unagreed proposals: `@everyone` trims (Create Invite, Expressions, Events), a Mod tier, AutoMod, 2FA for
              moderation, Onboarding, the bot audit (MEE6, carl-bot, Jockie), `lfg`-style Option B (a MUSTER category with
              voice rooms, only if the group splits into several voice groups)
-Next:      the owner, when back at the PC (about 10 minutes): delete the 33 roles, then a session runs `plan` (expect 0
-           changes, 0 extras). By hand, any device: Kick, Ban and Manage Server off High Marshal, Marshal and Castellan;
-           Safety Notifications pointed at `forge-audit`; untick Administrator on Layout Admin Bot (the bounded window;
-           still open). Then AutoMod, the `@everyone` trims, 2FA, the bot audit, in a sitting with the session's click
-           path. Closing steps: `import` to a scratch file, a last `plan`, the template sync for
-           `after-2026-10-09.template.json` and its diff, Done-when (1)-(5), mark done, move to done/, stop note to the
-           orchestrator
-Ask owner: - the 33 roles to delete (docs/discord/delete-list.md sections 2-4; 7 have members, none holds any bit);
-           - Done-when (3) is still not met: Kick, Ban and Manage Server on High Marshal, Marshal and Castellan, and
-             Administrator on MEE6's, carl-bot's, Jockie's and the bots' role (MEE6 and carl-bot after the audit);
-           - the Administrator window on Layout Admin Bot is still ticked, and the owner is away: untick it (one toggle)
-             unless they want the session to keep working the server today;
-           - the `vox-music-bot` topic: a line the owner wants, if any
+Next:      by hand, any device: Kick, Ban and Manage Server off High Marshal, Marshal and Castellan; Safety
+           Notifications pointed at `forge-audit`; Administrator off Layout Admin Bot (the bounded window, still open as
+           far as known), off Vox Handler once the feeds are checked, and off MEE6, carl-bot and Jockie after the audit.
+           Then AutoMod, the `@everyone` trims, 2FA, the bot audit, in one sitting with the session's click path. Closing
+           steps: `import` to a scratch file, a last `plan`, the template sync for `after-2026-10-09.template.json` and
+           its diff, Done-when (1)-(5), mark done, move to done/, stop note to the orchestrator
+Ask owner: - Done-when (3) is still not met: Kick, Ban and Manage Server on High Marshal, Marshal and Castellan, and
+             Administrator on Vox Handler, MEE6, carl-bot, Jockie and Layout Admin Bot (MEE6 and carl-bot after the audit);
+           - the `vox-music-bot` topic: a line the owner wants, if any;
+           - the three stray webhooks: PatchBot's two (tech-engineering, helldiving-quarters) are on channels the owner
+             deleted, so they went with them; SnailBot's stays
 Dirty:     docs/discord/* is local only and gitignored (it holds friends' names). Nothing uncommitted in the repo besides
-           untracked `.codex/` and `AGENTS.md` (not this brief's)
+           untracked `.codex/` and `AGENTS.md` (not this brief's). The repo is ahead of origin by the unpushed commits
 ```
 
 ## Why
