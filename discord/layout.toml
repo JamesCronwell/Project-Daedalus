@@ -331,7 +331,7 @@ permissions = []
 [[role]]
 key = "hrt-swat-sqd"
 id = "818178126978744341"
-name = "HRT // SWAT Sqd."
+name = "Assault Squad"
 color = 327680
 hoist = false
 mentionable = true
@@ -356,10 +356,10 @@ permissions = [
 [[role]]
 key = "aviation-sqd"
 id = "827202709399535636"
-name = "Aviation Sqd."
+name = "Thunderhawk Wing"
 color = 4620980
 hoist = false
-mentionable = false
+mentionable = true
 permissions = [
     "CREATE_INSTANT_INVITE",
     "ADD_REACTIONS",
@@ -381,25 +381,25 @@ permissions = [
 [[role]]
 key = "survivalist-sqd"
 id = "1178300333299089429"
-name = "Survivalist Sqd."
+name = "Wardens"
 color = 2263842
 hoist = false
-mentionable = false
+mentionable = true
 permissions = []
 
 [[role]]
 key = "miner-sqd"
 id = "1275775532029575239"
-name = "Miner Sqd."
+name = "Servitors"
 color = 9127187
 hoist = false
-mentionable = false
+mentionable = true
 permissions = []
 
 [[role]]
 key = "war-reporter-sqd"
 id = "1129093283566600232"
-name = "War Reporter Sqd."
+name = "Chroniclers"
 color = 8388736
 hoist = false
 mentionable = false
@@ -408,10 +408,10 @@ permissions = []
 [[role]]
 key = "pathfinder-sqd"
 id = "832209905792057346"
-name = "Pathfinder Sqd."
+name = "Scout Company"
 color = 16753920
 hoist = false
-mentionable = false
+mentionable = true
 permissions = [
     "CREATE_INSTANT_INVITE",
     "ADD_REACTIONS",
@@ -667,6 +667,13 @@ deny = ["SEND_MESSAGES"]
 role = "admin-mechanized-transport"
 allow = ["SEND_MESSAGES", "EMBED_LINKS"]
 deny = []
+
+[[channel]]
+key = "muster"
+type = "text"
+name = "muster"
+parent = "mess-hall-cat"
+topic = "Looking for a group? Say the game and ping the squad."
 
 [[channel]]
 key = "wh40k-guides-and-gallery"

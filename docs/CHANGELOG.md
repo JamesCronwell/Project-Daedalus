@@ -15,6 +15,21 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  Stage S8: the `muster` channel and the squad role names (planned, session applies)
+Brief:     03
+Why:       a place to ask for a group, with the squad roles pingable there; the squad roles get the Templars theme like the
+           ranks and categories
+Owner yes: "Yeah go a) / The squad name pass is good" (BRIEF 03 chat, 2026-10-10), to option A and the proposed names
+Before:    S7 applied (layout commit 0f4e387); `Aviation Sqd.`, `Survivalist Sqd.`, `Miner Sqd.` and `Pathfinder Sqd.`
+           are not mentionable, `HRT // SWAT Sqd.` is; no looking-for-group channel
+Change:    create the text channel `muster` in REFECTORIUM under `the-codex` (inherits the category, everyone can post);
+           rename Aviation Sqd. to Thunderhawk Wing, Pathfinder Sqd. to Scout Company, HRT // SWAT Sqd. to Assault Squad,
+           Survivalist Sqd. to Wardens, Miner Sqd. to Servitors, War Reporter Sqd. to Chroniclers; make the first five
+           mentionable (War Reporter stays as it is). Expect 1 create, 6 role edits and a reorder; nothing deleted
+Rollback:  the previous `discord/layout.toml` from git (0f4e387), `plan`, `apply`; `muster` stays as an extra for the owner
+           to delete by hand (the tool never deletes)
+Outcome:   -
+
 ## 2026-10-10  plumbing: Discord layout tool  A session may run `plan` and `apply` itself (owner's yes)
 Brief:     03 (the tool is BRIEF 05's)
 Why:       the owner will have only the mobile Claude app for the rest of the day and can't sit at the PC to paste
