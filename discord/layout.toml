@@ -1017,10 +1017,217 @@ type = "category"
 name = "MESS HALL"
 
 [[channel]]
+key = "general-and-media"
+id = "1275552213803991071"
+type = "text"
+name = "mess-hall"
+parent = "mess-hall-cat"
+
+[[channel]]
+key = "welcome"
+id = "818168986092830731"
+type = "text"
+name = "briefing-room"
+parent = "mess-hall-cat"
+topic = "Head over to the Cadet Room for further information"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "wh40k-guides-and-gallery"
+id = "1534974650906443876"
+type = "text"
+name = "wh40k-gallery"
+parent = "mess-hall-cat"
+
+[[channel]]
+key = "mining-group"
+id = "1409964144039428176"
+type = "voice"
+name = "🟩 | Mess Hall"
+parent = "mess-hall-cat"
+
+[[channel]]
+key = "general-voice"
+id = "1346807216627384331"
+type = "voice"
+name = "Barracks"
+parent = "mess-hall-cat"
+
+[[channel]]
+key = "project-zomboid"
+id = "1344984900985688086"
+type = "voice"
+name = "Project Zomboid"
+parent = "mess-hall-cat"
+
+[[channel]]
 key = "comms-cat"
 id = "1558401645275123724"
 type = "category"
 name = "COMMS"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "server-status"
+id = "1275774438574657610"
+type = "text"
+name = "comms-server-status"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "mining-incorporated"
+id = "1301135383689560115"
+type = "text"
+name = "comms-minecraft"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "army-rangers-applications-files"
+id = "1196244025783627856"
+type = "text"
+name = "comms-squad"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "survivalist-files"
+id = "1178300676347015238"
+type = "text"
+name = "comms-zomboid"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "swat-files"
+id = "1186364920158224385"
+type = "text"
+name = "comms-ready-or-not"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "wh40k"
+id = "1446046725725753477"
+type = "text"
+name = "comms-wh40k"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "aviation-sqd-news"
+id = "1115935391074242581"
+type = "text"
+name = "comms-war-thunder"
+parent = "comms-cat"
+topic = "News and Updates for the Meatgrinder from Hell"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "pathfinding-and-exiles"
+id = "818180678301777970"
+type = "text"
+name = "comms-path-of-exile"
+parent = "comms-cat"
+
+[[channel.overwrite]]
+role = "everyone"
+allow = []
+deny = ["SEND_MESSAGES"]
+
+[[channel.overwrite]]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
+deny = []
+
+[[channel]]
+key = "donations"
+id = "1196239982344552539"
+type = "text"
+name = "comms-free-games"
+parent = "comms-cat"
 
 [[channel.overwrite]]
 role = "everyone"
@@ -1329,70 +1536,6 @@ type = "category"
 name = "// MINECRAFT SQD. //"
 
 [[channel]]
-key = "mining-group"
-id = "1409964144039428176"
-type = "voice"
-name = "🟩 | Mining Group"
-parent = "minecraft-sqd"
-
-[[channel]]
-key = "server-status"
-id = "1275774438574657610"
-type = "text"
-name = "server-status"
-parent = "minecraft-sqd"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = [
-    "EMBED_LINKS",
-    "ATTACH_FILES",
-    "CREATE_PUBLIC_THREADS",
-    "CREATE_PRIVATE_THREADS",
-    "SEND_MESSAGES_IN_THREADS",
-]
-
-[[channel]]
-key = "general-and-media"
-id = "1275552213803991071"
-type = "text"
-name = "general-and-media"
-parent = "minecraft-sqd"
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["EMBED_LINKS", "CREATE_PUBLIC_THREADS"]
-
-[[channel]]
-key = "mining-incorporated"
-id = "1301135383689560115"
-type = "text"
-name = "mining-incorporated"
-parent = "minecraft-sqd"
-
-[[channel.overwrite]]
-role = "o-6-colonel"
-allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
-deny = []
-
-[[channel.overwrite]]
-role = "survivalist-sqd"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "miner-sqd"
-allow = ["VIEW_CHANNEL"]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
 key = "dungeoneering"
 id = "1401170765684015185"
 type = "category"
@@ -1502,50 +1645,6 @@ allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
 
 [[channel]]
-key = "wh40k"
-id = "1446046725725753477"
-type = "text"
-name = "wh40k"
-parent = "dungeoneering"
-
-[[channel.overwrite]]
-role = "dungeoneering-game-master"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "dungeoneering-member"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "wh40k-guides-and-gallery"
-id = "1534974650906443876"
-type = "text"
-name = "wh40k-guides-and-gallery"
-parent = "dungeoneering"
-
-[[channel.overwrite]]
-role = "dungeoneering-game-master"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "dungeoneering-member"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
 key = "survivalist-sqd"
 id = "1178300529735114763"
 type = "category"
@@ -1565,77 +1664,6 @@ deny = []
 role = "everyone"
 allow = []
 deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "project-zomboid"
-id = "1344984900985688086"
-type = "voice"
-name = "Project Zomboid"
-parent = "survivalist-sqd"
-
-[[channel.overwrite]]
-role = "o-6-colonel"
-allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
-deny = []
-
-[[channel.overwrite]]
-role = "survivalist-sqd"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "survivalist-files"
-id = "1178300676347015238"
-type = "text"
-name = "survivalist-files"
-parent = "survivalist-sqd"
-
-[[channel.overwrite]]
-role = "admin-mechanized-transport"
-allow = [
-    "MANAGE_CHANNELS",
-    "ADD_REACTIONS",
-    "VIEW_CHANNEL",
-    "SEND_MESSAGES",
-    "SEND_TTS_MESSAGES",
-    "MANAGE_MESSAGES",
-    "EMBED_LINKS",
-    "ATTACH_FILES",
-    "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
-    "USE_EXTERNAL_EMOJIS",
-    "USE_APPLICATION_COMMANDS",
-    "MANAGE_THREADS",
-    "CREATE_PUBLIC_THREADS",
-    "CREATE_PRIVATE_THREADS",
-    "USE_EXTERNAL_STICKERS",
-    "SEND_MESSAGES_IN_THREADS",
-    "USE_EMBEDDED_ACTIVITIES",
-    "SEND_VOICE_MESSAGES",
-    "BIT_51",
-    "BIT_52",
-]
-deny = []
-
-[[channel.overwrite]]
-role = "survivalist-sqd"
-allow = ["VIEW_CHANNEL"]
-deny = [
-    "SEND_MESSAGES",
-    "CREATE_PUBLIC_THREADS",
-    "CREATE_PRIVATE_THREADS",
-    "SEND_MESSAGES_IN_THREADS",
-]
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL"]
 
 [[channel]]
 key = "swat-sqd"
@@ -1665,50 +1693,6 @@ type = "voice"
 name = "SWAT Units"
 parent = "swat-sqd"
 user_limit = 6
-
-[[channel.overwrite]]
-role = "o-6-colonel"
-allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
-deny = []
-
-[[channel.overwrite]]
-role = "hrt-swat-sqd"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "swat-files"
-id = "1186364920158224385"
-type = "text"
-name = "swat-files"
-parent = "swat-sqd"
-
-[[channel.overwrite]]
-role = "o-6-colonel"
-allow = ["MANAGE_CHANNELS", "VIEW_CHANNEL", "BIT_52"]
-deny = []
-
-[[channel.overwrite]]
-role = "hrt-swat-sqd"
-allow = ["VIEW_CHANNEL", "CONNECT"]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
-
-[[channel]]
-key = "army-rangers-applications-files"
-id = "1196244025783627856"
-type = "text"
-name = "army-rangers-applications-files"
-parent = "swat-sqd"
 
 [[channel.overwrite]]
 role = "o-6-colonel"
@@ -2035,48 +2019,6 @@ allow = []
 deny = ["VIEW_CHANNEL"]
 
 [[channel]]
-key = "aviation-sqd-news"
-id = "1115935391074242581"
-type = "text"
-name = "aviation-sqd-news"
-parent = "aviation-sqd"
-topic = "News and Updates for the Meatgrinder from Hell"
-
-[[channel.overwrite]]
-role = "admin-mechanized-transport"
-allow = [
-    "ADD_REACTIONS",
-    "SEND_MESSAGES",
-    "EMBED_LINKS",
-    "ATTACH_FILES",
-    "USE_EXTERNAL_EMOJIS",
-    "CREATE_PUBLIC_THREADS",
-    "CREATE_PRIVATE_THREADS",
-    "SEND_MESSAGES_IN_THREADS",
-]
-deny = []
-
-[[channel.overwrite]]
-role = "aviation-sqd"
-allow = [
-    "SEND_MESSAGES",
-    "CREATE_PUBLIC_THREADS",
-    "CREATE_PRIVATE_THREADS",
-    "SEND_MESSAGES_IN_THREADS",
-]
-deny = []
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = [
-    "SEND_MESSAGES",
-    "CREATE_PUBLIC_THREADS",
-    "CREATE_PRIVATE_THREADS",
-    "SEND_MESSAGES_IN_THREADS",
-]
-
-[[channel]]
 key = "pathfinders-sqd"
 id = "818169664731217920"
 type = "category"
@@ -2124,28 +2066,6 @@ deny = [
 ]
 
 [[channel]]
-key = "pathfinding-and-exiles"
-id = "818180678301777970"
-type = "text"
-name = "pathfinding-and-exiles"
-parent = "pathfinders-sqd"
-
-[[channel.overwrite]]
-role = "admin-mechanized-transport"
-allow = ["VIEW_CHANNEL", "SEND_MESSAGES"]
-deny = []
-
-[[channel.overwrite]]
-role = "pathfinder-sqd"
-allow = ["VIEW_CHANNEL"]
-deny = ["SEND_MESSAGES"]
-
-[[channel.overwrite]]
-role = "everyone"
-allow = []
-deny = ["VIEW_CHANNEL", "SEND_MESSAGES"]
-
-[[channel]]
 key = "poe-general"
 id = "1223279929203097661"
 type = "text"
@@ -2174,28 +2094,6 @@ key = "off-duty"
 id = "1196101890442788984"
 type = "category"
 name = "<<< OFF-DUTY >>>"
-
-[[channel]]
-key = "general-voice"
-id = "1346807216627384331"
-type = "voice"
-name = "General Voice"
-parent = "off-duty"
-
-[[channel]]
-key = "welcome"
-id = "818168986092830731"
-type = "text"
-name = "welcome"
-parent = "off-duty"
-topic = "Head over to the Cadet Room for further information"
-
-[[channel]]
-key = "donations"
-id = "1196239982344552539"
-type = "text"
-name = "donations"
-parent = "off-duty"
 
 [[channel]]
 key = "general-chat"
