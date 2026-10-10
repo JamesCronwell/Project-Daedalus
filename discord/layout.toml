@@ -1273,17 +1273,17 @@ deny = []
 key = "company-movement-orders"
 id = "818169336782782504"
 type = "text"
-name = "company-movement-orders"
-parent = "archive"
+name = "vox-music-bot"
+parent = "comms-cat"
 
 [[channel.overwrite]]
 role = "everyone"
 allow = []
-deny = ["VIEW_CHANNEL", "CONNECT"]
+deny = ["SEND_MESSAGES"]
 
 [[channel.overwrite]]
-role = "layout-admin-bot"
-allow = ["VIEW_CHANNEL"]
+role = "admin-mechanized-transport"
+allow = ["SEND_MESSAGES", "EMBED_LINKS"]
 deny = []
 
 [[channel]]

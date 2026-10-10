@@ -15,6 +15,19 @@ Rollback:  <exact steps that restore Before>
 Outcome:   <what happened; how it was checked>
 ```
 
+## 2026-10-10  Discord (the owner's server)  Stage S6: `company-movement-orders` becomes the visible `vox-music-bot` (planned, owner applies)
+Brief:     03
+Why:       the channel holds the music bot's instructions (owner, 2026-10-10); stage S5's plan moved it back into the
+           hidden archive, where nobody can read them
+Owner yes: "VOX, read-only" (BRIEF 03 chat, 2026-10-10)
+Before:    `company-movement-orders` in ARCHIVUM, hidden from `@everyone` (View and Connect denied), the bot's View allowed
+Change:    one channel, same id and history: renamed `vox-music-bot`, moved into VOX, overwrites as the other feeds
+           (`@everyone` cannot send; `ADMIN / MECHANIZED TRANSPORT` can). Expect 1 move, 1 rename, a reorder, and the
+           overwrite edits; nothing created or deleted
+Rollback:  put the previous `discord/layout.toml` back from git (the S5 commit, 7fb2129), `plan`, `apply`
+Outcome:   applied by the owner, 6 changes (rename, move, the bot's View overwrite dropped, two overwrites set, the VOX
+           reorder); a second `plan` showed 0 changes, 27 yours
+
 ## 2026-10-10  Discord (the owner's server)  Stage S5: the Black Templars ladder and the Military x BT names (planned, owner applies)
 Brief:     03
 Why:       the owner likes the military ranks and chose to compress them into a Black Templars ladder and to theme the
