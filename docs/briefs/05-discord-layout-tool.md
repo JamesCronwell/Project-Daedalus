@@ -50,11 +50,20 @@ State:     tasks 1-3 done. Done-when (1) is green: `python -I tools/discord_layo
              Discord behaviour (task 5 proves them on the test server): that creating a channel with an explicit empty
              `permission_overwrites` list doesn't inherit the category's, that Discord accepts the PUTs when the live
              overwrite already holds bits the bot lacks, and the bot's 403 rules.
-Next:      the owner does task 4 (docs/DISCORD-LAYOUT.md "One-time"), then the test server run (task 5). The session
-           then reads each plan file. CHANGELOG entry for the live invite before task 6. Task 7: names check, commit
-           discord/layout.toml (only after the owner confirms the names), mark the brief done
-Ask owner: - the yes to invite the bot to the test server; later a separate yes for the live server
-           - the test server's id and a window to watch import, plan and apply (~15 min)
+           - 2026-10-10, test server "Soundboard 2" (the owner ran everything; I read each plan): bot created, token in
+             the password manager and the .dpapi file (the DPAPI read works), import + plan = 0 changes; round 1 (rename,
+             move, new channel with a read-only overwrite, new role) planned as 6 changes, applied, second plan 0:
+             the renamed channel kept its id, ids were written back, nothing deleted. Round 2: Kick and Ban on a role
+             showed as "yours", apply did the topic edit and skipped them, the next plan listed them again and nothing
+             else. Done-when (1), (2), (3) are met.
+           - A real-Discord bug found and fixed (c3dcf5a): a new role can share the bot's position number, and the older
+             role ranks higher; the tool now ranks by (position, age). Known gap: a role REORDER while positions tie
+             isn't proven (it reuses the slots' position values); not needed so far.
+Next:      task 6, the live server: a CHANGELOG entry first, then the owner's separate yes, invite, import, then
+           `check-template` against docs/discord/before-2026-10-09.template.json. Task 7: `names` check with the owner,
+           commit discord/layout.toml (no people's names), mark the brief done and move it to done/
+Ask owner: - the yes to invite the bot to the LIVE server (Mojo Dojo Casa House), and its server id; the bot's role
+             dragged above the roles it should edit; Done-when (4)'s `check-template` output to read
 Dirty:     nothing on any machine or server; no secret anywhere. Not pushed (the orchestrator pushes main)
 ```
 

@@ -241,3 +241,7 @@ Change:    `tools/discord_layout.py`, `tools/discord_layout_test.py`, `tools/dis
            then the live server (own entry before that invite), and `discord/layout.toml`
 Rollback:  revert the commits; the owner deletes the application in the Developer Portal and the .dpapi file
 Outcome:   tests green (`python -I tools/discord_layout_test.py`); nothing on any server or machine has changed
+Update 2026-10-10: the owner created the bot and its token (password manager + `%LOCALAPPDATA%\Daedalus\discord-token.dpapi`)
+           and added it to the owner's TEST server "Soundboard 2" (the owner's own act, in the BRIEF 03 session). The
+           owner ran import, plan and apply there: two rounds, only structure on that test server; no deletes. Found and
+           fixed one bug (a role that ties the bot's position). The LIVE server is not invited yet: its own entry first
