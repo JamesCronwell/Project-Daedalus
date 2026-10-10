@@ -9,6 +9,10 @@ the trail. Friends' names never go here.
 - **A standing yes for Hephaestus's small infrastructure requests:** "If Hephaestus needs small infrastructure work
   from you, accept but be mindful of destruction". Read as: small and reversible goes ahead, with a CHANGELOG entry
   first; anything that deletes, renames or reconfigures still comes to the owner. Lives in START_HERE §3.
+- **One deploy heads-up per deploy day** ("yes to one notice per day"), after four separate notices in one morning.
+  A deploy with a migration, or one near the 01:00 UTC backup, still gets its own. Lives in START_HERE §3.
+- **Docker Desktop parked.** Renaming the stale-socket folders loops: each failed start leaves a new one. Lives in
+  IDEAS; Hephaestus's BRIEF 62 database tests stay unrun meanwhile.
 
 ## 2026-10-09: Orchestrator - Daedalus, its first day
 

@@ -45,7 +45,8 @@ Rewrite §1, §2 and §6 in place when they change. History goes in git and `doc
 
 ## 3. Boundaries
 - **Projects keep their software; Daedalus owns the box.** The table is in DIRECTION.
-- Deploys stay the project's. Daedalus gets a heads-up and stays off that box during one.
+- Deploys stay the project's. Daedalus gets a heads-up and stays off that box during one. One heads-up per deploy
+  day is enough (owner, 2026-10-10); a deploy with a migration, or near the 01:00 UTC backup, gets its own.
 - Before changing anything a project relies on, tell that project's orchestrator.
 - **Standing yes for Hephaestus's small requests** (owner, 2026-10-10: "If Hephaestus needs small infrastructure work
   from you, accept but be mindful of destruction"). A small, reversible change gets a CHANGELOG entry first, as always.

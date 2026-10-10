@@ -37,6 +37,12 @@ Each one gets an interview with the owner before it becomes a brief (global rule
 - **The Discord server as code** (owner, 2026-10-09: "maybe we can still do some proper automation at some point").
   After BRIEF 03's manual rework: the layout in a declarative file, diffed against the live server and applied by a bot
   the owner owns, dry run first. Its own interview.
+- **Docker Desktop won't start on Crusader** (2026-10-10; 4.76.0). Every start dies on a stale Unix socket it
+  can't remove ("The file cannot be accessed by the system"): `Docker\run\dockerInference`, then
+  `docker-secrets-engine\engine.sock`. Renaming the folders only loops, because each failed start leaves a new stale
+  socket. Six `.stale` folders sit in `%LOCALAPPDATA%` from 10-08 and 10-10. Candidates, cheapest first: update
+  Docker Desktop; turn off the Model Runner (a settings change); look for what locks AF_UNIX socket files (antivirus).
+  Fallback for tests: Postgres inside WSL. Hephaestus's BRIEF 62 database tests wait on it.
 - **The guard's false positives** (2026-10-09, for the owner, who alone changes the guard). It refused:
   - a heredoc whose text mentioned an SSH key, read as an ssh command;
   - a relative script path after `cd`;

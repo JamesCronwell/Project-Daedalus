@@ -29,6 +29,19 @@ Outcome:   failed at 06:56 UTC, nothing changed. Docker Desktop 4.76.0 shows "An
            system"). The engine never came up, and com.docker.service stayed Stopped. The guard refused to stop the
            hung `docker version` call (a process kill). Waiting for the owner: click Quit in the dialog; the known fix
            is renaming `run` (and `secrets-engine` if needed), the owner's yes first
+Step 2:    owner yes "Go for it Daedalus" (Orchestrator - Daedalus, 2026-10-10). Before: `%LOCALAPPDATA%\Docker` holds
+           run, plus run.stale-20261008, run.stale2-20261008 and run.stale3-20261008 (three earlier renames on 10-08).
+           Change: once Docker has quit, rename `run` to `run.stale-20261010`, then start Docker Desktop again.
+           Rollback: quit Docker, rename it back
+Outcome 2: `run` renamed to `run.stale-20261010` after the owner quit Docker; the restart then failed on the next
+           stale socket, `%LOCALAPPDATA%\docker-secrets-engine\engine.sock` (the owner's screenshot)
+Step 3:    the same yes ("run, and secrets-engine if needed"). Before: `%LOCALAPPDATA%` holds docker-secrets-engine
+           (engine.sock only) plus .stale-20261008 and .stale2-20261008. Change: once Docker has quit, rename
+           docker-secrets-engine to docker-secrets-engine.stale-20261010, then start Docker. Rollback: quit, rename back
+Outcome 3: renamed; the restart failed again on `run\dockerInference`, in the fresh `run` folder the previous start
+           had created. Each failed start leaves a socket the next start can't remove, so renaming loops. Stopped
+           there: Docker is not running, nothing else changed. The renamed folders stay as they are (rollback above if
+           wanted). Root cause not found; parked for the owner (docs/IDEAS.md)
 
 ## 2026-10-09  plumbing  Global CLAUDE.md: usage habits revised, `/compact` past ~250k instead of the morning `/clear`
 Brief:     - (orchestrator; docs/DECISIONS.md, "Usage and the weekly limit")
